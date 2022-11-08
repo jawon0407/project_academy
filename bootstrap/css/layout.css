@@ -491,6 +491,75 @@ img {
   transition:all .6s;
 }
 
+/* modal_css */
+
+.modal {
+  display: none;
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal_background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modal_content {
+  border: 3px solid var(--main-color-blue);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background-color: #fff;
+  width:60%;
+}
+
+.modal_header{
+  padding-top:50px;
+}
+
+.modal_header strong{
+  font-size:2rem;
+}
+
+.modal_body{
+  padding:50px 0;
+}
+
+.modal_body ul{
+  display:grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 20px;
+}
+
+.modal_body ul li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_body ul li img{
+  width: 62%;
+  border-radius: 50%;
+}
+
+.modal_body ul li div{
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.modal_close_btn{
+  position: absolute;
+  font-size: 35px;
+  right: 5.5%;
+  top: 5%;
+}
 /* valorant section *************/
 
 .valorant{
@@ -744,14 +813,26 @@ img {
   .valorant .swiper-slide img{
     width:80%;
   }
+
   .info{
     width:90%;
     margin-left:0;
     margin-top:50px;
   }
+
+  .modal_body{
+    padding:50px 20px;
+  }
+  
+  .modal_body ul li img{
+    width: 100%;
+  }
+
+  .modal_body ul li div{
+    font-size: 0.9rem; 
+  }
 }
 
 /* 모바일 */
 @media screen and (max-width:640px) {
-
 }
