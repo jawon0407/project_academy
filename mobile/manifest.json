@@ -1,0 +1,26 @@
+{
+  "name": "요넥스코리아",
+  "description": "PWA start program",
+  "scope": ".",
+  "start_url": "./",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "#006eb6",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "images/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Yonex_Korea",
+      "short_name": "요넥스코리아",
+      "description": "Yonex_Korea",
+      "url": "./",
+      "icons": [{ "src": "images/icons/android-chrome-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

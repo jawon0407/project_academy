@@ -1,0 +1,312 @@
+h2{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation:opacity 1.8s ease-out forwards;
+    position:relative;
+}
+
+h2::before{
+    content: "TRAILER";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    line-height: .985em;
+    background: linear-gradient(0deg, #c0e5f7 0, transparent 70%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.opacity{
+    animation: opacity 1s forwards ease-out;
+}
+
+@keyframes opacity{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+#content{
+    background-color: #fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    
+}
+
+#content > p{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp: 3;
+    overflow:hidden;
+}
+
+/* common style */
+
+.trailer_wrap,
+.behind{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction:column;
+}
+
+.ttl h3{
+    display: inline-block;
+    font-size: 2.222rem;
+    letter-spacing: 0.045rem;
+    font-family: 'Suez One', serif;
+    background: -webkit-linear-gradient(45deg, rgba(228,245,252,1) 0%,rgba(42,176,237,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.trailer_lst,
+.behind ul{
+    width:90%;
+    padding:50px 0 100px 0;
+}
+
+.trailer_lst dt,
+.behind ul li dt{
+    font-family: 'Suez One', serif;
+    letter-spacing: 0.045rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.trailer_lst dd,
+.behind ul li dd{
+    margin: 1.38888rem 0 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+ul li{
+    overflow: hidden;
+}
+
+ul li img{
+    transition:all 0.7s;
+}
+
+ul li:hover img{
+    transform: scale(1.05);
+}
+
+.image{
+    position:relative;
+}
+
+.image::after{
+    content: "";
+    position: absolute;
+    left: 47%;
+    width: 10%;
+    height: 100%;
+    background: url(../image/trailer/youtube_gray.png) no-repeat center center;
+    background-size: contain;
+    transition: all 0.7s;
+}
+
+ul li:hover .image::after{
+    left: 47%;
+    width: 10%;
+    background: url(../image/trailer/youtube_red.png) no-repeat center center;
+    background-size: contain;
+}
+
+/* trailer_wrap style */
+
+.trailer_wrap .trailer_lst .ttl p {
+    width: 47%;
+    color: rgba(47, 100, 186);
+    margin: 1.38888rem 0 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.trailer_lst > ul{
+    display:grid;
+    margin-top:40px;
+    gap:40px;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+}
+
+.trailer_lst ul li{
+    transition: all 2s;
+    transform-origin: top;
+    transform:scale(0);
+    opacity: 0;
+}
+
+.transform{
+    transform:scale(1) !important;
+    opacity: 1 !important;
+}
+
+.trailer_wrap .trailer_lst ul li:nth-child(even) {
+    margin-top: -10rem;
+}
+
+.trailer_lst dl,
+.trailer_lst dt,
+.trailer_lst dd{
+    transition: all 0.5s ease-in-out;
+}
+
+.trailer_lst dl{
+    padding: 2rem;
+    background: rgb(224, 245, 255);
+    position:relative;
+}
+
+.trailer_lst dl::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../image/snowcrystal5.png);
+    background-size: contain;
+    opacity: 0.05;
+    transition: all 1s;
+}
+
+
+.trailer_lst dt{
+    font-size: 1.388rem;
+    color: rgba(47, 100, 186, 0.5);
+}
+
+.trailer_lst dd{
+    -webkit-line-clamp: 2;
+    color:rgba(0,0,0, 0.6);
+}
+
+.trailer_wrap .trailer_lst ul li:hover dl{
+    background: rgba(224, 245, 255, 1);
+}
+.trailer_wrap .trailer_lst ul li:hover dt{
+    color: rgba(47, 100, 186, 0.9);
+}
+.trailer_wrap .trailer_lst ul li:hover dd{
+    color:rgba(0,0,0, 0.9);
+}
+.trailer_lst ul li:hover dl::before{
+    opacity: 0.4;
+}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+    .trailer_wrap .trailer_lst ul{gap: 1rem 2rem; margin: 5rem 0 0;}
+    ul li:hover .image::after{
+
+    }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+    .trailer_wrap h3{font-size:1.75rem;}
+    .trailer_wrap .trailer_lst{padding: 5rem 8%;}
+    .trailer_wrap .trailer_lst .ttl p{width: auto;}
+    .trailer_wrap .trailer_lst ul{display: block; margin: 3rem 0 0;}
+    .trailer_wrap .trailer_lst ul li{width: auto;}
+    .trailer_wrap .trailer_lst ul li:nth-child(even) {margin: inherit;}
+    .trailer_wrap .trailer_lst ul li + li{margin:3rem 0 0;}
+}
+
+/* 모바일 */
+@media screen and (max-width:480px) {   
+    .trailer_wrap .trailer_lst{padding:3rem 6%;}
+    .trailer_wrap .trailer_lst ul li dl{padding:1.5rem;}
+    .trailer_wrap .trailer_lst ul li dl dt{font-size:1.25rem;}
+    .trailer_wrap .trailer_lst ul li dl dd{margin:1rem 0 0;}
+}
+
+/* behind style */
+
+.behind {
+    background-color: #c0e5f7;
+    margin-bottom:100px;
+    padding-top:50px;
+    position:relative;
+}
+
+.behind::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../image/snowcrystal5.png);
+    opacity: 0.2;
+    transition: all 1s;
+}
+
+.behind:has(li:hover)::before{
+    opacity: 0.5;
+}
+
+.behind h3{
+    color: #fff;
+    font-size: 2.222rem;
+    letter-spacing: 0.045rem;
+    font-family: 'Suez One', serif;
+}
+
+.behind ul{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap:30px;
+    z-index:10;
+}
+
+.behind ul li dl{
+    padding: 1.38888rem;
+    background: #fff;
+}
+
+.behind ul li dt{
+    font-size: 1.388rem;
+    letter-spacing: 1px;
+    color: rgba(47, 100, 186, 0.9);
+}
+
+.behind ul li dd{
+    font-size:0.9rem;
+    -webkit-line-clamp: 3;
+}
+
+@media screen and (max-width:1280px){ 
+    .behind ul li dt{
+         font-size: 1.2rem;
+    }
+    .behind ul li dd{
+        font-size:0.8rem;
+        -webkit-line-clamp: 2;
+    }
+}
+@media screen and (max-width:768px) {
+    .behind ul{
+        grid-template-columns: repeat(1, minmax(0,0.9fr));
+        justify-content:center;
+    }
+}

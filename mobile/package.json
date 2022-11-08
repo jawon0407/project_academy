@@ -1,0 +1,29 @@
+{
+  "name": "project_mobile",
+  "version": "1.0.0",
+  "description": "project_different & one mobile ver",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./common/css/tailwindCSS.css -o ./maincss/article.css --watch"
+  },
+  "keywords": [
+    "Html",
+    "tailwind",
+    "CSS",
+    "Mobile",
+    "App",
+    "Javascript",
+    "Jquery",
+    "Ajax"
+  ],
+  "author": "jawon0407",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "tw-elements": "^1.0.0-alpha12"
+  }
+}

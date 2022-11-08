@@ -1,0 +1,427 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+
+/* Reset CSS  */
+* { margin:0; padding:0; border:0; outline:0; vertical-align:top; -webkit-text-size-adjust:none; font-family: 'Suez One', serif;
+}
+html{font-size:18px;}
+body {font-family:'Open Sans','Suez One', serif; color:#333; line-height: 1.6; transition:background .3s;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+ul, ol, dl { list-style:none; }
+img, video {border:0; vertical-align:top;width:100%;}
+a{color:inherit; text-decoration: none;}
+/* a, a:link {color:#333;text-decoration:none; }
+a:visited { color:#333; }
+a:hover, a:active {color:#333;text-decoration:none; } */
+table {border-collapse:collapse; border-spacing:0;}
+input, select {vertical-align:middle;}
+label {cursor:pointer;}
+.blind, legend, hr, caption { display:block; overflow:hidden; position:absolute; top:0; left:-1000rem;}
+i,em,address {font-style:normal; font-weight:normal;}
+h1, h2, h3, h4, h5, h6{font-weight: normal; font-size:inherit;}
+
+.hidden, #skipNav{display: block; position: absolute; left:-1000%; top:0; width: 1px; height: 1px; overflow: hidden; color: #fff;}
+
+/* wide PC */
+#wrap{width:100%; overflow:hidden;}
+
+#headerArea {
+    position: fixed;
+    z-index: 30;
+    height: 100px;
+    background: rgba(0, 0, 0, 0);
+    left: 0;
+    top: 0;
+    width: 100%
+}
+#headerArea .headerInner {
+    width: 90%;
+    margin: 0 5%;
+    overflow: hidden
+}
+#headerArea h1 {
+    float: left;
+    margin: 14.5px 0;
+}
+#headerArea h1 a {
+    text-decoration: none;
+    display: block;
+    width: 180px;
+    height: 60px;
+    background: url(../image/frozen_logo_l.png)no-repeat;
+    text-indent: -999px;
+    overflow: hidden;
+    background-size: cover;
+    transition: all .5s;
+}
+#headerArea #gnb {
+    float: right;
+    margin-top: 20.5px;
+}
+#headerArea #gnb ul {
+    overflow: hidden;
+}
+#headerArea #gnb ul li {
+    float: left;
+    margin-right: 56px;
+}
+#headerArea #gnb ul li:last-child {
+    margin-right: 0;
+}
+#headerArea #gnb ul li a {
+    display: block;
+    color: rgba(255, 255, 255, .8);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4rem;
+    transition: all .7s;
+    position: relative;
+    padding: 6px 0;
+}
+#headerArea #gnb ul li:hover a {
+    background: -webkit-linear-gradient(left, rgba(228,245,252,1) 0%,rgba(42,176,237,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#headerArea #gnb ul li a.current::before {
+    width: 100%;
+    left: 0;
+}
+/* header>scroll(color) */
+#headerArea.sc {
+    background: rgba(0, 0, 0, 1);
+}
+#headerArea.sc h1 a {
+    background: url(../image/frozen_logo_l.png)no-repeat;
+    background-size: cover;
+}
+
+/* mobile header */
+#headerArea .menu_open {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    display: none
+}
+#headerArea .menu_open span {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    position: relative;
+    text-indent: -9999px;
+    display: block;
+    margin: 28.5px 20px;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+
+#content{
+    margin-top:1000px;
+}
+#content img{
+    width:100%;
+}
+
+.movebtn{
+    position:absolute;
+    bottom:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    animation:opacity 2s infinite;
+}
+
+.movebtn div:first-child{
+    width:60px;
+    height: 60px;
+    opacity:1;
+}
+
+.movebtn div:last-child{
+    margin-top:10px;
+}
+
+.movebtn span{
+    font-size:0.7rem;
+    color:#fff;
+}
+
+@keyframes opacity{
+    0%{
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+/* media queries */
+/* 일반 pc */
+@media screen and (max-width:1280px) {}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    #headerArea.sc {
+        background: rgba(0, 0, 0, 0);
+    }
+    #headerArea .headerInner {
+        width: 100%;
+        margin: 0;
+        background: rgba(0, 0, 0, 1);
+    }
+    #headerArea h1 {
+        position: relative;
+        left: 50%;
+        margin-left: -80px;
+    }
+    #headerArea #gnb {
+        width: 100%;
+        margin: 0;
+        padding: 24px 0 32px;
+        display: none;
+    }
+    #headerArea #gnb ul li {
+        float: none;
+        margin-right: 0;
+        text-align: center;
+    }
+    #headerArea #gnb ul li a {
+        font-size: 1.667rem;
+        padding: 24px 0;
+    }
+
+    /* mobile header>open submenu */
+    #headerArea .menu_open {
+        display: block;
+        float: right;
+        height: 60px;
+        position: relative;
+        border-radius: 5px;
+        z-index: 110;
+        transition: all .5s;
+        top: 15px;
+    }
+    #headerArea .menu_open span {
+        width: 32px;
+        height: 2px;
+        background: #fff;
+        position: relative;
+        text-indent: -9999px;
+        display: block;
+        margin: 28.5px 20px;
+        border-radius: 5px;
+        transition: all .3s;
+    }
+    #headerArea .menu_open span::before {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        top: -9.5px;
+        left: 0;
+        border-radius: 5px;
+        transition: all .3s;
+    }
+    #headerArea .menu_open span::after {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        top: 9.5px;
+        left: 0;
+        border-radius: 5px;
+        transition: all .3s;
+    }
+    #headerArea.mn_open {
+        background: rgba(0, 0, 0, .8);
+    }
+    #headerArea.mn_open h1 a {
+        background: url(../image/frozenlogo.png)no-repeat;
+        background-size: cover;
+    }
+    #headerArea.mn_open .menu_open span {
+        background: rgba(0, 0, 0, 0);
+    }
+    #headerArea.mn_open .menu_open span::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    #headerArea.mn_open .menu_open span::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    #headerArea #gnb ul {
+        margin-top:0px;
+    }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+    #headerArea .headerInner {
+        background: rgba(0,0,0,1);
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    html {
+        font-size: 16px;
+    }
+    #headerArea {
+        height: 76px;
+    }
+    #headerArea h1 a {
+        width: 140px;
+        height: 47px;
+    }
+    #headerArea h1 {
+        margin-left: -66px;
+    }
+    #headerArea .menu_open {
+        top:15px;
+    }
+    .movebtn{
+        position:absolute;
+        bottom:40px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {
+    #wrap {
+        min-width: 320px;
+    }
+}
+/*footer*/
+
+footer{
+    width:100%;
+    height:80px;
+    background:#000;
+    background-color:#c0e5f7;
+    font-size:20px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+footer > div{
+    position:absolute;
+    display:flex;
+    height:8%;
+    align-items:center;
+    left:2%;
+} 
+
+footer > div > div{
+    display:flex;
+    width:50px;
+    height:50px;
+    margin-right:20px;
+}
+
+footer > div > div img{
+    width:100%;
+    border-radius:50%;
+}
+
+.topBtn{
+    margin-bottom:40px;
+    position: absolute;
+}
+
+.topBtn > div > div:last-child{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#2f64ba;
+    padding:15px;
+}
+
+.topBtn > div > div:first-child{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:10px;
+    color:#2f64ba;
+}
+
+.topBtn img{
+    width:100%;
+}
+
+.topBtn > div > div:first-child i{
+    animation:up 1.5s infinite;
+}
+
+@keyframes up{
+    0%{
+        opacity:0;
+        transform:translateY(0px);
+    }
+    50%{
+        opacity:1;
+        transform:translateY(-10px);
+    }
+    100%{
+        opacity:0;
+        transform:translateY(0px);
+    }
+}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    footer span{
+        font-size:16px;
+    }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+    footer > div > div img{
+        width:90%;
+    }
+    footer span{
+        font-size:13px;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    footer > div > div {
+        display:none;
+    }
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {
+    .topBtn{
+        margin-bottom:54px;
+    }
+    
+    .topBtn > div > div:last-child{
+        width:35px;
+        height:35px;
+        border-radius:50%;
+        background:#2f64ba;
+        padding:8px;
+    }    
+}

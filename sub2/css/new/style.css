@@ -1,0 +1,141 @@
+.contentArea {
+  margin-top: 100px;
+}
+
+article h2::after {
+  width: 50%;
+  border-radius: 30px;
+  left: 38px;
+}
+.badminton_newlist img,
+.clothes_newlist img {
+  width: 200px;
+}
+
+.tennis_newlist img {
+  width: 150px;
+  height: 400px;
+}
+
+.image_list {
+  width: 1400px;
+  display: flex;
+}
+
+.image_list li {
+  width: 33.33%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s;
+}
+
+/* 아코디언 메뉴 구현 */
+
+.image_list:hover li {
+  width: 25%;
+}
+.image_list:hover li:hover {
+  width: 50%;
+}
+
+.image_list dl {
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s;
+}
+
+.image_list dt {
+  font-size: 2em;
+  font-weight: var(--font-bold);
+  margin: 30px 0;
+}
+
+.image_list dd {
+  width: 80%;
+  font-size: 1.3em;
+  line-height: 2em;
+}
+
+.image_list dt,
+.image_list dd {
+  margin-left: 40px;
+}
+
+.image_list li:hover dl {
+  opacity: 1;
+  top: 0;
+}
+
+section {
+  text-align: center;
+}
+
+section > strong {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--title-font);
+}
+
+.new_list {
+  margin: 200px 0 100px 0;
+}
+
+.badminton_newlist_wrap,
+.tennis_newlist_wrap,
+.clothes_newlist_wrap {
+  padding: 100px 0 200px 0;
+  width: 100%;
+}
+
+.badminton_newlist,
+.tennis_newlist,
+.clothes_newlist {
+  display: flex;
+  justify-content: space-between;
+  width: 1400px;
+}
+
+.badminton_newlist li,
+.clothes_newlist li,
+.tennis_newlist li {
+  transition: all 0.5s;
+  padding: 20px;
+}
+
+.badminton_newlist li:hover,
+.clothes_newlist li:hover,
+.tennis_newlist li:hover {
+  transform: scale(1.11);
+  box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.badminton_newlist li:hover a,
+.clothes_newlist li:hover a,
+.tennis_newlist li:hover a {
+  color: var(--point-color);
+}
+
+.badminton_newlist a,
+.tennis_newlist a,
+.clothes_newlist a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.3em;
+}
+
+.badminton_newlist span,
+.tennis_newlist span,
+.clothes_newlist span {
+  margin-top: 40px;
+}
+
+

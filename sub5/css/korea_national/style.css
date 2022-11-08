@@ -1,0 +1,150 @@
+/* match_kind_box_style */
+
+.match_kind ul {
+  display: flex;
+  width: 1200px;
+  margin: 100px 0 120px 0;
+}
+
+.match_kind ul li {
+  width: 25%;
+  border: 1px solid #006eb6;
+}
+
+.match_kind ul li:hover a {
+  color: var(--point-color);
+}
+
+.match_kind ul li a {
+  padding: 10px 0;
+  display: block;
+  font-size: 1.25em;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+/* player */
+
+.player {
+  border: 2px solid #ccc;
+  display: flex;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  align-items: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.player > div:last-child {
+  width: 70%;
+  margin-left: 20px;
+  position: relative;
+  top: 23px;
+}
+
+.player > div:last-child::before {
+  content: "";
+  width: 800px;
+  height: 1px;
+  background-color: #ccc;
+  position: absolute;
+}
+
+.player > div:last-child::before {
+  top: 25px;
+}
+
+.player > div:first-child img {
+  width: 300px;
+  border-radius: 15px;
+}
+
+.name span:first-child {
+  font-size: 2em;
+}
+
+.name span:nth-child(2) {
+  font-size: 1.6em;
+  color: #ccc;
+  font-style: italic;
+  position: relative;
+  left: 50px;
+}
+
+.name span:nth-child(3) {
+  font-size: 1.2em;
+  position: absolute;
+  right: 60px;
+  top: 15px;
+}
+
+.career {
+  color: var(--font-middle-color);
+}
+
+.player .name {
+  position: relative;
+  top: -30px;
+}
+
+.career_container > span {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.player .career {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(3, 60px);
+  align-items: flex-start;
+}
+
+.player {
+  transition: all 0.5s;
+}
+
+.player:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.flag {
+  width: 40px;
+  position: absolute;
+  left: 90px;
+  top: 12px;
+}
+
+/* js animation css */
+
+.click {
+  background-color: #f1f1f1;
+}
+
+.click a {
+  color: var(--point-color);
+}
+
+.no_show {
+  display: none;
+}
+
+.show {
+  animation: appear 0.8s forwards ease-out;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

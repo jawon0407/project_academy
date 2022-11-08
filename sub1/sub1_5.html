@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./common/css/sub_style.css" />
+    <link rel="stylesheet" href="../sub1/css/path/style.css" />
+    <script
+      src="https://kit.fontawesome.com/bff332bdcf.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>회사소개 - 오시는 길</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <? include "../common/sub_header.html" ?>
+      <div class="main visual">
+        <img src="./images/sub_introduce_mainimage.png" alt="회사소개" />
+        <h3>회사소개</h3>
+      </div>
+      <div class="subNav">
+        <ul class="subNav_wrap">
+          <li>
+            <a href="./sub1_1.html">
+              <span>브랜드소개</span>
+            </a>
+          </li>
+          <li>
+            <a href="./sub1_2.html">
+              <span>연혁</span>
+            </a>
+          </li>
+          <li>
+            <a href="./sub1_3.html">
+              <span>ceo인사말</span>
+            </a>
+          </li>
+          <li>
+            <a href="./sub1_4.html">
+              <span>회사개요</span>
+            </a>
+          </li>
+          <li class="onclick">
+            <a href="./sub1_5.html">
+              <span>오시는 길</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <article id="content">
+        <div class="titleArea">
+          <h2>오시는 길</h2>
+          <div class="lineMap">
+            <span>홈</span>
+            &#62;
+            <span>회사소개</span>
+            &#62;
+            <strong>오시는 길</strong>
+          </div>
+        </div>
+        <div class="contentArea">
+          <div id="map"></div>
+          <div class="address_container">
+            <img src="./images/path/yonex_building.png" alt="yonex건물" />
+            <div class="address_info">
+              <ul class="address_info_list">
+                <li>
+                  <span>주소 : 서울특별시 마포구 포은로 120 덕일빌딩</span>
+                </li>
+                <li>
+                  <span>대표번호 : 335 - 2551</span>
+                </li>
+                <li>
+                  <span>팩스 : 333 - 2568</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="way">
+            <div class="bus_train">
+              <div>
+                <img src="./images/path/bus-school.png" alt="버스,지하철" />
+              </div>
+              <div class="bus_train_way">
+                <div>
+                  <span class="route">&#183; 마포구청역 - 7011번 버스</span>
+                  <div class="exact_route">
+                    <span
+                      >마포구청역 1번출구 &#8594; 40m 보행 &#8594; 7011버스 탑승
+                      &#8594; 동교초등학교역 하차 &#8594; 파리바게뜨 방면 50m
+                      보행</span
+                    >
+                  </div>
+                </div>
+                <div>
+                  <span class="route">&#183; 망원역 - 마포 09번 버스</span>
+                  <div class="exact_route">
+                    <span>
+                      망원역 2번 출구 &#8594; 마포 09번 버스 탑승 &#8594;
+                      하나은행망원동지점역 하차 &#8594; 세븐일레븐 방면 우회전
+                      &#8594; 200m 보행
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="car">
+              <div>
+                <img src="./images/path/car.png " alt="자가용,택시" />
+              </div>
+              <div class="car_way">
+                <div>
+                  <span class="route">&#183; 월드컵로 방면</span>
+                  <div class="exact_route">
+                    <span
+                      >월드컵로 25길 방면으로 운행 바리바게뜨 방면 좌회전
+                    </span>
+                    <span
+                      >월드컵로 25길 방면으로 운행 -> 씬스튜디오 방면 우회전
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <span class="route">&#183; 망원로 방면</span>
+                  <div class="exact_route">
+                    <span>
+                      망원로 올리브영 방면에서 우회전 &#8594; 100m 직진
+                    </span>
+                    <span>
+                      망원로 망원동고기,망원동칼짬뽕 방면에서 좌회전 &#8594;
+                      100m 직진
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <? include "../common/sub_footer.html" ?>
+      <a href="#top">
+        <div class="go_top">
+          <i class="fa-solid fa-arrow-up"></i>
+          <span class="hidden">위로 올라가기</span>
+        </div>
+      </a>
+    </div>
+    <script src="./../common/js/jquery-1.12.4.min.js"></script>
+    <script src="./../common/js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="./../common/js/fullnav.js"></script>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=adb8b4ef30f0961b0bc9a03eea6dd212"></script>
+    <script src="./js/map.js"></script>
+    <script src="./../common/js/topBtn.js"></script>
+    <script src="./../common/js/subskipnav.js"></script>
+    <script src="./js/waytocome.js"></script>
+  </body>
+</html>

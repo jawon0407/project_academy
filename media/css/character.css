@@ -1,0 +1,305 @@
+h2{
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation:opacity 1.8s ease-out forwards;
+    position:relative;
+}
+
+h2::before{
+    content: "CHARACTER";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    line-height: .985em;
+    background: linear-gradient(0deg, #c0e5f7 0, transparent 70%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+
+.common:not(.etc_character){
+    position:relative;
+    display:flex;
+    align-items: center;
+    opacity:0;
+    top:-120px;
+    transition:all 1.2s ease-in-out;
+}
+.character_info{
+    display:flex;
+    position:absolute;
+    align-items: center;
+}
+
+.character_info h4{
+ font-size:1.2rem;
+}
+
+.anna .character_info > div:first-child,
+.kristoff .character_info > div:first-child,
+.elsa .character_info > div:last-child,
+.olaf .character_info > div:last-child{
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    position:relative;
+}
+
+.character_gallery{
+    display: flex;
+}
+
+.character_info{
+    color:white;
+}
+
+.anna .character_info,
+.kristoff .character_info{
+    justify-content: flex-end;
+}
+
+.anna .character_info > div:first-child,
+.kristoff .character_info > div:first-child{
+    width:60%;
+    margin-right:30px;
+}
+
+.anna .character_info .character_model,
+.kristoff .character_info .character_model{
+    width:10%;
+}
+
+.anna .image_box{
+    display:flex;
+    justify-content: flex-end;
+} 
+
+.anna .character_gallery,
+.kristoff .character_gallery{
+    justify-content: flex-end;
+}
+
+.character_gallery img{
+    width:22% !important;
+    height:90%;
+    margin:5px 20px;
+}
+
+.anna .character_gallery img ,
+.kristoff .character_gallery img {
+    filter: grayscale(70%);
+    transition:all .7s;
+    border-radius: 15% 65% / 65% 15%;
+}
+
+.anna .character_gallery img:hover ,
+.kristoff .character_gallery img:hover{
+    filter: grayscale(0%);
+    border-radius: 65% 15% / 15% 65%;
+}
+
+.anna .character_info,
+.kristoff .character_info{
+    text-align: right;
+    right:30px;
+}
+
+.elsa .character_info > div:last-child,
+.olaf .character_info > div:last-child{
+    width:60%;
+    margin-left:30px;
+}
+
+.elsa .character_info .character_model,
+.olaf .character_info .character_model{
+    width:10%;
+}
+
+.elsa .character_info,
+.olaf .character_info{
+    left:30px;
+}
+
+
+.elsa .character_gallery,
+.olaf .character_gallery{
+    justify-content: flex-start;
+}
+
+.elsa .character_gallery img ,
+.olaf .character_gallery img {
+    filter: grayscale(70%);
+    border-radius: 65% 15% / 15% 65%;
+    transition:all .7s;
+}
+
+.elsa .character_gallery img:hover ,
+.olaf .character_gallery img:hover{
+    filter: grayscale(0%);
+    border-radius: 15% 65% / 65% 15%;
+}
+
+@media screen and (max-width: 1240px) {
+    .image_box{
+        display: none !important;
+    }
+}
+
+.etc_character{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color:#fff;
+}
+
+.etc_character ul{
+    width:80%;
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap:50px;
+    padding:100px 0;
+}
+
+.etc_character ul li{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+}
+
+
+.etc_character ul li div{
+    position:relative;
+    transition: all .7s;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 15%); 
+    border-bottom: 10px solid #fff;
+}
+
+.etc_character ul li:hover dt{
+    color:#2f64b0;
+}
+
+.etc_character ul li:nth-child(odd) div{
+    overflow: hidden;
+    border-radius: 10% 40% / 40% 10%;
+    border-right: 3px solid #fff;
+}
+
+.etc_character ul li:nth-child(even) div{
+    overflow: hidden;
+    border-radius:  40% 10% / 10% 40%;
+    border-left: 3px solid #fff;
+}
+
+.etc_character ul li div:hover{
+    transform: scale(1.05) translateY(-20px);
+}
+
+.etc_character ul li dl{
+    margin-top:15px;
+}
+
+.etc_character dt{
+    text-transform: uppercase;
+    text-align: center;
+    font-size:1.2rem;
+    margin-bottom: 14px;
+}
+
+.etc_character dd{
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/* js class  */
+
+.appear{
+    opacity:1 !important;
+    top:0 !important;
+}
+
+.opacity{
+    animation: opacity 1s forwards ease-out;
+}
+
+@keyframes opacity{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+.etc_character ul li:nth-child(2){
+    animation-delay: 0.2s;
+}
+.etc_character ul li:nth-child(3){
+    animation-delay: 0.4s;
+}
+.etc_character ul li:nth-child(4){
+    animation-delay: 0.6s;
+}
+.etc_character ul li:nth-child(5){
+    animation-delay: 0.8s;
+}
+.etc_character ul li:nth-child(6){
+    animation-delay: 1s;
+}
+.etc_character ul li:nth-child(7){
+    animation-delay: 1.2s;
+}
+.etc_character ul li:nth-child(8){
+    animation-delay: 1.4s;
+}
+
+
+/* media queries */
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+}
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    .etc_character ul{
+        grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+    .etc_character ul li:nth-child(7){
+        display:none;
+    }
+    .etc_character ul li:nth-child(8){
+        display:none;
+    }
+}
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+}
+/* 모바일 */
+@media screen and (max-width:640px) {
+    .etc_character ul{
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+    .etc_character ul li:nth-child(5){
+        display:none;
+    }
+    .etc_character ul li:nth-child(6){
+        display:none;
+    }
+}
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {
+}
+

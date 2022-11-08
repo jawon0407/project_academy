@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" href="app_icon.png">
+    <link rel="apple-touch-startup-image" href="startup.ong">
+    <link rel="stylesheet" href="./common/css/common.css">
+    <link rel="stylesheet" href="./maincss/swiper.css">
+    <link rel="stylesheet" href="./maincss/article.css">
+    <script
+      src="https://kit.fontawesome.com/bff332bdcf.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>후원선수</title>
+    <script>
+      // <![CDATA[
+      try {
+        window.addEventListener(
+          "load",
+          function () {
+            setTimeout(scrollTo, 0, 0, 1);
+          },
+          false
+        );
+      } catch (e) {}
+      // ]]>
+    </script>
+  </head>
+
+  <body class="w-screen h-screen">
+    <div id="skipNav">
+      <a href="#content">본문바로가기</a>
+      <a href="#gnb">네비게이션바로가기</a>
+    </div>
+
+    <div class="wrap">
+      <header id="headerArea">
+        <div class="header_top flex items-center justify-between">
+          <h1 class="px-5">
+            <a href="./index.html"><span class="hidden">yonex</span></a>
+          </h1>
+          <a class="menu_open" href="#">
+            <span>메뉴오픈</span>
+          </a>
+        </div>
+        <div class="modal_box"></div>
+        <nav id="gnb">
+          <h2 class="hidden">글로벌네비게이션영역</h2>
+          <h3><a href="index.html">yonex</a></h3>
+          <ul class="mainMenu w-full mt-20">
+            <li class="depth1 pl-1">
+              <h3>
+                <a href="#"
+                  >회사소개 <span>About Yonex</span><i class="fas fa-plus"></i
+                ></a>
+              </h3>
+              <ul>
+                <li><a href="./sub1_1.html">YONEX 소개</a></li>
+                <li><a href="./sub1_2.html">주요연혁</a></li>
+                <li><a href="./sub1_3.html">오시는길</a></li>
+              </ul>
+            </li>
+            <li class="depth1 pl-1">
+              <h3>
+                <a href="#"
+                  >후원선수 <span>Support Player</span><i class="fas fa-plus"></i
+                ></a>
+              </h3>
+              <ul>
+                <li><a href="./sub2_1.html">TEAM YONEX</a></li>
+                <li><a href="./sub2_2.html">국가대표</a></li>
+                <li><a href="./sub2_3.html">국제선수</a></li>
+              </ul>
+            </li>
+            <li class="depth1 pl-1">
+              <h3>
+                <a href="#"
+                  >회사경영 <span>Management</span><i class="fas fa-plus"></i
+                ></a>
+              </h3>
+              <ul>
+                <li><a href="./sub3_1.html">윤리경영</a></li>
+                <li><a href="./sub3_2.html">소비자중심경영</a></li>
+              </ul>
+            </li>
+            <li class="depth1 pl-1 last">
+              <h3>
+                <a href="#">고객문의 <span>Center</span><i class="fas fa-plus"></i></a>
+              </h3>
+              <ul>
+                <li><a href="./sub4_1.html">FAQ</a></li>
+                <li><a href="./sub4_2.html">뉴스룸</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="gnb_sns flex w-full justify-center space-x-4 mt-10">
+            <li>
+              <a
+                href="https://www.youtube.com/channel/UCdf1Jx_McgoSyMadgtI7L3w"
+                target="black"
+                title="유튜브 새창으로 열림"
+              >
+                <i
+                  class="fab fa-youtube text-lg p-2 text-white bg-gray-300 rounded-full"
+                ></i>
+                <span class="hidden">유튜브</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/yonex_com/"
+                target="black"
+                title="트위터 새창으로 열림"
+              >
+                <i
+                  class="fab fa-twitter text-lg p-2 text-white bg-gray-300 rounded-full"
+                ></i>
+                <span class="hidden">트위터</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/yonexkorea/"
+                target="black"
+                title="페이스북 새창으로 열림"
+              >
+                <i
+                  class="fab fa-facebook text-lg p-2 text-white bg-gray-300 rounded-full"
+                ></i>
+                <span class="hidden">페이스북</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/yonex_kr/?hl=ko"
+                target="black"
+                title="인스타그램 새창으로 열림"
+              >
+                <i
+                  class="fab fa-instagram text-lg p-2 text-white bg-gray-300 rounded-full"
+                ></i>
+                <span class="hidden">인스타그램</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="flex space-x-4 mt-10 justify-center">
+            <li class="rounded-lg bg-main">
+              <a href="./login.html" class="block px-4 py-2 text-white w-full"
+                >로그인</a
+              >
+            </li>
+            <li class="rounded-lg bg-main">
+              <a href="./signup.html" class="block px-5 py-2 text-white w-full"
+                >회원가입</a
+              >
+            </li>
+          </ul>
+        </nav>        
+      </header>
+
+      <div class="visual relative flex justify-center items-center">
+     <img
+          src="./images/sub2/sub2_visual_image.jpg"
+          alt="sub2 visual image"
+        >
+        <div class="visual_text absolute mt-5">
+          <h3 class="text-2xl text-white font-thin sm:text-3xl">후원선수</h3>
+        </div>
+      </div>
+      <div class="sub_menu">
+        <ul class="flex w-full justify-around sub_wrap">
+          <li class="current">
+            <a
+              href="./sub2_1.html"
+              class="w-full px-1 py-2 text-sm sm:text-lg md:text-xl"
+              >TEAM YONEX</a
+            >
+          </li>
+          <li>
+            <a
+              href="./sub2_2.html"
+              class="w-full px-1 py-2 text-sm sm:text-lg md:text-xl"
+              >국가대표</a
+            >
+          </li>
+          <li>
+            <a
+              href="./sub2_3.html"
+              class="w-full px-1 py-2 text-sm sm:text-lg md:text-xl"
+              >후원선수</a
+            >
+          </li>
+        </ul>
+      </div>
+      <article id="content" class="flex flex-col items-center justify-center">
+        <h2
+          class="font-bold mt-12 sm:mt-16 relative before:absolute before:h-6 before:w-px before:bg-gray-500 before:-bottom-12 before:left-1/2 text-2xl md:text-3xl"
+        >
+          TEAM YONEX
+        </h2>
+        <div class="yonex_area">
+          <div class="director mt-20">
+            <div>
+              <img src="./images/sub2/parkyoungjae.jpg" alt="박용제감독">
+            </div>
+            <div>
+              <div class="name">
+                <span>박용제 감독</span>
+                <span>Park Yong Jae</span>
+              </div>
+            </div>
+          </div>
+          <div class="coach mt-20">
+            <div>
+              <img src="./images/sub2/ahnhyunsuk.jpg" alt="안현석코치">
+            </div>
+            <div>
+              <div class="name">
+                <span>안현석 코치</span>
+                <span>Ahn Hyun Seok</span>
+              </div>
+            </div>
+          </div>
+          <div class="player_list">
+            <div class="player_intro">
+              <div>
+                <img src="./images/sub2/leeyoungdae.jpg" alt="이용대">
+              </div>
+            </div>
+            <div class="name">
+              <span>이용대</span>
+              <span>Lee Young Dae</span>
+            </div>
+          </div>
+          <div class="player_list">
+            <div class="player_intro">
+              <div>
+                <img src="./images/sub2/kimyounghyun.jpg" alt="김용현">
+              </div>
+            </div>
+            <div class="name">
+              <span>김용현</span>
+              <span>Kim Yong Hyun</span>
+            </div>
+          </div>
+          <div class="player_list">
+            <div class="player_intro">
+              <div>
+                <img src="./images/sub2/kimdoungwook.jpg" alt="김동욱">
+              </div>
+            </div>
+            <div class="name">
+              <span>김동욱</span>
+              <span>Kim Dong Wook</span>
+            </div>
+          </div>
+          <div class="player_list">
+            <div class="player_intro">
+              <div>
+                <img src="./images/sub2/junhyukjin.jpg" alt="전혁진">
+              </div>
+            </div>
+            <div class="name">
+              <span>전혁진</span>
+              <span>Jeon Hyeok Jin</span>
+            </div>
+          </div>
+          <div class="player_list">
+            <div class="player_intro">
+              <div>
+                <img src="./images/sub2/leesangmin.jpg" alt="이상민">
+              </div>
+            </div>
+            <div class="name">
+              <span>이상민</span>
+              <span>Lee Sang Min</span>
+            </div>
+          </div>
+          <div class="player_list">
+            <div class="player_intro">
+              <div>
+                <img src="./images/sub2/kimtaekwan.jpg" alt="김태관">
+              </div>
+            </div>
+            <div class="name">
+              <span>김태관</span>
+              <span>Kim Taek Wan</span>
+            </div>
+          </div>
+          <div class="player_list mb-20">
+            <div class="player_intro">
+              <div>
+                <img src="./images/sub2/kimjaehyun.jpg" alt="김재현">
+              </div>
+            </div>
+            <div class="name">
+              <span>김재현</span>
+              <span>Kim Jae Hyun</span>
+            </div>
+          </div>
+          <div class="player_list mb-20">
+            <div class="player_intro">
+              <div>
+                <img src="./images/sub2/jinyoung.jpg" alt="진용">
+              </div>
+            </div>
+            <div class="name">
+              <span>진 용</span>
+              <span>Jin Yong</span>
+            </div>
+          </div>
+        </div>
+      </article>
+      <footer id="footerArea" class="bg-gray-50">
+        <div class="footer_inner">
+          <ul class="terms flex w-full border-b">
+            <li class="w-1/2 text-center">
+              <a href="#a" class="py-4">A/S 관련규정</a>
+            </li>
+            <li class="w-1/2 text-center">
+              <a href="#a" class="py-4">개인정보 수집 및 이용</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer_info flex flex-col items-center w-full">
+          <div class="footer_family my-8 relative z-20 w-3/5">
+            <a
+              class="arrow border-2 border-gray-300 py-2 px-6 flex items-center"
+              href="#"
+            >
+              FAMILY SITE
+              <i class="fas fa-chevron-down absolute right-5"></i>
+              <span class="hidden">목차 보이기</span>
+            </a>
+            <ul class="family_list border-2 absolute top-10 w-full bg-gray-200">
+              <li class="text-center border-b border-gray-300">
+                <a
+                  href="https://www.yonex.co.jp/"
+                  target="_blank"
+                  title="새창에 열림"
+                  class="py-2"
+                  >일본</a
+                >
+              </li>
+              <li class="text-center border-b border-gray-300">
+                <a
+                  href="https://www.yonex.com/us/"
+                  target="_blank"
+                  title="새창에 열림"
+                  class="py-2"
+                  >미국</a
+                >
+              </li>
+              <li class="text-center">
+                <a
+                  href="https://www.yonex.co.uk/"
+                  target="_blank"
+                  title="새창에 열림"
+                  class="py-2"
+                  >영국</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex justify-around w-full flex-wrap">
+            <address class="text-lg">
+              <span>(주)동승통상</span>
+              <br>
+              <span>대표이사 : 김철웅 | 대표번호 : 02-335-8077</span>
+              <br>
+              <span>주소 : 서울특별시 마포구 포은로 120 덕일빌딩</span>
+              <br>
+              <span>&#169;2012-2014 YONEX CO.,LTD</span>
+            </address>
+            <div class="footer_sns">
+              <ul class="flex space-x-3 my-8">
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UCdf1Jx_McgoSyMadgtI7L3w"
+                    target="black"
+                    title="유튜브 새창으로 열림"
+                  >
+                    <i
+                      class="fab fa-youtube text-sm p-2 text-white bg-gray-300 rounded-full"
+                    ></i>
+                    <span class="hidden">유튜브</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/yonex_com/"
+                    target="black"
+                    title="트위터 새창으로 열림"
+                  >
+                    <i
+                      class="fab fa-twitter text-sm p-2 text-white bg-gray-300 rounded-full"
+                    ></i>
+                    <span class="hidden">트위터</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/yonexkorea/"
+                    target="black"
+                    title="페이스북 새창으로 열림"
+                  >
+                    <i
+                      class="fab fa-facebook text-sm p-2 text-white bg-gray-300 rounded-full"
+                    ></i>
+                    <span class="hidden">페이스북</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/yonex_kr/?hl=ko"
+                    target="black"
+                    title="인스타그램 새창으로 열림"
+                  >
+                    <i
+                      class="fab fa-instagram text-sm p-2 text-white bg-gray-300 rounded-full"
+                    ></i>
+                    <span class="hidden">인스타그램</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a href="#top" class="go_top">
+          <div
+            class="go_top fixed bottom-4 right-5 bg-main rounded-50% w-10 h-10 flex justify-center items-center text-white z-50"
+          >
+            <i class="fa-solid fa-arrow-up"></i>
+            <span class="hidden">위로 올라가기</span>
+          </div>
+        </a>        
+      </footer>
+    </div>
+
+    <script src="./common/js/jquery-1.12.4.min.js"></script>
+    <script src="./common/js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="./common/js/common.js"></script>
+  </body>
+</html>

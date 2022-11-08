@@ -1,0 +1,271 @@
+article h2::after {
+  width: 5%;
+  border-radius: 50%;
+  left: 49%;
+}
+
+.content h2 {
+  margin-bottom: 150px;
+  transition: all .2s;
+}
+
+.history_divide {
+  display: flex;
+  width: 1200px;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.history_divide > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  padding: 10px 60px;
+  border: 1px solid #ccc;
+  color: var(--font-color);
+  font-size: 1.8em;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.history_divide > li:hover {
+  color: var(--main-color-blue);
+}
+
+/* 연혁 공통 부분 */
+
+dd {
+  margin-top: 10px;
+  line-height: 32px;
+  text-align: justify;
+}
+
+.common {
+  position: relative;
+}
+
+.common::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #2f4798;
+  left: 220px;
+  top: 88px;
+}
+
+.common > ul {
+  width: 1200px;
+}
+
+.common > ul > li {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin: 60px 0;
+}
+
+.common > ul > li span {
+  color: var(--point-color);
+  font-size: 2.5em;
+}
+
+.common ul li:first-child span {
+  font-weight: var(--font-bold);
+}
+
+dl {
+  width: 800px;
+  font-size: 1.125em;
+}
+
+dt {
+  border-top: 1px solid #ccc;
+}
+
+li:first-child dt {
+  border: none;
+}
+
+/* Only last_history style*/
+
+.last_history li:nth-child(5) dd,
+.last_history li:nth-child(6) dd,
+.last_history li:nth-child(7) dd,
+.last_history li:nth-child(8) dd,
+.last_history li:nth-child(9) dd {
+  margin-bottom: 40px;
+}
+
+.last_history {
+  margin-top: 150px;
+  position: relative;
+}
+
+.last_history::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: var(--main-color-blue);
+  position: absolute;
+  top: -10px;
+}
+
+/* Only middle_history style*/
+.need_line {
+  border-top: 1px solid #ccc !important;
+}
+
+.middle_history li:first-child dd,
+.middle_history li:nth-child(2) dd,
+.middle_history li:nth-child(3) dd,
+.middle_history li:nth-child(4) dd,
+.middle_history li:nth-child(5) dd,
+.middle_history li:nth-child(6) dd,
+.middle_history li:nth-child(7) dd {
+  margin-bottom: 40px;
+}
+/* Only first_history style*/
+
+.first_history li:nth-child(5) dd,
+.first_history li:nth-child(6) dd,
+.first_history li:nth-child(7) dd {
+  margin-bottom: 40px;
+}
+
+.first_history {
+  margin-bottom: 200px;
+}
+
+/* 연혁 dot 위치 */
+
+.common li:first-child::after,
+.common li:nth-child(2)::after,
+.common li:nth-child(3)::after,
+.common li:nth-child(4)::after,
+.common li:nth-child(5)::after,
+.common li:nth-child(6)::after,
+.common li:nth-child(7)::after,
+.common li:nth-child(8)::after,
+.common li:nth-child(9)::after,
+.common li:nth-child(10)::after,
+.common li:last-child::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #2f4798;
+  border-radius: 50%;
+  top: 28px;
+  left: 215px;
+}
+
+.table_top {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  right: 8%;
+  width: 40px;
+  height: 40px;
+  color: var(--main-color-blue);
+  background: conic-gradient(#006eb6 0deg, white 0deg);
+  font-size: 2em;
+  border-radius: 50%;
+  transition: all 0.5s ease-in;
+  z-index: 2;
+}
+
+.table_top::before {
+  content: "";
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.table_top:hover {
+  transform: scale(1.2);
+}
+
+.fa-caret-up {
+  z-index: 1;
+}
+
+/* js animation_css */
+
+.active a {
+  color: var(--main-color-blue) !important;
+  font-weight: 600;
+}
+.full_width {
+  width: 2000px;
+  background-color: #006eb6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: 0;
+  animation: opacity 0.5s ease-in-out forwards;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.history_header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 105;
+}
+
+.history_header li {
+  box-sizing: border-box;
+  background-color: var(--main-color-blue);
+  color: var(--main-color-white);
+  transition: all 0.5s ease-in-out;
+  border: none;
+}
+
+.history_header li:hover {
+  background-color: var(--main-color-white);
+}
+
+.history_header li a {
+  font-size: 1.2rem;
+  color: var(--main-color-white);
+}
+
+.history_header li:hover a {
+  color: var(--main-color-blue);
+}
+
+.history_header li.active {
+  background-color: var(--main-color-white);
+  color: var(--main-color-blue);
+}
+
+.button_on {
+  animation: button_on 0.5s ease-in-out forwards;
+}
+
+@keyframes button_on {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

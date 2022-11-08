@@ -1,0 +1,112 @@
+.mileage {
+  width: 1200px;
+}
+
+.mileage > span {
+  display: block;
+  font-size: 2.2em;
+  font-weight: var(--font-bold);
+  color: var(--main-color-blue);
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.mileage_icon {
+  width: 100%;
+}
+
+.mileage_icon img {
+  width: 100px;
+  height: 100px;
+  transition: all 0.5s;
+}
+
+.mileage_icon ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.mileage_icon li{
+  padding:10px 50px;
+  transition:all .5s;
+}
+
+.mileage_icon li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mileage_icon li:hover{
+  transform:scale(1.1);
+  
+  border-radius: 15px;
+}
+
+.mileage_icon li span {
+  font-size: 1.5em;
+  display: block;
+  margin: 40px 0 20px 0; 
+  font-weight: var(--font-bold);
+}
+
+.mileage_textbox {
+  margin-top: 50px;
+  border: 8px solid #ccc;
+  padding: 60px;
+  border-radius: 40px;
+}
+
+.mileage_textbox dt {
+  font-weight: var(--font-bold);
+  font-size: 1.8em;
+  color: var(--main-color-blue);
+  margin: 20px 0 40px 0;
+}
+
+.mileage_textbox dl {
+  font-size: 1.1em;
+  line-height: 45px;
+}
+
+.membership_terms_of_service {
+  margin-top: 200px;
+}
+
+.membership_terms_of_service > span {
+  display: block;
+  margin: 30px 20px;
+  font-size: 1.8em;
+  font-weight: var(--font-bold);
+  color: var(--main-color-blue);
+}
+
+.membership_terms_of_service_text {
+  border: 5px solid #ccc;
+  padding: 10px 40px;
+  height: 400px;
+  overflow: auto;
+  border-radius: 20px;
+}
+
+.membership_terms_of_service_text::-webkit-scrollbar {
+  width: 10px;
+}
+
+.membership_terms_of_service_text li {
+  margin-top: 40px;
+}
+
+.membership_terms_of_service_text li > span {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--main-color-blue);
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.membership_terms_of_service_text li > p {
+  line-height: 40px;
+  color: var(--font-middle-color);
+}

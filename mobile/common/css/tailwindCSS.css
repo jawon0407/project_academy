@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .w-lg {
+    width: 300%;
+  }
+  .left {
+    left: 5%;
+  }
+  .slogan_style {
+    @apply absolute bottom-1/4 left text-white text-xl;
+  }
+  .progress_circle {
+    @apply block bg-white w-2 h-2 rounded;
+  }
+  .w_2xl {
+    width: 200%;
+  }
+  .list_style {
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* sub */
+
+@layer components {
+  .sub_wrap li {
+    @apply border border-gray-300 text-center w-full flex items-center;
+  }
+
+  .current {
+    border: 1px solid #006eb6 !important;
+  }
+  .current a {
+    color: #006eb6;
+    font-weight: 600;
+  }
+
+  .on {
+    border: 1px solid #006eb6 !important;
+  }
+
+  .on a {
+    color: #009867;
+  }
+
+  .li_border li {
+    border: 1px solid #ccc;
+    @apply px-2 py-2 w-1/3 text-center xs:text-sm;
+  }
+
+  .li_border li a {
+    @apply text-xxs s:text-12px lsm:text-base;
+  }
+
+  .common dd {
+    margin-top: 10px;
+    text-align: justify;
+    color: #666;
+  }
+
+  .common {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+  }
+
+  .common::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #006eb6;
+    left: 27%;
+    top: 8px;
+  }
+
+  .common ul {
+    width: 100%;
+  }
+
+  .common > ul > li {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    position: relative;
+    margin: 40px 0;
+  }
+
+  .common > ul > li span {
+    color: var(--point-color);
+    font-size: 1.2rem;
+  }
+  .common ul li:first-child span {
+    font-weight: var(--font-bold);
+  }
+  .common dl {
+    width: 60%;
+    font-size: 0.8em;
+  }
+  .common dt {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .common dt::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: -10px;
+    left: 0;
+    background: #ccc;
+  }
+
+  .common li:first-child dt {
+    border: none;
+  }
+
+  @media screen and (max-width: 360px) {
+    .common {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .common::after {
+      display: none;
+    }
+    .common > ul > li::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: #006eb6;
+      left: 0;
+      bottom: -40px;
+    }
+    .common ul {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .common > ul > li {
+      flex-direction: column;
+    }
+    .common > ul > li::after {
+      display: none;
+    }
+    .common dl {
+      width: 100%;
+    }
+  }
+}
+
+.up {
+  animation: up 1s ease-out forwards;
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(140px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .custom-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@layer components {
+  .yonex_area {
+    @apply grid gap-4 px-5;
+    grid-template-columns: repeat(2, minmax(100px, 0.8fr));
+  }
+  .yonex_area img {
+    border-radius: 50%;
+  }
+  .name {
+    margin: 15px 0;
+    @apply flex flex-col items-center justify-center text-center;
+  }
+
+  .name span {
+    display: block;
+  }
+
+  .name span:first-child {
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width:780px) {
+    .name span:first-child {
+      font-size: 1.2rem;
+    }
+  }
+
+  .name span:last-child {
+    font-size: 1.2em;
+    color: #ccc;
+    font-style: italic;
+    position: relative;
+  }
+
+  .career_container > span {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .director .career {
+    margin-top: 10px;
+  }
+
+  .coach .career {
+    margin-top: 10px;
+  }
+
+  .coach .career_container:last-child {
+    margin-top: 10px;
+  }
+
+  @media screen and (max-width: 400px) {
+    .name span:last-child {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .name span:first-child {
+      font-size: 16px;
+    }
+  }
+  .on {
+    border: 1px solid #006eb6 !important;
+  }
+
+  .on a {
+    color: #009867;
+  }
+
+  .match_list li {
+    @apply border border-gray-300 text-center flex items-center;
+  }
+
+  .match_list li a {
+    @apply w-full py-2;
+  }
+
+  .grid_style{
+    @apply grid grid-cols-2 gap-4 px-4 my-20;
+  }
+
+  .grid_style > div {
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    @apply rounded-md relative;
+  }
+
+  .grid_style img:not(.flag_box > img){
+    @apply rounded-md
+  }
+  
+  .flag_box{
+    position: absolute;
+    right:10px;
+  }
+  
+  .korea_national_area{
+    @apply w-full;
+  }
+  
+  .flag_box {
+    max-width: 30px;
+  }
+
+  .korea_national_area .flag_box{
+    bottom:85px;
+  }
+  
+  .support_player_area .flag_box{
+    bottom: 70px;
+  }
+
+  .korea_national_area .name span:nth-child(2),
+  .support_player_area .name span:nth-child(2) {
+    font-size: 1rem;
+    color: #ccc;
+    font-style: italic;
+    position: relative;
+    text-transform:uppercase;
+  }
+  
+@media screen and (max-width:320px){
+  .korea_national_area .flag_box{
+    display:none;
+  }
+}
+  @media screen and (max-width:380px){
+    .support_player_area .flag_box{
+      display:none
+    }
+  }
+  @media screen and (min-width:700px){
+    .flag_box{
+      max-width:40px;
+    }
+    .korea_national_area .flag_box{
+      bottom:95px;
+    }
+    .support_player_area .flag_box{
+      bottom:80px;
+    }
+  }
+}

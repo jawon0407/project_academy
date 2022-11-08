@@ -1,0 +1,151 @@
+.contentArea > img {
+  margin-top: 300px;
+}
+
+.customer_mark {
+  position: relative;
+  top: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.customer_mark > img {
+  width: 250px;
+  height: 250px;
+  opacity: 0;
+}
+
+.customer_mark > div {
+  margin-left: 50px;
+  opacity: 0;
+}
+
+.customer_mark > div > span {
+  font-size: 2em;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.customer_mark_info {
+  width: 400px;
+  text-align: justify;
+}
+
+.customer_mark_info p {
+  font-size: 1.08rem;
+  line-height: 1.5em;
+}
+
+.customer_mark_info > div {
+  display: flex;
+  margin-top: 20px;
+}
+
+.recognize {
+  display: flex;
+}
+
+.recognize > div {
+  margin: 5px 10px;
+  position: relative;
+}
+
+.recognize_item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 1px;
+  height: 100%;
+  background: #ccc;
+}
+
+.recognize img {
+  width: 25px;
+  height: 25px;
+}
+
+.award_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 110, 182, 0.1);
+  border-radius: 10px;
+  padding: 50px 100px;
+  margin: 100px 0 200px 0;
+  opacity: 0;
+}
+
+.award_container > span {
+  font-size: 2.2em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 80px;
+}
+
+.award_info {
+  display: flex;
+  align-items: center;
+}
+
+.award_imgbox {
+  display: flex;
+}
+
+.award_textbox {
+  margin-left: 50px;
+  text-align: justify;
+}
+
+.award_textbox p {
+  font-size: 1.08rem;
+  line-height: 2em;
+  margin: 10px 0;
+}
+
+.award_textbox p b {
+  font-size: 1.2rem;
+}
+
+/* js animation css */
+
+.slide_left {
+  animation: slide_left 1.5s ease-in-out forwards;
+}
+.slide_right {
+  animation: slide_right 2s ease-in-out forwards;
+}
+.appear {
+  animation: appear 1s ease-in-out forwards;
+}
+
+@keyframes slide_left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide_right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
