@@ -1,0 +1,60 @@
+{
+    "players":[{
+        "name": "이용대(kor)",
+        "img": "./images/sub2/lee_young_dae.jpg",
+        "alt":  "이용대",
+        "englishName": "LEE YOUNG DAE",
+        "flag": "./images/sub2/korea_flag.png",
+        "flagImgAlt":  "한국"
+    },{
+        "name": "수카물 조(ina)",
+        "img": "./images/sub2/sukamuljo.jpg",
+        "alt":  "수카물 조",
+        "englishName": "KEVIN.S SUKAMULJO",
+        "flag": "./images/sub2/indonesia_flag.jpg",
+        "flagImgAlt":  "인도네시아"
+    },{
+        "name": "켄토 모모타(JPN)",
+        "img": "./images/sub2/kento_momota.jpg",
+        "alt":  "켄토 모모타",
+        "englishName": "KENTO MOMOTA",
+        "flag": "./images/sub2/jpn_flag.png",
+        "flagImgAlt":  "일본"
+    },{
+        "name": "리 총 웨이(MAS)",
+        "englishName": "LEE CHONG WEI",
+        "img": "./images/sub2/lee_chong_wei.jpg",
+        "alt":  "리총웨이",
+        "flag": "./images/sub2/msa_flag.png",
+        "flagImgAlt":  "말레이시아"
+    },{
+        "name": "린 단(CHN)",
+        "img": "./images/sub2/lindan.jpg",
+        "alt":  "린 단",
+        "englishName": "lin dan",
+        "flag": "./images/sub2/jpn_flag.png",
+        "flagImgAlt":  "중국"
+    },{
+        "name": "기데온(INA)",
+        "img": "./images/sub2/gideon.jpg",
+        "alt":  "기데온",
+        "englishName": "FERNALDI GIDEON",
+        "flag": "./images/sub2/msa_flag.png",
+        "flagImgAlt":  "인도네시아"
+    },{
+        "name": "리 양(tpe)",
+        "img": "./images/sub2/lee_yang.jpg",
+        "alt":  "리 양",
+        "englishName": "LEE YANG",
+        "flag": "./images/sub2/tpe_flag.png",
+        "flagImgAlt":  "대만"
+    },{
+        "name": "나가하라(jpn)",
+        "img": "./images/sub2/nagahara.jpg",
+        "alt":  "와카나 나가하라",
+        "englishName": "WAKANA NAGAHARA",
+        "flag": "./images/sub2/jpn_flag.png",
+        "flagImgAlt":  "일본"
+    }
+]
+}

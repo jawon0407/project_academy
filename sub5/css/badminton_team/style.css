@@ -1,0 +1,171 @@
+.director,
+.coach {
+  border: 2px solid #ccc;
+  display: flex;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.director > div:last-child,
+.coach > div:last-child {
+  width: 70%;
+  margin-left: 20px;
+  position: relative;
+}
+
+.director > div:last-child::before,
+.coach > div:last-child::before {
+  content: "";
+  width: 800px;
+  height: 1px;
+  background-color: #ccc;
+  position: absolute;
+}
+
+.director > div:last-child::before {
+  top: 25px;
+}
+
+.coach > div:last-child::before {
+  top: 55px;
+}
+
+.director img,
+.coach img {
+  width: 300px;
+  border-radius: 15px;
+}
+
+.name span:first-child {
+  font-size: 2em;
+}
+
+.name span:last-child {
+  font-size: 1.6em;
+  color: #ccc;
+  font-style: italic;
+  position: relative;
+  left: 40px;
+}
+
+.career {
+  color: var(--font-middle-color);
+}
+
+.director .name {
+  position: relative;
+  top: -30px;
+}
+
+.career_container > span {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.director .career {
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(3, 50px);
+  align-items: center;
+}
+
+.coach .career {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(1, 30px);
+  align-items: center;
+}
+
+.coach .career_container {
+  margin-top: 25px;
+}
+
+.coach {
+  margin-top: 100px;
+}
+
+.player_list {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 640px);
+  grid-template-rows: repeat(3, 550px);
+  gap: 30px;
+}
+
+.player_list > li {
+  border: 1px solid #ccc;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.director,
+.coach,
+.player_list > li {
+  transition: all 0.5s;
+}
+
+.director:hover,
+.coach:hover,
+.player_list > li:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.player_list img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.player_intro {
+  display: flex;
+}
+
+.player_intro > div:last-child {
+  margin-left: 15px;
+}
+
+.profile li {
+  margin: 10px 0;
+  font-size: 1.05em;
+}
+
+.recent_achievement {
+  margin: 20px 0;
+}
+
+.recent_achievement > span,
+.support_item > div:first-child span {
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.recent_achievement dl,
+.recent_achievement dt {
+  margin-top: 5px;
+}
+
+.recent_achievement dl,
+.support_item div:last-child {
+  border-radius: 10px;
+  background-color: rgba(250, 247, 252, 0.9);
+  padding: 10px 15px;
+}
+
+.recent_achievement dd,
+.support_item div:last-child {
+  color: var(--font-middle-color);
+}
+
+.support_item div:last-child {
+  margin-top: 10px;
+}
+
+.support_item div:last-child span {
+  display: inline-block;
+}
+
+.support_item div:last-child span:last-child {
+  margin-left: 50px;
+}

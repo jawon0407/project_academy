@@ -1,0 +1,82 @@
+@import "../common/css/common.css";
+@import "./main.css";
+@import "./article.css";
+
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --main-color-blue: #006eb6;
+  --main-color-white: #fff;
+  --sub-color: #f8f8f8;
+  --point-color: #009867;
+  --font-color: #333;
+  --font-middle-color: #666;
+  --font-small-color: #999;
+  --title-font: 3.13em;
+  --sub-title-font: 0.5em;
+  --font-bold: 700;
+  --font-light: 300;
+  --font-thin: 100;
+}
+
+.hidden,
+#skipNav {
+  position: absolute;
+  top: 0%;
+  color: white;
+  width: 1px;
+  overflow: hidden;
+}
+
+.hidden {
+  height: 1px;
+  left: -1000%;
+}
+
+#skipNav {
+  position: fixed;
+  width: 2000px;
+  z-index: 110;
+}
+
+#skipNav a {
+  display: block;
+  height: 1px;
+  margin-bottom: -1px;
+  color: var(--main-color-white);
+  overflow: hidden;
+  text-align: center;
+}
+
+#skipNav a:hover,
+#skipNav a:focus,
+#skipNav a:active {
+  height: auto;
+  padding: 5px 0;
+  background: var(--main-color-blue);
+}
+
+* {
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+*:-webkit-any-link {
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}

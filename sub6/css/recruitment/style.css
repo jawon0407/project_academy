@@ -1,0 +1,198 @@
+.recruitment_icon_wrap {
+  width: 100%;
+  margin-top: 200px;
+}
+
+.recruitment_icon_list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.recruitment_icon_list li,
+.recruitment_icon_list li div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recruitment_icon_list li {
+  justify-content: space-around;
+  width: 250px;
+  height: 250px;
+  border: 3px solid var(--main-color-blue);
+  border-radius: 50%;
+  position: relative;
+  opacity: 0;
+}
+
+.recruitment_icon_list li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.recruitment_icon_list li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.recruitment_icon_list li:last-child {
+  animation-delay: 0.9s;
+}
+
+.recruitment_icon_list li:hover::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-color: #009867;
+  border-radius: 50%;
+  bottom: -9px;
+  animation: rotate 0.5s forwards ease;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+  }
+}
+
+.recruitment_icon_list li div span {
+  display: block;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.recruitment_icon_list li > span {
+  font-size: 1.3em;
+  font-weight: var(--font-bold);
+}
+
+.recruitment_icon_list img {
+  width: 100px;
+  height: 100px;
+}
+
+.recruitment_text {
+  margin: 150px 0;
+  border: 4px solid #333;
+  border-left: none;
+  border-right: none;
+  opacity: 0;
+}
+
+.recruitment_text li {
+  display: flex;
+  position: relative;
+}
+
+.recruitment_text li::before {
+  content: "";
+  width: 1200px;
+  height: 1px;
+  background-color: #ccc;
+  position: absolute;
+}
+
+.recruitment_text li div {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recruitment_text li div:first-child {
+  width: 15%;
+  font-size: 1.5em;
+}
+.recruitment_text li div:last-child {
+  width: 85%;
+  font-size: 1.125rem;
+  color: var(--font-middle-color);
+  line-height: 32px;
+}
+
+.common_requirements > span,
+.application > span {
+  font-size: 1.75em;
+  font-weight: var(--font-bold);
+}
+
+.common_requirements {
+  margin-bottom: 40px;
+}
+
+.common_requirements ul,
+.application ul {
+  margin: 30px 0;
+  font-size: 1.15em;
+}
+
+.common_requirements ul li,
+.application ul li {
+  margin: 10px 0;
+  color: var(--font-middle-color);
+}
+
+.submission {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.submission > div > span {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.submission div div {
+  margin-top: 50px;
+}
+.submission div:first-child div {
+  background-color: var(--main-color-blue);
+  border-radius: 20px;
+  padding: 10px 25px;
+  color: var(--main-color-white);
+}
+
+.submission div:first-child div i {
+  margin-left: 10px;
+}
+
+.submission div:last-child div span {
+  color: var(--main-color-blue);
+}
+
+/* js animation css */
+
+.up {
+  animation: up 0.5s forwards ease;
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.text_up {
+  animation: text_up 1s forwards ease;
+}
+
+@keyframes text_up {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

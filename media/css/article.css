@@ -1,0 +1,609 @@
+/* Common Section */
+
+section h3{
+    font-size:1.6rem;
+    font-weight:700;
+    position:relative;
+    left:70px;
+    z-index: 10;
+    color:#2f64ba;
+}
+
+section:not(.about) h3::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index: -1;
+    background: url(../image/snowflake6.png) no-repeat left center;
+}
+
+
+
+/* Character Section */
+
+.character h3{
+    top:80px;
+}
+
+.character h3::before{
+    bottom:0px;
+    left:0;
+}
+
+.character_box{
+    background-color:#c0e5f7;
+    padding: 0 60px;
+    z-index: 10;
+    position:relative;
+    transition:all 1s;
+    display: flex;
+    justify-content: center;
+}
+
+
+.character_box::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: url(../image/snowcrystal5.png);
+    opacity: 0.1;
+    transition:all 1s;
+}
+
+.character_box:has(li:hover)::before{
+    opacity: 0.5;
+}
+
+
+.character_list{
+    position:relative;
+    top:-70px;
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 0.4fr));
+    grid-gap: 40px 40px;
+}
+
+.character_list li{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    opacity:0;
+    transition:all .7s;
+}
+
+.character_list li img{
+    filter:grayscale(100%);
+    transition:all .5s ease-in;
+    border-radius: 35%;
+}
+
+.character_list li:hover{
+    transform:translateY(-40px);
+}
+
+.character_list li:hover img{
+    filter:grayscale(0%);
+    border-radius: 20%/42%;
+}
+
+.character_list li dt{
+    text-transform:uppercase;
+    font-size:1.2rem;
+    margin-top:10px;
+    color:#666;
+    text-align: center;
+}
+
+.character_list li:hover dt{
+    color:#2f64ba;
+    transition:all .7s;
+}
+
+.character_list li dd{
+    opacity: 0;
+    text-align: center;
+    transition:all .7s;
+}
+
+
+.character_list li:hover dd{
+    opacity: 1;
+}
+
+.appear{
+    opacity:1 !important;
+}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    .character_list{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        top:-50px;
+    }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+    .character_list li img{
+        filter:grayscale(0%);
+        border-radius: 20%/42%;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    section h3{
+        left:30px;
+    }
+    .character_list{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        top:-30px;
+    }
+    .character_list li:nth-child(5),
+    .character_list li:nth-child(6){
+        display:none;
+    }
+    .character_list li dd{
+        opacity: 1;
+    }
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {}
+
+/* About Section*/
+
+.about{
+    background-color: #98dafa;
+    padding: 100px 0;
+    position:relative;
+}
+
+/* .about::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: url(../image/bg_pattern.png);
+    opacity: 0.1;
+} */
+
+.about h3::before{
+    bottom:7px;
+    left:-35px;
+}
+
+.about p,
+.about_imgBox{
+    padding: 0 75px;
+}
+
+.about p{
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    color:#fff;
+    width:80%;
+    margin:50px 0;
+}
+
+.about_imgBox{
+    display:grid;
+    width:90%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-areas: 
+    "a a b e"
+    "c d b e"
+    ;
+}
+
+.about_imgBox > div:hover img{
+    transform:scale(1.05);
+    opacity: 1;
+}
+
+.about_imgBox img{
+    opacity: 0.5;
+    transition:all .8s;
+}
+
+.about_container1{
+    grid-area:a;
+}
+
+.about_container2{
+    grid-area:b;
+}
+
+.about_container2 img{
+    height: 100%;
+}
+
+.about_container3{
+    grid-area:c;
+}
+
+.about_container4{
+    grid-area:d;
+}
+
+.about_container5{
+    grid-area:e;
+}
+
+.about_container5 img{
+    height: 100%;
+}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    .about_imgBox{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .about_imgBox{
+        width:80%;
+        grid-template-areas: 
+        "a a b"
+        "c d b"
+        ;
+    }
+    .about_container5{
+        display: none;
+    }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    .about p,
+    .about_imgBox{
+        padding: 0 30px;
+    }
+    .about_imgBox{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .about_imgBox{
+        grid-template-areas: 
+        "a a"
+        "c d"
+        ;
+    }
+    .about_container2{
+        display: none;
+    }
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {}
+
+
+
+/* Trailer & Music Section */
+
+
+.trailerMusic{
+    background-color: #fff;
+    padding: 100px 0;
+    position:relative;
+}
+
+.trailerMusic h3{
+    line-height:1.8rem;
+}
+
+.trailerMusic h3::before{
+    width:300px;
+    left:-28px;
+    top:-5px;
+}
+
+.swiper-wrapper{
+    margin:90px 0;
+    width:100%;
+}
+
+.swiper-wrapper a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.swiper-wrapper a > img{
+    width:35% !important;
+    border-radius:40px;
+}
+
+.swiper-wrapper li > img {
+    border-radius: 20px;
+}
+
+
+.swiper-slide dl{
+    width:40%;
+    margin-left:40px;
+    opacity: 0;
+    transition:all 1.2s;
+    transition-delay: .5s;
+}
+
+.swiper-slide-active dl{
+    opacity: 1;
+}
+
+.swiper-wrapper li dt{
+    display:flex;
+    align-items: center;
+}
+
+.swiper-wrapper li dt img{
+    width:15% !important;
+    margin-right:20px;
+}
+
+.swiper-wrapper li dd{
+    text-align: justify;
+    margin-top:40px;
+}
+
+.swiper-slide{
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+    top:15%;
+    border: 1px solid #2f64ba;
+    border-radius: 50%;
+    padding:5px 10px;
+}
+
+.swiper-button-prev{
+    right:140px;
+}
+
+.swiper-button-next{
+    right:80px;
+}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    .swiper-wrapper a{
+        flex-direction: column;
+    }
+    .swiper-wrapper a > img{
+        width:80% !important;
+        margin-bottom:20px;
+    }
+
+    .swiper-wrapper li dl{
+        width:80%;
+        margin-left:0;
+    }
+    .swiper-wrapper li dt img{
+        width:10% !important;
+        border-radius: 50%;
+    }
+    .swiper-cube .swiper-cube-shadow{
+        display:none;
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        top:10%;
+    }
+    .swiper-slide dl{
+        opacity: 1;
+        }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    .swiper-button-prev,
+    .swiper-button-next{
+        top:13%;
+    }
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {}
+
+
+/* gallery Section */
+
+.gallery{
+    background-color: #fff;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery h3{
+    width:200px;
+    height:65px;
+    align-self: flex-start;
+    margin-top:100px;
+}
+
+.gallery h3::before{
+    top:-10px;
+    left:-20px;
+}
+
+.gallery p {
+    width: 90%;
+    margin: 50px 0;
+    text-align: justify;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.gallery_title{
+    width:100%;
+    height:350px;
+    background-image: url(../image/frozenbg4.jpg);
+    background-position: 25% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery_title > img{
+    position:absolute;
+    width:30% !important;
+}
+
+.gallery_container{
+    width:100%;
+    background-color: #fff;
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    grid-template-areas: 
+    "a a c d"
+    "b b e f"
+    "g h h h"
+    "i h h h"
+    ;
+    margin-bottom:140px;
+}
+
+.gallery_container img{
+    width:100%;
+    height:100%;
+}
+
+.container1{
+    grid-area:a;
+}
+
+.container2{
+    grid-area:b;
+}
+.container3{
+    grid-area:c;
+}
+.container4{
+    grid-area:d;
+}
+.container5{
+    grid-area:e;
+}
+.container6{
+    grid-area:i;
+}
+.container7{
+    grid-area:g;
+}
+.container8{
+    grid-area:h;
+}
+.container9{
+    grid-area:f;
+}
+
+.gallery_container > div {
+    position:relative;
+    overflow: hidden;
+}
+
+.gallery_container > div::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    content: '';
+    z-index: 10;
+    transition: transform 0.6s;
+    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+}
+
+.gallery_container > div:hover::before {
+	transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+}
+
+.gallery_container > div img {
+    filter: grayscale(80%);
+    position:relative;
+	transition: all 0.35s, transform 0.35s;
+}
+
+.gallery_container > div:hover img {
+    filter: grayscale(0%);
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    .gallery_container{
+        grid-template-areas: 
+        "a a a a"
+        "c c d d"
+        "e e f f"
+        "h h h h"
+        ;
+    }
+    .container2,
+    .container6,
+    .container7{
+        display:none;
+    }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+    .gallery p {
+        width: 80%;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    .gallery_container{
+        grid-template-areas: 
+        "a a a a "
+        "c c c c"
+        "d d d d"
+        "h h h h"
+        ;
+    }
+    .container5,
+    .container9{
+        display:none;
+    }
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {}

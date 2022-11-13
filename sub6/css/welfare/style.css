@@ -1,0 +1,132 @@
+.contentArea{
+    align-items: center;
+}
+
+.company_welfare,
+.outdoor_welfare{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company_welfare{
+    margin:250px 0 100px 0;
+}
+
+.company_welfare > span,
+.outdoor_welfare > span{
+    display:inline-block;
+    margin-bottom:80px;
+    font-size: 1.75em;
+    font-weight:var(--font-bold);
+
+}
+
+.company_welfare_icon,
+.outdoor_welfare_icon{
+    display:flex;
+}
+
+.company_welfare_icon span,
+.outdoor_welfare_icon span{
+    text-indent: -9999px;
+    width:100px;
+    height:100px;
+    margin:0 50px;
+}
+
+/* .five{
+    background:url(../../images/welfare/number-5.png) no-repeat;
+    background-size: cover;
+    transition:all .5s;
+}
+
+.cutlery{
+    background:url(../../images/welfare/cutlery.png) no-repeat;
+    background-size: cover;
+    transition:all .5s;
+}
+.insurance{
+    background:url(../../images/welfare/insurance.png) no-repeat;
+    background-size: cover;
+    transition:all .5s;
+}
+.baggage{
+    background:url(../../images/welfare/baggage.png) no-repeat;
+    background-size: cover;
+    transition:all .5s;
+}
+.gift{
+    background:url(../../images/welfare/gift.png) no-repeat;
+    background-size: cover;
+    transition:all .5s;
+}
+.education{
+    background:url(../../images/welfare/education.png) no-repeat;
+    background-size: cover;
+    transition:all .5s;
+}
+.family{
+    background:url(../../images/welfare/family.png) no-repeat;
+    background-size: cover;
+    transition:all .5s;
+}
+.building{
+    background:url(../../images/welfare/buildings.png) no-repeat;
+    background-size: cover;
+    transition:all .5s;
+} */
+
+.five{
+    background:url(../../images/welfare/number-5_color.png) no-repeat;
+    background-size: cover;
+}
+
+.cutlery{
+    background:url(../../images/welfare/cutlery_color.png) no-repeat;
+    background-size: cover;
+}
+.insurance{
+    background:url(../../images/welfare/insurance_color.png) no-repeat;
+    background-size: cover;
+}
+.baggage{
+    background:url(../../images/welfare/baggage_color.png) no-repeat;
+    background-size: cover;
+}
+.gift{
+    background:url(../../images/welfare/gift_color.png) no-repeat;
+    background-size: cover;
+}
+.education{
+    background:url(../../images/welfare/education_color.png) no-repeat;
+    background-size: cover;
+}
+.family{
+    background:url(../../images/welfare/family_color.png) no-repeat;
+    background-size: cover;
+}
+.building{
+    background:url(../../images/welfare/buildings_color.png) no-repeat;
+    background-size: cover;
+}
+
+
+.company_welfare_textbox,
+.outdoor_welfare_textbox{
+    border:2px solid #ccc;
+    padding:50px;
+    width:80%;
+    border-radius:30px;
+    margin-top:50px;
+    font-size:1.2em;
+    display:flex;
+    justify-content:space-around;
+    line-height:3.5em;
+}
+.company_welfare_textbox ul,
+.outdoor_welfare_textbox ul{
+    width:50%;
+    margin-left:80px;
+}

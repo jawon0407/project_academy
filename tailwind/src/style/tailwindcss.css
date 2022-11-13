@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+.layer-button {
+  @apply flex flex-col space-y-4 p-4;
+}
+
+.layer-button > button {
+  @apply block bg-red-500 text-white rounded-lg text-sm px-4 py-3;
+}
+*/
+a{
+  @apply block;
+}
+
+header:hover nav li > ul {
+  opacity: 1;
+}
+
+.hover-effect:hover > ul {
+  @apply top-full opacity-100;
+}
+
+section:has(li:hover) {
+  box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  position: absolute;
+  top: 0%;
+  color: white;
+  width: 1px;
+  overflow: hidden;
+}
+
+section ul li {
+  min-width: 200px;
+}
+
+i {
+  cursor: pointer;
+}
+
+@layer components{
+  .header_style{
+    @apply w-screen flex justify-around items-start top-0 fixed bg-zinc-800 text-white px-20 z-10 font-mono opacity-90 hover:shadow-xl shadow-gray-100 h-24 overflow-hidden hover:h-56 transition-all;
+  }
+  .nav_li_style{
+    @apply w-full text-center h-full;
+  }
+  .one_depth_a{
+    @apply flex items-center justify-center font-bold w-full h-full;
+  }
+  .section_style{
+    @apply flex flex-col justify-center items-center my-10 relative transition-all py-10 opacity-0;
+  }
+  .title_style{
+    @apply font-bold text-3xl;
+  }
+  .slogan_style{
+    @apply slogan text-center flex flex-col items-center mt-10;
+  }
+  .slogan_text_style{
+    @apply text-gray-400 text-xl;
+  }
+  .ul_style{
+    @apply flex px-10 space-x-5;
+  }
+  .plus_icon_style{
+    @apply text-3xl hover:text-red-500 transition-all;
+  }
+  .li_style{
+    @apply relative flex flex-col items-center justify-center hover:scale-110 transition-all;
+  }
+  .a_style{
+    @apply relative flex justify-center items-center;
+  }
+  .a_img_style{
+    @apply w-4/5 rounded-50%; 
+  }
+  .text_box_style{
+    @apply img_info absolute top-0 w-4/5 text-center h-full rounded-50% flex justify-center items-center transition-all opacity-0 hover:opacity-70 hover:bg-gray-900 text-xl text-white px-2;
+  }
+}
+  .list > li a {
+    @apply text-lg;
+  }
+
+  .img_info {
+    @apply text-base;
+  }
+  
+  .up{
+    animation: up 1s ease-in-out forwards;
+  }
+  
+  @keyframes up {
+    0%{
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+@media screen and (max-width: 640px) {
+  header div:last-child {
+    margin-left: 20px;
+    width: 80%;
+  }
+  .list > li a{
+    @apply text-sm;
+  }
+  .slogan span:first-child {
+    @apply text-base;
+  }
+  .slogan span:last-child {
+    @apply text-sm;
+  }
+}
+@media screen and (min-width:600px) {
+  .text_box_style > span{
+    @apply text-xl;
+  }
+}
+
+@media screen and (max-width:850px) {
+  .section_style .ul_style{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(50px,1fr));
+    gap:20px;
+  }
+}
+

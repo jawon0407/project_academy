@@ -1,0 +1,28 @@
+{
+  "name": "introduce-myhobby",
+  "version": "1.0.0",
+  "description": "introduce hobby first webpage",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/style/tailwindcss.css -o ./css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jawon0407/introduce-myhobby.git"
+  },
+  "keywords": [
+    "tailwind"
+  ],
+  "author": "jawon (jawon0407@naver.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jawon0407/introduce-myhobby/issues"
+  },
+  "homepage": "https://github.com/jawon0407/introduce-myhobby#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  },
+  "dependencies": {
+    "@flaticon/flaticon-uicons": "^1.7.0"
+  }
+}

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riot Games</title>
+    <link rel="shortcut icon"  type="image/x-icon"  href="./favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="./app_icon.png">
+    <link rel="apple-touch-startup-image" href="./startup.png">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // <![CDATA[
+            try {
+                window.addEventListener('load', function(){
+                    setTimeout(scrollTo, 0, 0, 1); 
+                }, false);
+            } catch(e) {}
+        // ]]>
+    </script>
+</head>
+<body>
+    <div id="skipNav">
+        <a href="#content">본문 바로가기</a>
+        <a href="#navbar">글로벌 네비게이션 바로가기</a>
+   </div>
+   <div class="container-fluid">
+    <header id="headerArea">
+        <h1><a href="index.html">Riot Games</a></h1>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <h2 class="hidden">Global Navigation Area</h2>
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#worldcup"><h3>WORLD CUP</h3></a></li>
+                    <li><a href="#lol"><h3>LEAGUE OF LEGENDS</h3></a></li>
+                    <li><a href="#tft"><h3>TFT</h3></a></li>
+                    <li><a href="#valorant"><h3>VALRORANT</h3></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </header>
+    <div class="visual swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_container">
+                <img src="./images/lol_bg.jpg" alt="리그 오브 레전드 배경이미지">
+            </div>
+            <div class="img_info">
+                <strong>League Of Legends</strong>
+                <p>
+                    League of Legends consists of Summoners’s Rift and Aram, in which 5 summoners on each team 
+                    win by destroying the enemy’s nexus. Show off the strategy that leads the game to victory and the
+                    physical that overwhelms the enemy! Show off your skills in League of Legends, a 5v5 MOBA that 
+                    combines individual proficiency and team synergy. Choose a position, complete item builds, and engage in fierce battles on the map to destroy the enemy nexus. Find your own champion from over 150 champions with endless ways to play and claim victory.
+                </p>
+            </div>
+        </div>
+          <div class="swiper-slide">
+            <div class="img_container">
+                <img src="./images/tft_bg.jpg" alt="전략적 팀 전투 배경이미지">
+            </div>
+            <div class="img_info">
+                <strong>Teamfight Tactics</strong>
+                <p>
+                    Strategic Team Combat is a round-based strategy game that tests your team-building skills. Choose and deploy your team in 8-player Brawl, strategize and work your way to victory. With hundreds of team combinations and an ever-evolving meta, there is no set strategy. But there is only one winner. Switch between friendly and competitive modes to defeat your enemies and survive to the end to become the ultimate winner!
+                </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img_container">
+                <img src="./images/valrorant_bg.jpg" alt="발로란트 배경이미지">
+            </div>
+            <div class="img_info">
+                <strong>VALORANT</strong>
+                <p>
+                    Show off your precision skills, awesome loot, breathtaking gameplay and exhilarating experiences. All can be enjoyed for free at Valorant. In Valorant, the attacking team and the defending team, each of five players, face off in a best-of-thirteen shootout in 24 rounds. Above all else, transparent and fair gameplay is important for a game, so Riot Games has invested heavily in Valorant to build an unprecedented backend system. The system boasts a dedicated 128-tic server, custom-made netcode, server-privileged gaming architecture, and unique anti-fraud features.
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <article id="content">
+        <h3 class="hidden">CONTENT</h3>
+        <section id="worldcup">
+            <div>
+                <h4 class="hidden">lol world cup</h4>
+                <img src="./images/wolrd_cup/world_cup.png" alt="2022 롤드컵 로고">
+            </div>
+            <div class="textbox">
+                <span>
+                    The Battle for the Summoner’s Cup
+                    <br/>
+                    Starts Now
+                </span>
+                <span>Don't miss the final of T1 and DRX</span>
+                <button>
+                    Watch Now
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+        <section id="lol">
+            <h4>League Of Legends</h4>
+            <p class="lol_info">
+                League of Legends consists of Summoners’s Rift and Aram, in which 5 summoners on each team 
+                win by destroying the enemy’s nexus. Show off the strategy that leads the game to victory and the
+                physical that overwhelms the enemy! Show off your skills in League of Legends, a 5v5 MOBA that 
+                combines individual proficiency and team synergy. Choose a position, complete item builds, and engage in fierce battles on the map to destroy the enemy nexus. Find your own champion from over 150 champions with endless ways to play and claim victory.
+            </p>
+            <div class="img_container row">
+                <div class="map_container col-md-8">
+                    <img src="./images/league_of_legends/summoner_rift_map.jpg" alt="소환사의 협곡">
+                </div>
+                <div class="col-md-2"></div>
+                <div class="icon_container col-md-2">
+                    <div>
+                        <div class="icon_img_box rift">
+                            <img src="./images/league_of_legends/summoners_rift_icon.png" alt="소환사의 협곡 아이콘">
+                        </div>
+                        <span>Summoners Rift</span>
+                    </div>
+                    <div>
+                        <div>
+                            <div class="icon_img_box aram filtered">
+                                <img src="./images/league_of_legends/aram_icon.png" alt="칼바람 나락 아이콘">
+                            </div>
+                            <span>Aram</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="map_explain">
+                <strong>Summoners Rift</strong>
+                <p>
+                    As the flagship map of League of Legends, Summoner's Rift is the m ost favored map by many players. 
+                    As two teams of five champions each, you'll battle through three lanes and expansive jungles.
+                    The jungle is filled with neutral monsters that grant powerful effects. The biggest feature is the long 
+                    lane confrontation phase and large-scale team battles
+                </p>
+            </div>
+        </section>
+        <section id="tft" class="tft">
+            <h4>Teamfight Tactics</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img kframe">
+                        <img src="./images/teamfight_tactics/tft_mobile.jpg" alt="tft image1">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cont kframe">
+                        <div class="text">
+                            <strong>Combination</strong>
+                            <p>
+                                Create your own powerful deck by combining 31 synergies 
+                                and various 1-8 cost units in each synergy. As you level up, 
+                                the chance of getting expensive units increases!
+                            </p>
+                            <a href="#" class="combination_btn btn btn-default">SEE MORE <span class="glyphicon glyphicon-menu-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-push-6">
+                    <div class="img kframe">
+                        <img src="./images/teamfight_tactics/augments.jpg" alt="tft image2">
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-pull-6">
+                    <div class="cont kframe">
+                        <div class="text">
+                            <strong>Augmentation</strong>
+                            <p>
+                                There is an opportunity to choose 3 augments for each specific stage. 
+                                Choose the augments that fit your combination.
+                                And win the game with the power of augments and combinations...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img kframe little_legendary">
+                        <img src="./images/teamfight_tactics/bbulbo.png" alt="tft image3">
+                        <img src="./images/teamfight_tactics/skul.png" alt="tft image3">
+                        <img src="./images/teamfight_tactics/fox.png" alt="tft image3">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cont kframe">
+                        <div class="text">
+                            <strong>STYLE</strong>
+                            <p>Dance, use your emotes, 
+                                and express yourself as 
+                                a bragging little legend.</p>
+                            <a href="#" class="style_btn btn btn-default">SEE MORE <span class="glyphicon glyphicon-menu-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal">
+                <div class="modal_background"></div>
+                <div class="modal_content">
+                    <div class="modal_header">
+                        <Strong>hihi</Strong>
+                    </div>
+                    <div class="modal_body">
+                        <ul>
+                            <li>
+                                <img src="./images/teamfight_tactics/modal_img/synergy/기병대.jpg" alt="#">
+                                <div>
+                                    <span>.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./images/logo_icon.png" alt="#">
+                                <div>
+                                    <span>.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./images/logo_icon.png" alt="#">
+                                <div>
+                                    <span>.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./images/logo_icon.png" alt="#">
+                                <div>
+                                    <span>.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./images/logo_icon.png" alt="#">
+                                <div>
+                                    <span>.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./images/logo_icon.png" alt="#">
+                                <div>
+                                    <span>.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./images/logo_icon.png" alt="#">
+                                <div>
+                                    <span>.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./images/logo_icon.png" alt="#">
+                                <div>
+                                    <span>.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="modal_close_btn">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                        <span class="hidden">닫기</span>
+                    </a>
+                </div>        
+            </div>
+        </section>
+        <section id="valorant" class="valorant swiper">
+            <h4>VALORANT</h4>
+            <p>Show off your style and skills on the competitive arena around the world. You will alternate between attack and defense for 
+                13 rounds using precise shooting and strategic skills You have one life per round, and you must judge faster than your opponent
+                 to survive. Fight and beat your enemies in Deathmatch, Spike Charge, Competitive and Casual Matche</p>
+                <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/jett.png" alt="제트">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">jett</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/타격대.png" alt="타격대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strike Squad</dd>
+                            <dt class="background">background</dt>
+                            <dd>Born in Korea and moving quickly and stealthily, Jet is willing to do dangerous things that no other person would have dared to do. Whenever there is a battle, they always attack by surprise with their superior abilities.</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/raze.png" alt="레이즈">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">raze</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/타격대.png" alt="타격대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strike Squad</dd>
+                            <dt class="background">background</dt>
+                            <dd>Reyes, from Brazil, has a hot personality and wields big guns. Her daring fighting style is perfect for driving out enemies in cover, and she ravages small areas with large amounts of explosives.</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/breach.png" alt="브리치">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">breach</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/척후대.png" alt="척후대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Skirmish</dd>
+                            <dt class="background">background</dt>
+                            <dd>Breach, a biological weapon from Sweden, uses powerful mechanical explosions to break through enemy lines. Breach's powerful damage and sabotage skills make it unnecessary for allies to fight 'fair'.</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/omen.png" alt="오멘">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">omen</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/전략가.png" alt="전략가">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strategist</dd>
+                            <dt class="background">background</dt>
+                            <dd>The ghost of memory, Omen, hunts enemies in the shadows. Its ability to blind enemies, move anywhere on the battlefield, and cause paranoia leaves opponents unpredictable and confused by their next attack.</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/brimstone.png" alt="브림스톤">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">brimstone</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/전략가.png" alt="전략가">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strategist</dd>
+                            <dt class="background">background</dt>
+                            <dd>The American-born Brimstone uses orbital weapons to lead battles to the advantage of allies. His ability to assist his team by a variety of means with precision from afar makes him the ultimate field commander.</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/phx.png" alt="피닉스">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">phx</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/타격대.png" alt="티격대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strike Squad</dd>
+                            <dt class="background">background</dt>
+                            <dd>The British Phoenix's extraordinary abilities stem from his fighting style, which lights the battlefield with flares and flames. With or without team support, Phoenix leads the fight in his own way.</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/sage.png" alt="세이지">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">sage</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/감시자.png" alt="감시자">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Observer</dd>
+                            <dt class="background">background</dt>
+                            <dd>A sage from China, she uses her powers to keep herself and her allies safe wherever they go. The ability to resurrect downed allies or dodge aggressive pressures makes them a serene center in hellish battles.</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/sova.png" alt="소바">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">sova</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/척후대.png" alt="척후대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Skirmish</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                Born in the Russian tundra, where the winters are endless, Sova excels at tracking and spotting enemies and annihilating them with precision and ruthlessness. Your crafted bow and excellent scouting skills will never miss a hidden enemy.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/viper.png" alt="바이퍼">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">viper</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/전략가.png" alt="전략가">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strategist</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                The American chemist Viper dominates the battlefield with a variety of chemical weapons and blocks enemy lines of sight. Even if you survive a chemical attack, you're just playing with the viper's psychological warfare.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/cypher.png" alt="사이퍼">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">cypher</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/감시자.png" alt="감시자">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Observer</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                The Moroccan intelligence broker, Cypher, also known as a walking watch network, constantly monitors enemy movements and intelligence. Whatever secrets or tricks they're hiding, there's no way to escape the persistent and sharp cypher's gaze.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/reyna.png" alt="레이나">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">reyna</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/타격대.png" alt="타격대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strike Squad</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                Born in the heart of Mexico, Reina excels in one-on-one combat and grows stronger with every enemy she slays. Her abilities depend entirely on her combat skills.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/killjoy.png" alt="킬조이">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">killjoy</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/감시자.png" alt="감시자">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Observer</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                A German genius agent, Killjoy uses a variety of advanced equipment to easily hold the battlefield. Even if you can't subdue an enemy with a gun, you can take advantage of the robot's detrimental effects to deal with it quickly.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/skye.png" alt="스카이">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">skye</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/척후대.png" alt="척후대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Skirmish</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                A native of Australia, Sky paves the way for the enemy with his beasts. With the ability to stop enemies and heal allies with handcrafted creations, a team with Skye is stronger and safer than ever.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/yoru.png" alt="요루">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">yoru</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/타격대.png" alt="타격대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strike Squad</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                Yoru, from Japan, makes a hole in reality and secretly infiltrates the enemy camp. He uses his aggression and trickery to complete missions before the enemy even notices.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/astra.png" alt="아스트라">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">astra</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/전략가.png" alt="전략가">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strategist</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                Agent Astra from Ghana uses the power of the universe to dominate the battlefield. Celestial form abilities and strategic acumen allow you to outpace your opponents by several numbers.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/kayo.png" alt="케이/오">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">kayo</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/척후대.png" alt="척후대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Skirmish</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                K/O is a weapon of war designed for the sole purpose of neutralizing the Radiant. Weakens the opponent's counterattack ability by suppressing the enemy's skills so that you and your allies have an advantage.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/chamber.png" alt="체임버">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">chamber</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/감시자.png" alt="감시자">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Observer</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                Dressed and equipped with high-tech weapons, French weapon designer Chambers takes down opponents with deadly precision. With all contingency plans in place, he uses his custom weapon to hold the front lines and repel enemies from afar.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/neon.png" alt="네온">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">neon</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/타격대.png" alt="타격대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strike Squad</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                Filipino agent Neon runs at great speed, rapidly discharging bioelectricity generated by his body. Neon moves quickly to surprise the unsuspecting enemy and subdue it faster than lightning.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/fade.png" alt="페이드">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">fade</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/척후대.png" alt="척후대">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Skirmish</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                Fade, a Turkish bounty hunter, uses the power of nightmares to uncover the secrets of his enemies. Become one with fear, pursue your target, uncover the deepest horrors of your heart, and trample them in the dark.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/valolant/character/harbor.png" alt="하버">
+                    <div class="info">
+                        <div class="name_box">
+                            <span class="name">harbor</span>
+                            <div class="role_img_box">
+                                <img src="./images/valolant/role/전략가.png" alt="전략가">
+                            </div>   
+                        </div>
+                        <dl>
+                            <dt class="role">role</dt>
+                            <dd>Strategist</dd>
+                            <dt class="background">background</dt>
+                            <dd>
+                                Harbour, from the Indian coast, sweeps the battlefield with ancient water-manipulation techniques. Protects allies and attacks enemies with strong torrents and powerful waves.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+                <!-- If we need navigation buttons -->
+        </section>
+      </article>
+      <footer id="footer">
+        <div class="sns">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span class="hidden">riot 인스타그램</span>
+                    </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                    <span class="hidden">riot 페이스북</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                  >
+                  <i class="fa-brands fa-youtube"></i>
+                    <span class="hidden">riot 유튜브</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                    <span class="hidden">riot 트위터</span>
+                  </a>
+                </li>
+              </ul>
+        </div>
+        <div class="footer_logo">
+            <a href="./index.html">
+                <img src="./images/riot_logo_white.png" alt="라이엇 로고">
+            </a>    
+        </div>
+        <address>
+            라이엇게임즈코리아 유한회사 서울특별시 강남구 데헤란로 521 30층(삼성동 파트나스타워)
+            <br>
+            대표자 : 조혁진 ㅣ 대표전화 : 02-3454-1560 ㅣ FAX : 02-3454-1565 ㅣ 사업자등록번호 : 120-87-68488
+            <br>
+            통신판매업신고 : 2011-서울강남-02718
+        </address>
+        <a href="#top" class="topBtn">
+            <img src="./images/logo_icon.png" alt="top아이콘" class="topBtnImg">
+            <span class="hidden">top</span>
+        </a>
+      </footer>
+    </div>
+    <script src="./js/prefixfree.min.js"></script>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://kit.fontawesome.com/bff332bdcf.js" crossorigin="anonymous"></script>
+</body>
+</html>

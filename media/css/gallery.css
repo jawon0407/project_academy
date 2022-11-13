@@ -1,0 +1,195 @@
+h2{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation:opacity 1.8s ease-out forwards;
+    position:relative;
+}
+
+h2::before{
+    content: "GALLERY";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    line-height: .985em;
+    background: linear-gradient(0deg, #c0e5f7 0, transparent 70%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.opacity{
+    animation: opacity 1s forwards ease-out;
+}
+
+@keyframes opacity{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+#content{
+  background-color: #fff;
+}
+
+/*-------------------------------------------------------------------*/
+.container{
+  background:#131021; 
+  padding:5rem 4%; 
+  text-align:center;
+  position:relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../image/snowcrystal5.png);
+  opacity: 0.1;
+  transition: all 1s;
+}
+
+.container:has(li:hover)::before{
+  opacity: 0.3;
+}
+
+.container h3{
+    display:inline-block;
+    font-size:2.222rem; 
+    letter-spacing:0.045rem;
+    font-family: 'Suez One', serif;
+    background: -webkit-linear-gradient(45deg, rgba(228,245,252,1) 0%,rgba(42,176,237,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container h3 + p{ 
+  margin:1.4rem; 
+  display:-webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+}
+
+.container p{
+  color:rgba(47, 100, 186,.8)
+}
+
+.gallery_wrap .grid--images{
+  margin:5rem 0 0;
+}
+
+.grid--images .grid-image-item,
+.grid--images .grid-sizer{
+  width:25%;
+}
+
+.grid--images .grid-sizer{
+  font-size: 0; 
+  text-indent:-9999%; 
+  overflow: hidden;
+}
+
+.grid--images .grid-image-item {
+  float: left; 
+  text-align: center; 
+  transition:opacity .3s;
+}
+
+.grid--images .grid-image-item .inner{
+  margin:0 1rem 2rem; 
+  padding: 0 0 1rem; 
+  background:rgba(224, 245, 255, 0.4); 
+  transition:background .3s;
+}
+
+.grid--images .grid-image-item img{
+  transition:all .3s;
+}
+
+.grid--images .grid-image-item img{
+  display: block; 
+  width: 100%;
+}
+
+.grid--images .grid-image-item h4{
+  display: block; 
+  font-weight: normal; 
+  margin:1rem 0 0; 
+  padding: 0 1rem; 
+  white-space:nowrap; 
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  transition:color .3s;
+}
+
+.grid--images .grid-image-item p{
+  font-size: .8rem; 
+  padding: 0 1rem; 
+  display:-webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+  overflow: hidden; 
+  transition:color .3s;
+}
+    
+@media(hover:hover){
+    .grid--images:hover .grid-image-item img{
+      filter:grayscale(1); 
+      opacity: .3;
+    }
+
+    .grid--images:hover .grid-image-item:hover .inner{
+      box-shadow:10px 10px 20px #c0e5f7;
+    }
+
+    .grid--images:hover .grid-image-item:hover img{
+      filter:grayscale(0); 
+      opacity: 1;
+    }
+
+    .grid--images .grid-image-item:hover .inner{
+      background:rgba(224, 245, 255, 0.7);
+    }
+    
+    .grid--images .grid-image-item:hover h4{
+      color:rgba(47, 100, 186.9);
+    }
+
+    .grid--images .grid-image-item:hover p{
+      color:rgba(47, 100, 186,.9);
+    }
+}
+/*-------------------------------------------------------------------*/
+
+
+@media screen and (max-width:1280px) {
+    .grid--images .grid-image-item,
+    .grid--images .grid-sizer{
+      width:33.333%;
+    }	
+}
+
+@media screen and (max-width:1024px) {  
+  .grid--images .grid-image-item,
+  .grid--images .grid-sizer{
+    width:50%;
+  }
+}
+
+@media screen and (max-width:640px){
+  .grid--images .grid-image-item .inner{
+    margin: 0 0.5rem 1rem;
+  } 
+}

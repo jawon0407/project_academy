@@ -1,0 +1,114 @@
+.contentArea {
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.contentArea div {
+  margin: 20px 0;
+  position: relative;
+}
+
+.contentArea > div:not(.caution):before {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--main-color-blue);
+  top: 5px;
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+  font-weight: var(--font-bold);
+}
+
+.contentArea div h4 {
+  font-weight: var(--font-bold);
+  font-size: 1.875em;
+}
+
+.contentArea div h4:not(.caution_title) {
+  margin-left: 60px;
+}
+
+.contentArea div p,
+.caution ul li {
+  width: 90%;
+  line-height: 2em;
+  font-size: 1.2em;
+  text-align: justify;
+}
+
+.contentArea div div:not(.caution > div) {
+  width: 1200px;
+  padding: 30px 60px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.sign_up::before {
+  content: "1";
+}
+
+.application::before {
+  content: "2";
+}
+
+.receipt::before {
+  content: "3";
+}
+
+.return::before {
+  content: "4";
+}
+
+.later::before {
+  content: "5";
+}
+
+.caution {
+  border: 1px solid #ccc;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.caution > div {
+  display: flex;
+  align-items: center;
+  color: var(--main-color-blue);
+}
+
+.caution_title {
+  margin-left: 20px;
+}
+
+.caution > div i {
+  font-size: 35px;
+}
+
+.caution ul {
+  margin-top: 50px;
+}
+
+.button_container {
+  padding: 150px 0 50px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button_container > div {
+  width: 500px !important;
+  background-color: rgba(0, 110, 182, 0.8);
+  font-size: 1.6em;
+  transition: all 0.5s;
+  text-align: center;
+}
+
+.button_container > div a {
+  color: #fff;
+}
+.button_container > div:hover {
+  background-color: var(--main-color-blue);
+  transform: translateY(-20px);
+  box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.1);
+}

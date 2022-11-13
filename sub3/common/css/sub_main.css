@@ -1,0 +1,29 @@
+/* main */
+
+.main {
+  position: relative;
+  overflow: hidden;
+}
+
+.main h3 {
+  font-size: 2em;
+  font-weight: var(--font-light);
+  color: var(--main-color-white);
+  position: absolute;
+  top: 60%;
+  left: 943px;
+}
+
+.main img {
+  height: 500px;
+  animation: size_up 4s ease-out forwards;
+}
+
+@keyframes size_up {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

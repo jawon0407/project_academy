@@ -1,0 +1,136 @@
+article h2::after {
+  width: 60%;
+  border-radius: 30px;
+  left: 40px;
+}
+
+.contentArea img {
+  width: 100%;
+}
+
+/*common style*/
+
+.company_information ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: var(--font-bold);
+}
+
+.company_information > ul ul {
+  position: relative;
+}
+
+.company_information > ul ul::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -10px;
+  border-radius: 20px;
+}
+
+.company_information > ul li li {
+  font-size: 22px;
+  color: var(--font-middle-color);
+}
+
+.company_information > ul li:nth-child(2) li {
+  margin: 0 10px;
+}
+
+.common {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 130px;
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.1em;
+  line-height: 2em;
+  text-align: justify;
+  width: 900px;
+  margin-left: 100px;
+}
+
+.textbox p {
+  margin-bottom: 40px;
+}
+
+.logo_product,
+.textbox {
+  opacity: 0;
+}
+
+.common .logo_product {
+  text-align: center;
+}
+
+.common .logo_product > div {
+  margin-bottom: 140px;
+}
+
+.common .logo_product span {
+  display: block;
+  font-size: 1.3em;
+  font-weight: var(--font-bold);
+  margin-top: 60px;
+}
+/* dongseung style */
+.dongseung {
+  margin-top: 100px;
+  margin-bottom: 200px;
+  width: 1200px;
+}
+.dongseung_company_infolist ul::after {
+  background-color: var(--point-color);
+}
+
+/* seyang style */
+.seyang {
+  margin-bottom: 200px;
+  width: 1200px;
+}
+
+.seyang_company_infolist ul::after {
+  background-color: #228487;
+}
+
+/* js animation css */
+
+.slideleft {
+  animation: slideleft 0.5s forwards ease-in-out;
+}
+
+@keyframes slideleft {
+  0% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slideright {
+  animation: slideright 1s forwards ease-in-out;
+}
+
+@keyframes slideright {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

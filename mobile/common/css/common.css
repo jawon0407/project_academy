@@ -1,0 +1,377 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  font-family: "Noto Sans KR";
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: #333; /* font-size:14px; */
+  /* font-family:돋움, Dotum; */
+  font-family: "Lato", "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+}
+img,
+fieldset {
+  border: 0;
+  vertical-align: top;
+}
+ul,
+ol {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+hr {
+  display: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* a, a:link, a:hover, a:active { color:#333; text-decoration:none; } 
+a:visited { color:#333; } */
+em,
+i,
+address {
+  font-style: normal;
+  font-weight: normal;
+}
+legend,
+caption {
+  display: none;
+  clear: both;
+}
+input,
+textarea,
+select,
+button,
+table {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+section,
+nav,
+article,
+aside,
+hgroup,
+header,
+footer {
+  display: block;
+}
+textarea,
+input {
+  border-radius: 1px;
+}
+textarea {
+  resize: none;
+}
+label {
+  cursor: pointer;
+}
+select {
+  background: url(../images/select.png) 100% 50% no-repeat;
+  background-size: 25px auto;
+  border-radius: 0; /* 아이폰 사파리 보더 없애기 */
+  -webkit-appearance: none; /* 화살표 없애기 for chrome*/
+  -moz-appearance: none; /* 화살표 없애기 for firefox*/
+  appearance: none; /* 화살표 없애기 공통*/
+  padding-right: 30px;
+}
+select::-ms-expand {
+  display: none; /* 화살표 없애기 for IE10, 11*/
+}
+
+.hidden,
+#skipNav {
+  position: absolute;
+  left: -1000%;
+  top: 0;
+  display: block;
+  width: 1px;
+  height: 1px;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* 전체 공통 */
+.wrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.wrap img {
+  width: 100%;
+}
+a {
+  display: block;
+}
+
+* {
+  font-size: 14px;
+}
+
+/* 헤더 공통 */
+
+#headerArea {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#headerArea .header_top h1 > a {
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 90px;
+  height: 29px;
+  background: url(../images/logo.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 640px) {
+  #headerArea .header_top h1 > a {
+    background: url(../images/logox2.png) no-repeat center;
+    background-size: cover;
+  }
+}
+#headerArea .menu_open {
+  display: block;
+  float: right;
+  height: 60px;
+  position: relative;
+  border-radius: 5px;
+  z-index: 110;
+  transition: all 0.5s;
+  left: -5px;
+}
+
+#headerArea .menu_open span {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  text-indent: -9999px;
+  display: block;
+  margin: 28.5px 20px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.menu_open span::before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: -9.5px;
+  left: 0;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.menu_open span::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 9.5px;
+  left: 0;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+/*메뉴 열렸을때*/
+#headerArea.mn_open .menu_open span,
+#headerArea .header_top .menu_open span::before,
+#headerArea .header_top .menu_open span::after {
+  background: #fff;
+}
+#headerArea.mn_open .menu_open span {
+  background: rgba(0, 0, 0, 0);
+}
+#headerArea.mn_open .menu_open span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+#headerArea.mn_open .menu_open span::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+#headerArea.mn_open .modal_box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  top: 0;
+  display: none;
+}
+
+/* 스크롤 했을 때 */
+#headerArea.sc {
+  background: #fff;
+  border-bottom: 1px solid #ececec;
+}
+#headerArea.sc h1 > a {
+  background: url(../images/logo_blue.png) no-repeat center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 640px) {
+  #headerArea.sc h1 > a {
+    background: url(../images/logo_bluex2.png) no-repeat center;
+    background-size: cover;
+  }
+}
+
+#headerArea.sc .menu_open span {
+  background: #333;
+}
+#headerArea.sc .menu_open span::before {
+  background: #333;
+}
+#headerArea.sc .menu_open span::after {
+  background: #333;
+}
+#headerArea.sc.mn_open .menu_open span {
+  background: rgba(0, 0, 0, 0);
+}
+#headerArea.sc.mn_open .menu_open span::before {
+  background: #fff;
+}
+#headerArea.sc.mn_open .menu_open span::after {
+  background: #fff;
+}
+
+#gnb {
+  position: absolute;
+  width: 80%;
+  left: -100%;
+  top: 0;
+  opacity: 0;
+  background: #fff;
+  z-index: 20;
+}
+#gnb > h3 > a {
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  color: #fff;
+  width: 110px;
+  height: 34px;
+  background: url(../images/logo_blue.png) no-repeat center;
+  background-size: cover;
+  float: left;
+  position: relative;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: 16px;
+}
+
+@media screen and (min-width: 640px) {
+  #gnb > h3 > a {
+    background: url(../images/logo_bluex2.png) no-repeat center;
+    background-size: cover;
+  }
+}
+
+#gnb .mainMenu > li a {
+  display: block;
+  font-weight: 700;
+  padding: 6px 10px;
+  font-size: 1.429rem;
+  margin-bottom: 20px;
+}
+
+
+#gnb .mainMenu > li a span {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.071rem;
+  color: #666;
+}
+
+#gnb .mainMenu > li a i {
+  float: right;
+  font-size: 1rem;
+  margin-right: 10px;
+  line-height: 2.5em;
+}
+#gnb .mainMenu > li ul {
+  display: none;
+  margin-left: 14px;
+}
+#gnb .mainMenu > li ul li a {
+  display: block;
+  font-weight: 400;
+  font-size: 1.143rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+@media screen and (max-width: 480px){
+  #gnb .mainMenu > li a{
+    font-size: 1.2rem;
+  }
+  #gnb .mainMenu > li a span{
+    font-size: 0.85rem;  
+  }
+  #gnb .mainMenu > li a i{
+    font-size: 0.9rem;
+  }
+  #gnb .mainMenu > li ul li a{
+    font-size : 1rem;
+  }
+} 
+
+#gnb .mainMenu > li ul li:last-of-type a {
+  margin-bottom: 20px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  /* 2배 이상 */
+  #headerArea .header_top h1 a {
+    background-image: url(../images/logox2.png);
+  }
+  #headerArea.sc .header_top h1 a {
+    background-image: url(../images/logo_bluex2.png);
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  /* 3배 이상 */
+  #headerArea .header_top h1 a {
+    background-image: url(../images/logox4.png);
+  }
+  #headerArea.sc .header_top h1 a {
+    background-image: url(../images/logo_bluex4.png);
+  }
+}
+
+.family_list {
+  display: none;
+}
