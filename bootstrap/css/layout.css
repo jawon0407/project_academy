@@ -188,6 +188,10 @@ img {
   to{transform:translateY(0); opacity: 1;}
 }
 
+.visual{
+  margin-top:5rem;
+}
+
 .swiper img{
     width: 100%;
     height: auto;
@@ -413,7 +417,7 @@ img {
 /* tft section ********************/
 .tft{
   text-align:center; 
-  padding:6.25rem 5% 0; 
+  padding:6.25rem 0; 
   background-color: #000;
 }
 

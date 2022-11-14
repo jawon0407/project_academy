@@ -1,1 +1,14 @@
-s
+.contentArea > div{
+    width:100%;
+}
+
+.contentArea img{
+    width:100%;
+}
+
+.latest_social_box{
+    border: 5px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 50px;
+}
