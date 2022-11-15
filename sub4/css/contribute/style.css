@@ -1,3 +1,14 @@
+.slogan {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom:100px;
+}
+
+.slogan span{
+    font-size: 33px;
+    color: #999;
+}
+
 .contentArea > div{
     width:100%;
 }
@@ -6,9 +17,53 @@
     width:100%;
 }
 
+.social_contribution_box li{
+    opacity:0;
+    transform:translateY(100px);
+    transition:all 1s ease-in-out;
+}
+
 .latest_social_box{
     border: 5px solid #ccc;
     border-radius: 20px;
     overflow: hidden;
     padding: 50px;
+}
+
+.social_box{
+    display:flex;
+    align-items: center;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    margin:50px 0;
+}
+
+.social_box .social_text{
+    width:70%;
+    padding:30px;
+}
+
+.latest_social_box .social_text h4{
+    margin-top:20px;
+}
+
+.social_text h4{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.social_text p{
+    text-align: justify;
+    margin:10px 0;
+    line-height: 30px;
+}
+
+.social_image_container{
+    width:52%;
+}
+
+.up{
+    transform:translateY(0px) !important;
+    opacity:1 !important;
 }
