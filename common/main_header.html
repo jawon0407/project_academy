@@ -11,14 +11,42 @@
         <a href="../index.html">YONEX</a>
       </h1>
       <div id="gnb_top_nav">
+        <?
+          @extract($_SESSION);
+          @extract($_POST);
+          @extract($_GET);
+          
+          //$userid = $_SESSION['userid'];
+
+            if(!$userid)
+          {
+        ?>
         <ul>
           <li>
-            <a href="#"> 로그인 </a>
+            <a href="./login/login_form.php"> 로그인 </a>
           </li>
           <li>
             <a href="./member/join.html"> 회원가입 </a>
           </li>
         </ul>
+          <?
+            }
+            else
+            {
+          ?>
+              <ul>
+                <li>
+                  <a href="./login/logout.php"> 로그아웃 </a>
+                </li>
+                <li>
+                  <a href="./login/member_form_modify.php"> 회원정보수정 </a>
+                </li>
+              </ul>
+      
+          <?
+            }
+          ?>
+
       </div>
     </div>
     <div>
