@@ -1,0 +1,13 @@
+*{
+    text-transform:none;
+}
+
+form li > span,
+label{
+    width:50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+form li input{
+    width:50%;
+}
