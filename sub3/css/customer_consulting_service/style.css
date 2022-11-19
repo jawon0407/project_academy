@@ -1,0 +1,47 @@
+#mailAddress{
+    width: 80%;
+}
+
+form{
+    width: 100%;
+}
+
+form > div{
+    margin:8px 0;
+}
+
+.mailTitle{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.mailTitle > div{  
+    width: 49.5%;
+}
+
+.mailTitle > div,
+.email_box,
+.message{
+    border: 1px solid #ccc;
+}
+
+input,
+textarea{
+    width: 100%;
+    padding:20px 0 20px 20px;
+    border:none;
+    resize:none;
+    font-size:20px;
+}
+
+input:focus,
+textarea:focus{
+    outline:1px solid #006eb6;
+}
+
+
+input[type = submit]{
+    background-color: rgba(9, 146, 237,0.8);
+    border-radius: 5px;
+}

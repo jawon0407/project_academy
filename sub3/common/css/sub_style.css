@@ -70,7 +70,6 @@ body::-webkit-scrollbar {
 }
 
 * {
-  text-transform: uppercase;
   box-sizing: border-box;
 }
 

@@ -108,6 +108,11 @@ section:not(.about) h3::before{
     opacity: 0;
     text-align: center;
     transition:all .7s;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    position:relative;
 }
 
 

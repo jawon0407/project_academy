@@ -1,3 +1,7 @@
+*{
+  text-transform: uppercase;
+}
+
 .mileage {
   width: 1200px;
 }

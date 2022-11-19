@@ -11,14 +11,41 @@
         <a href="../index.html">YONEX</a>
       </h1>
       <div id="gnb_top_nav">
+        <?
+          @extract($_SESSION);
+          @extract($_POST);
+          @extract($_GET);
+          
+          //$userid = $_SESSION['userid'];
+
+            if(!$userid)
+          {
+        ?>
         <ul>
           <li>
-            <a href="#"> 로그인 </a>
+            <a href="../login/login_form.php"> 로그인 </a>
           </li>
           <li>
-            <a href="#"> 회원가입 </a>
+            <a href="../member/join.html"> 회원가입 </a>
           </li>
         </ul>
+          <?
+            }
+            else
+            {
+          ?>
+              <ul>
+                <li>
+                  <a href="../login/logout.php"> 로그아웃 </a>
+                </li>
+                <li>
+                  <a href="../login/member_form_modify.php"> 회원정보수정 </a>
+                </li>
+              </ul>
+      
+          <?
+            }
+          ?>
       </div>
     </div>
     <div>
@@ -64,7 +91,7 @@
               <a href="../sub4/sub4_1.html" class="depth1"> 요넥스존 </a>
             </h3>
             <ul class="second_nav">
-              <li><a href="../sub4/sub4_1.html">요넥스소식</a></li>
+              <li><a href="../greet/list.php">요넥스소식</a></li>
               <li><a href="../sub4/sub4_2.html">사회공헌</a></li>
             </ul>
           </li>

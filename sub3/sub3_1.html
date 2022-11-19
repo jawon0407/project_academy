@@ -1,3 +1,4 @@
+<? session_start(); ?>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -55,7 +56,19 @@
             <strong>고객문의</strong>
           </div>
         </div>
-        <div class="contentArea"></div>
+        <div class="contentArea">
+          <div id="mailAddress">
+            <form action="mail.php" method="post">
+              <div class="mailTitle">
+                <div><input type="text" id="uname" name="uname" placeholder="Full name"></div>
+                <div><input type="text" id="phone" name="phone" placeholder="Phone number"></div>
+              </div>
+              <div class="email_box"><input type="text" id="email" name="email" placeholder="E-mail address"></div>
+              <div class="message"><textarea name="message"  placeholder="Message" cols="50" rows="25"></textarea></div>
+              <div class="send_btn"><input type="submit" value="Send E-mail" class="submitBtn"></div>
+            </form>
+    </div>
+        </div>
       </article>
       <? include "../common/sub_footer.html" ?>
       <a href="#top">
