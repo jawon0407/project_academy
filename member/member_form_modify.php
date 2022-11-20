@@ -13,8 +13,6 @@
 <head> 
 <meta charset="utf-8">
 <link rel="stylesheet" href="../common/css/common.css">
-<link rel="stylesheet" href="./css/sub_style.css" />
-<link rel="stylesheet" href="./css/member_modify.css">
 <script>
    function check_id()
    {

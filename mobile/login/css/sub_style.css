@@ -212,6 +212,9 @@ article h2::after {
 .modal_tab {
   display: none;
   z-index: 500;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal_background {
@@ -232,7 +235,7 @@ article h2::after {
   flex-direction: column;
   z-index: 1000;
   background-color: #fff;
-  width:1000px;
+  width:50%;
 }
 
 .product_information {

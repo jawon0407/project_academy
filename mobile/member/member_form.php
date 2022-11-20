@@ -11,8 +11,8 @@
 	<meta charset="UTF-8">
 	<title>회원가입</title>
 	<link rel="stylesheet" href="../common/css/common.css">
-    <link rel="stylesheet" href="./css/sub_style.css" />
-	<link rel="stylesheet" href="css/member_form.css">
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-migrate-1.4.1.min.js"></script>
 	<script>
 	 $(document).ready(function() {
         //id 중복검사
@@ -49,16 +49,15 @@
         $("#pass_confirm").keyup(function(){
             
             if($('#pass').val() == $('#pass_confirm').val()){
-                $('#loadtext_pass_confirm').html('<span class="success">비밀번호가 일치합니다.</span>');
-                $('#pass_confirm').parent().parent('dl').removeClass('fail');
-                $('#pass_confirm').parent().parent('dl').addClass('success');
+                $('#loadtext_pass_confirm').html('<span style="color:#0f9af5;">비밀번호가 일치합니다.</span>');
+                $('#pass_confirm').removeClass('fail');
+                $('#pass_confirm').addClass('success');
             } else {
-                $('#loadtext_pass_confirm').html('<span class="fail">비밀번호가 일치하지 않습니다.</span>');
-                $('#pass_confirm').parent().parent('dl').removeClass('success');
-                $('#pass_confirm').parent().parent('dl').addClass('fail');
+                $('#loadtext_pass_confirm').html('<span style="color:red;">비밀번호가 일치하지 않습니다.</span>');
+                $('#pass_confirm').removeClass('success');
+                $('#pass_confirm').addClass('fail');
             }
         });
-
     });
 	</script>
 	<script>
@@ -147,8 +146,8 @@
                 <label for="id">아이디</label>
             </div>
      		<div class="id_input_container">
-     			 <input type="text" name="id" id="id" required>
-			     <span id="loadtext"></span>
+     			 <input type="text" name="id" id="id" placeholder="아이디를 입력하세요" required>
+                 <div class="info_text" id="loadtext"></div>
      		</div>
      	</div>
         <div class="pass_container">
@@ -156,7 +155,7 @@
                 <label for="pass">비밀번호</label>
             </div>
             <div class="password_input_container">
-                <input type="password" name="pass" id="pass" required>
+                <input type="password" name="pass" id="pass" minlength="8" maxlength="20" placeholder="비밀번호를 입력하세요." required>
             </div>
         </div>
      	<div class="pass_confirm_container">
@@ -164,7 +163,8 @@
                 <label for="pass_confirm">비밀번호확인</label>
             </div>
             <div class="password_confirm_input_container">
-                <input type="password" name="pass_confirm" id="pass_confirm"  required>
+                <input type="password" name="pass_confirm" id="pass_confirm" placeholder="비밀번호를 입력하세요." required>
+                <div class="notice_txt" id="loadtext_pass_confirm"></div>
             </div>
         </div>
         <div class="name_container">
@@ -180,15 +180,16 @@
                 <label for="nick">닉네임</label>
             </div>
      		<div class="nick_input_container">
-     			 <input type="text" name="nick" id="nick"  required>
-			     <span id="loadtext2"></span>
+     			<input type="text" name="nick" id="nick" minlength="2" required>
+                <div class="info_text" id="loadtext2">
+                </div>
      		</div>
      	</div>
      	<div class="ph_number_container">
      		<div class="ph_text">
                 <label for="ph">휴대폰</label>
             </div>
-     		<div>
+     		<div class="ph_number_input_container">
      			<label class="hidden" for="hp1">전화번호앞3자리</label>
      			<select class="hp" name="hp1" id="hp1"> 
                     <option value='010'>010</option>
@@ -197,38 +198,46 @@
                     <option value='017'>017</option>
                     <option value='018'>018</option>
                     <option value='019'>019</option>
-                </select>  - 
+                </select> 
                 <div class="ph_middle_number">
                     <label class="hidden" for="hp2">전화번호중간4자리</label>
-                    <input type="text" class="hp" name="hp2" id="hp2"  required> - 
+                    <input type="text" class="hp" name="hp2" id="hp2" maxlength="4" required> 
                 </div>
                 <div class="ph_last_number">
                     <label class="hidden" for="hp3">전화번호끝4자리</label>
-                    <input type="text" class="hp" name="hp3" id="hp3"  required>
+                    <input type="text" class="hp" name="hp3" id="hp3" maxlength="4" required>
                 </div>
             </div>
      	</div>
      	<div class="email_container">
-     		<div scope="col">이메일</div>
-     		<div class="email_id_input_container">
-     		    <label class="hidden" for="email1">이메일아이디</label>
-     		    <input type="text" id="email1" name="email1"  required> @ 
-     		</div>
-            <div class="email_address_input_container">
-                <label class="hidden" for="email2">이메일주소</label>
-                <input list="email" name="email2" id="email2" placeholder="직접 입력하기" required>
-                 <datalist id="email">
-                   <option value="Edge">
-                   <option value="Firefox">
-                   <option value="Chrome">
-                   <option value="Opera">
-                   <option value="Safari">
-                 </datalist>
-
+     		<div>
+                <label for="email">
+                    이메일
+                </label>
+            </div>
+            <div class="email_input_container">
+                <div class="email_id_input_container">
+                    <label class="hidden" for="email1">이메일아이디</label>
+                    <input type="text" id="email1" name="email1"  required> 
+                </div>
+                <span>
+                    @
+                </span>
+                <div class="email_address_input_container">
+                    <label class="hidden" for="email2">이메일주소</label>
+                    <input list="email" name="email2" id="email2" placeholder="직접 입력하기" required>
+                    <datalist id="email">
+                        <option value="gmail.com">
+                        <option value="naver.com">
+                        <option value="nate.com">
+                        <option value="hotmail.com">
+                        <option value="daum.net">
+                    </datalist>
+                </div>
             </div>
      	</div>
      	<div>
-     		<div colspan="2">
+     		<div class="btn_container">
      			<a href="#" onclick="check_input()">가입하기</a>&nbsp;&nbsp;
 				<a href="#" onclick="reset_form()">다시쓰기</a>
      		</div>
@@ -237,8 +246,6 @@
 	  
 	</article>
 </body>
-<script src="./js/jquery-1.12.4.min.js"></script>
-<script src="./js/jquery-migrate-1.4.1.min.js"></script>
 </html>
 
 

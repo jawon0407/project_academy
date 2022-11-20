@@ -322,3 +322,9 @@
     }
   }
 }
+
+@layer components{
+.policy{
+  @apply h-32 overflow-auto;
+  }
+}

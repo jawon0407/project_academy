@@ -9,12 +9,13 @@
   ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
+  
   /*
-$id='green2'
-$name='홍길동'
-$hp1='010'
-$hp2='1111'
-$hp3='2222'
+    $id='green2'
+    $name='홍길동'
+    $hp1='010'
+    $hp2='1111'
+    $hp3='2222'
   */
 
 
@@ -48,10 +49,9 @@ $hp3='2222'
          exit;
    }
 
-
    include "../lib/dbconn.php";
 
-   $sql = "select * from member where id='$id'";
+   $sql = "select * from member where name='$name' and id='$id'";
    $result = mysql_query($sql, $connect); //있으면 1, 없으면 null
 
    $num_match = mysql_num_rows($result);  //1 null
@@ -120,13 +120,13 @@ $hp3='2222'
 
         $ranpass = generateRandomPassword(8,1);  //랜덤으로 뽑은 8자의 문자
             
-        echo " <strong>[ 가입정보 ]</strong><br>
-           임시비밀번호는 <strong> $ranpass </strong> 입니다<br>
-           아이디 : $userid <br>
-           이름 : $username <br>
-           연락처: $userhp <br>
-           가입일자 : $date <br>
-           <strong>* 로그인 후 비밀번호를 변경해주세요.</strong>";
+        echo "<strong>[ 가입정보 ]</strong><br>
+        아이디 : $id <br>
+        이름 : $name <br>
+        연락처: $hp <br>
+        가입일자 : $date<br>
+        임시비밀번호 : $ranpass <br>
+        <strong>* 로그인 후 비밀번호를 변경해주세요.</strong> ";
             
         $sql = "update member set pass=password('$ranpass') where id='$id' and name='$name' and hp='$hp'";
         $result = mysql_query($sql, $connect);
