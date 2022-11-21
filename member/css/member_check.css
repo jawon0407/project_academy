@@ -1,9 +1,13 @@
-.logo{
-    margin: 50px auto 0; 
-    display: block; 
-    width: 113px; 
-    height: 49px;
+.index_img{
+    display: flex;
+    justify-content: center;
+    margin-bottom:50px;
 }
+
+.logo_img{
+    width: 50%;
+}
+
 
 #content{
     width: 1400px; 
@@ -39,10 +43,6 @@
 .container{
     padding:40px 40px 20px 40px;
     transition:all .6s ease-in-out;
-}
-
-.logo_img{
-    margin-bottom:50px;
 }
 
 .container:hover{

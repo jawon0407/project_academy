@@ -13,6 +13,8 @@
 <head> 
 <meta charset="utf-8">
 <link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="./css/sub_style.css" />
+<link rel="stylesheet" href="./css/member_modify.css">
 <script>
    function check_id()
    {
@@ -114,7 +116,9 @@
     mysql_close();
 ?>
 <body>
-  <? include "../common/sub_header.html" ?>
+  <a href="./../index.html" class="index_img">
+    <img src="./images/sub_logo_image.png" alt="로고이미지" class="logo_img">
+  </a>
   <h1 class=title>회원정보수정</h1>
   <div id="wrap">
     <div>
@@ -188,7 +192,6 @@
       </form>
     </div>
   </div>
-  <? include "../common/sub_footer.html" ?>
 </body>
 <script src="./../common/js/jquery-1.12.4.min.js"></script>
 <script src="./../common/js/jquery-migrate-1.4.1.min.js"></script>

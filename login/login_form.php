@@ -13,7 +13,9 @@
 <body>
     <form  name="member_form" method="post" action="login.php"> 
         <div class="img_container">
-            <img src="./images/sub_logo_image.png" alt="로고이미지">
+            <a href="../index.html">
+                <img src="./images/sub_logo_image.png" alt="로고이미지">
+            </a>
         </div>
         <div class="input_container">
             <div id="id_pw_input">

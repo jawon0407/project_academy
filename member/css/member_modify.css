@@ -1,17 +1,36 @@
 *{
     text-transform:none;
 }
+
+body{
+    background: #f6f6f6;
+}
+
+.index_img{
+    display: flex;
+    justify-content: center;
+    margin-top:50px;
+}
+
+.logo_img{
+    width: 30%;
+}
+
 .title{
     font-size: 1.8rem;
     font-weight: bold;
-    margin-top:200px;
+    margin-top:50px;
     padding: 0;
 }
 
 #wrap{
-    width:70%;
+    width:80%;
     position:relative;
-    margin:100px 0;
+    margin:70px 0;
+    background: #fff;
+    padding: 100px 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
 }
 
 form li{
@@ -26,7 +45,7 @@ label{
     background-color: #f3f3f3;
     display:block;
     width:23%;
-    padding:20px 5px;
+    padding:32px 5px;
     font-size: 1.1rem;
     font-weight: bold;
     position:relative;
@@ -47,7 +66,7 @@ label::after{
 
 form li > input,
 form li > div > input{
-    padding:6px 2px;
+    padding:12px 2px;
     margin-left:20px;
 }
 
@@ -99,7 +118,7 @@ form .email_container input{
 #must{
     margin-top: 10px;
     position:absolute;
-    right:0;
+    right:46px;
     color:#999;
     font-size: 14px;
 }
@@ -113,7 +132,7 @@ form .email_container input{
     width:16%;
     margin-top:30px;
     border-radius: 4px;
-    padding:8px 0;
+    padding:10px 0;
     text-align:center;
     font-size: 1rem;
     background-color: #f3f3f3;

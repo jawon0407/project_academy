@@ -5,6 +5,8 @@
 	@extract($_POST);
 	@extract($_SESSION);
 
+	$table = "product";
+
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
@@ -13,15 +15,15 @@
 <html lang="ko">
 <head> 
 <meta charset="utf-8">
-<link href="../sub4/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
-<link href="./css/greet.css" rel="stylesheet">
+<link href="../sub2/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
+<link href="./css/product.css" rel="stylesheet">
 </head>
 <?
 
 	include "../lib/dbconn.php";
 
 	if(!$scale){
-		$scale=10;			// 한 화면에 표시되는 글 수
+		$scale=4;			// 한 화면에 표시되는 글 수
 	}
 
     if ($mode=="search")
@@ -37,11 +39,11 @@
 			exit;
 		}
 
-		$sql = "select * from greet where $find like '%$search%' order by num desc";
+		$sql = "select * from $table where $find like '%$search%' order by num desc";
 	}
 	else
 	{
-		$sql = "select * from greet order by num desc";
+		$sql = "select * from $table order by num desc";
 	}
 
 	$result = mysql_query($sql, $connect);
@@ -49,7 +51,7 @@
 	$total_record = mysql_num_rows($result); // 전체 글 수
 
 	// 전체 페이지 수($total_page) 계산 
-	if ($total_record % $scale == 0)     
+	if ($total_record % $scale === 0)     
 		$total_page = floor($total_record/$scale);      
 	else
 		$total_page = floor($total_record/$scale) + 1; 
@@ -66,32 +68,47 @@
 	<div id="wrap">
 		<? include "../common/sub_header.html" ?>
 		<div class="main visual">
-			<img src="./../sub4/common/images/yonexzone_main_image.png" alt="요넥스존" />
-			<h3>요넥스존</h3>
+			<img src="./../sub2/images/product_intromainlogo.png" alt="요넥스존" />
+			<h3>상품소개</h3>
 		</div>
 		<div class="subNav">
 			<ul class="subNav_wrap">
-				<li class="onclick">
-					<a href="./list.php">
-						<span>요넥스소식</span>
+			<li>
+					<a href="./../sub2/sub2_1.html">
+						<span>신상품</span>
 					</a>
 				</li>
 				<li>
-					<a href="./../sub4/sub4_2.html">
-						<span>사회공헌</span>
+					<a href="./../sub2/sub2_2.html">
+						<span>배드민턴</span>
+					</a>
+				</li>
+				<li>
+					<a href="./../sub2/sub2_3.html">
+						<span>테니스</span>
+					</a>
+				</li>
+				<li>
+					<a href="./../sub2/sub2_4.html">
+						<span>의류 / 가방</span>
+					</a>
+				</li>
+				<li class="onclick">
+					<a href="./list.php">
+						<span>제품검색</span>
 					</a>
 				</li>
 			</ul>
 		</div>
 		<article id="content">
 			<div class="titleArea">
-				<h2>요넥스소식</h2>
+				<h2>제품검색</h2>
 				<div class="lineMap">
 					<span>홈</span>
 					&#62;
-					<span>요넥스존</span>
+					<span>상품소개</span>
 					&#62;
-					<strong>요넥스소식</strong>
+					<strong>제품검색</strong>
 				</div>
 			</div>
 			<div class="contentArea">
@@ -104,22 +121,13 @@
 							<label for="scale" class="hidden">리스트개수</label>
 							<select id="scale" name="scale" onchange="location.href='list.php?scale='+this.value">
 								<option value=''>보기</option>
-								<option value='5'>5</option>
-								<option value='10'>10</option>
-								<option value='10'>15</option>
+								<option value='4'>4</option>
+								<option value='8'>8</option>
+								<option value='12'>12</option>
 							</select>
 						</div>
 					</div>	
 					<div id="list_content">
-						<div>
-							<ul class="list_title">
-								<li>번호</li>
-								<li>내용</li>
-								<li>글쓴이</li>
-								<li>작성날짜</li>
-								<li>조회수</li>
-							</ul>
-						</div>
 						<?		
 							for ($i=$start; $i<$start+$scale && $i < $total_record; $i++){
 								mysql_data_seek($result, $i);       
@@ -127,24 +135,46 @@
 								$row = mysql_fetch_array($result);       
 								// 하나의 레코드 가져오기
 								
-								$item_num     = $row[num];
-								$item_id      = $row[id];
-								$item_name    = $row[name];
-								$item_nick    = $row[nick];
-								$item_hit     = $row[hit];
-
-								$item_date    = $row[regist_day];
+								$item_num = $row[num];
+								$item_id = $row[id];
+								$item_name = $row[name];
+								$item_nick = $row[nick];
+								$item_hit = $row[hit];
+								$item_date = $row[regist_day];
 								$item_date = substr($item_date, 0, 10);  
-
 								$item_subject = str_replace(" ", "&nbsp;", $row[subject]);
+								$item_content = str_replace(" ", "&nbsp;", $row[content]);
+								if($row[file_copied_0]){ 
+									$item_img = './data/'.$row[file_copied_0];
+								}else{ 
+									$item_img = './data/default.jpg';
+								}	
 						?>
-						<div id="list_item">
-							<div id="list_item1"><?= $number ?></div>
-							<div id="list_item2"><a href="view.php?num=<?=$item_num?>&page=<?=$page?>&scale=<?=$scale?>"><?= $item_subject ?></a></div>
-							<div id="list_item3"><?= $item_nick ?></div>
-							<div id="list_item4"><?= $item_date ?></div>
-							<div id="list_item5"><?= $item_hit ?></div>
-						</div>
+						<a href="view.php?table=<?=$table?>&num=<?=$item_num?>&page=<?=$page?>&scale=<?=$scale?>">
+							<div id="list_item">
+								<div class="img_container">
+									<img src="<?=$item_img?>" alt="첨부된 이미지">
+								</div>
+								<div class="contents_container">
+									<strong class="title_info"><?=$item_subject?></strong>
+									<p class="content_info"><?=$item_content?></p>
+									<div class="write_info_box">
+										<div class="name_info">
+											<span><?=$item_nick?></span>
+										</div>
+										<div class="date_info">
+											<span><?=$item_date?></span>
+										</div>
+										<div class="hit_info">
+											<i class="fa-solid fa-eye"></i>
+											<span>
+												<?=$item_hit?>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>	
 						<?
 							$number--;
 						}
@@ -163,26 +193,26 @@
 							?>			
 						</div>
 						<div id="btn_container">
-							<a href="list.php?page=<?=$page?>&scale=<?=$scale?>">목록</a>
+							<a href="list.php?page=<?=$page?>&scale=<?=$scale?>&table=<?=$table?>">목록</a>
 							<? 
 								if($userid){
 							?>
-							<a href="write_form.php?page=<?=$page?>&scale=<?=$scale?>">글쓰기</a>
+							<a href="write_form.php?page=<?=$page?>&scale=<?=$scale?>&table=<?=$table?>">글쓰기</a>
 							<? } ?>
 						</div>
 						<div class="search_container">
-							<form  name="board_form" method="post" action="list.php?mode=search"> 
+							<form  name="board_form" method="post" action="list.php?mode=search&table=<?=$table?>&page=<?=$page?>&scale=<?=$scale?>"> 
 								<div id="list_search">
 									<div id="find_kind">
 										<select name="find">
 											<option value='subject'>제목</option>
 											<option value='content'>내용</option>
-											<option value='nick'>별명</option>
+											<option value='nick'>닉네임</option>
 											<option value='name'>이름</option>
 										</select>
 									</div>
 									<div id="list_search4">
-										<input type="text" name="search">
+										<input type="text" name="search" placeholder="검색어를 입력해주세요">
 										<button type="submit">검색</button>
 									</div>
 								</div>

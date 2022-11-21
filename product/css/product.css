@@ -1,22 +1,30 @@
-#col2{
-    width:1200px;
+h2{
+    font-size: 3.2em;
+    display: block;
+    margin-top: 180px;
 }
 
-#list_search{
+.contentArea{
+    margin: 90px 0 200px 0;
+}
+
+#col2,
+.num_container,
+#list_content{
     width:100%;
     display:flex;
-    align-items:center;
 }
 
-#find_kind {
-    width:20%
+#col2,
+#list_content{
+    flex-direction: column;
+    align-items: center;
+    width:100%;
 }
 
-#find_kind select{
-    border-radius: 5px;
-    font-size: 18px;
-    width:70%;
-    padding:10px;
+.num_container{
+    align-items: center;
+    justify-content: space-between;
 }
 
 .num_container{
@@ -39,57 +47,26 @@
     outline:none;
 }
 
-#list_content{
-    display: flex;
-    flex-direction: column;
-}
-
-.list_title{
-    border-top:2px solid #333;
-    border-bottom:2px solid #333;
-    background-color: #ccc;
-}
-
-.list_title,
 #list_item{
     display: flex;
-    width: 100%;
+    align-items: center;
 }
 
-#list_item{
-    border-bottom: 1px solid #ccc;
+#list_content a{
+    width:100%;
 }
 
-.list_title > li,
-#list_item > div{
-    text-align: center;
-    padding: 20px 0;
+.img_container{
+    width:30%
 }
 
-
-.list_title > li:nth-child(1),
-#list_item1{
-    width:5%
+.contents_container{
+    width:70%;
 }
 
-.list_title > li:nth-child(2),
-#list_item2{
-    width:70%
-}
-
-.list_title > li:nth-child(3),
-#list_item3{
-    width:5%
-}
-
-.list_title > li:nth-child(4),
-#list_item4{
-    width:15%
-}
-
-.list_title > li:nth-child(5),
-#list_item5{
-    width:5%
+.write_info_box{
+    display:flex;
+    align-items:center;
 }
 
 #page_button{
@@ -107,8 +84,11 @@
 }
 
 #btn_container{
-    display:flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     align-self: flex-end;
+    width:20%
 }
 
 #btn_container a{
@@ -116,6 +96,7 @@
     padding: 10px 20px;
     margin: 0 10px;
     transition:all .3s ease-in-out;
+    text-align: center;
 }
 
 
@@ -136,10 +117,26 @@
     background-color: #006eb6;
 }
 
+#find_kind {
+    width:20%
+}
+
+#find_kind select{
+    border-radius: 5px;
+    font-size: 18px;
+    width:70%;
+    padding:10px;
+}
+
 .search_container{
     width: 60%;
     align-self: center;
     margin-top: 60px;
+}
+
+#list_search{
+    width: 100%;
+    display: flex;   
 }
 
 #list_search4{
