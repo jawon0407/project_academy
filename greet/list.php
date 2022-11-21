@@ -1,12 +1,16 @@
 <? 
 	session_start(); 
 
+	@extract($_GET);
+	@extract($_POST);
+	@extract($_SESSION);
+
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
 ?>
 <!DOCTYPE HTML>
-<html>
+<html lang="ko">
 <head> 
 <meta charset="utf-8">
 <link href="../sub4/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
@@ -14,14 +18,10 @@
 </head>
 <?
 
-	@extract($_GET);
-	@extract($_POST);
-	@extract($_SESSION);
-
 	include "../lib/dbconn.php";
 
 	if(!$scale){
-		$scale=2;			// 한 화면에 표시되는 글 수
+		$scale=10;			// 한 화면에 표시되는 글 수
 	}
 
     if ($mode=="search")
@@ -91,40 +91,35 @@
 					&#62;
 					<span>요넥스존</span>
 					&#62;
-					<strong>프로모션</strong>
+					<strong>요넥스소식</strong>
 				</div>
 			</div>
 			<div class="contentArea">
 				<div id="col2">    
-					<div class="search_container">
-						<form  name="board_form" method="post" action="list.php?mode=search"> 
-							<div id="list_search">
-								<div id="find_kind">
-									<select name="find">
-										<option value='subject'>제목</option>
-										<option value='content'>내용</option>
-										<option value='nick'>별명</option>
-										<option value='name'>이름</option>
-									</select>
-								</div>
-								<div id="list_search4">
-									<input type="text" name="search">
-									<button type="submit">검색</button>
-								</div>
-							</div>
-						</form>
+					<div class="num_container">
+						<div id="total_record">
+							<span>총 <?= $total_record ?> 개의 게시물이 있습니다.</span>  
+						</div>
+						<div class="list_counter">
+							<label for="scale" class="hidden">리스트개수</label>
+							<select id="scale" name="scale" onchange="location.href='list.php?scale='+this.value">
+								<option value=''>보기</option>
+								<option value='5'>5</option>
+								<option value='10'>10</option>
+								<option value='10'>15</option>
+							</select>
+						</div>
 					</div>	
-					<div class="list_counter">
-						<label for="scale" class="hidden">리스트개수</label>
-						<select id="scale" name="scale" onchange="location.href='list.php?scale='+this.value">
-							<option value=''>보기</option>
-							<option value='5'>5</option>
-							<option value='10'>10</option>
-							<option value='10'>15</option>
-						</select>
-					</div>
-					<div id="total_record">총 <?= $total_record ?> 개의 게시물이 있습니다.  </div>
 					<div id="list_content">
+						<div>
+							<ul class="list_title">
+								<li>번호</li>
+								<li>내용</li>
+								<li>글쓴이</li>
+								<li>작성날짜</li>
+								<li>조회수</li>
+							</ul>
+						</div>
 						<?		
 							for ($i=$start; $i<$start+$scale && $i < $total_record; $i++){
 								mysql_data_seek($result, $i);       
@@ -155,7 +150,6 @@
 						}
 						?>
 						<div id="page_button">
-							<span class="prev">이전</span> 
 							<?
 								// 게시판 목록 하단에 페이지 링크 번호 출력
 								for ($i=1; $i<=$total_page; $i++){
@@ -167,7 +161,6 @@
 									}      
 								}
 							?>			
-							<span class="next">다음</span>
 						</div>
 						<div id="btn_container">
 							<a href="list.php?page=<?=$page?>&scale=<?=$scale?>">목록</a>
@@ -177,6 +170,24 @@
 							<a href="write_form.php?page=<?=$page?>&scale=<?=$scale?>">글쓰기</a>
 							<? } ?>
 						</div>
+						<div class="search_container">
+							<form  name="board_form" method="post" action="list.php?mode=search"> 
+								<div id="list_search">
+									<div id="find_kind">
+										<select name="find">
+											<option value='subject'>제목</option>
+											<option value='content'>내용</option>
+											<option value='nick'>별명</option>
+											<option value='name'>이름</option>
+										</select>
+									</div>
+									<div id="list_search4">
+										<input type="text" name="search">
+										<button type="submit">검색</button>
+									</div>
+								</div>
+							</form>
+						</div>	
 					</div>
 				</div>
 			</div>

@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./*.html",
-    './node_modules/tw-elements/dist/js/**/*.js'
+    "./**/*.html",
   ],
   presets: [],
   darkMode: "media", // or 'class'
@@ -993,6 +993,5 @@ module.exports = {
     "disabled",
   ],
   plugins: [
-    require('tw-elements/dist/plugin')
   ],
 };

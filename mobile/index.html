@@ -168,10 +168,8 @@
           @extract($_SESSION);
           @extract($_POST);
           @extract($_GET);
-          
-          //$userid = $_SESSION['userid'];
 
-            if(!$userid)
+          if(!$userid)
           {
         ?>
         <ul class="flex space-x-4 mt-10 justify-center">
@@ -195,7 +193,6 @@
                   <a href="./login/member_form_modify.php" class="block px-4 py-2 text-white w-full"> 회원정보수정 </a>
                 </li>
               </ul>
-      
           <?
             }
           ?>

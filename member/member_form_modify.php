@@ -29,7 +29,6 @@
          "NICKcheck",
           "left=200,top=200,width=250,height=100,scrollbars=no,resizable=yes");
    }
-
    function check_input()
    {
       if (!document.member_form.pass.value)
@@ -78,7 +77,6 @@
 
       document.member_form.submit();
    }
-
    function reset_form()
    {
       document.member_form.id.value = "";
@@ -118,57 +116,65 @@
     mysql_close();
 ?>
 <body>
-  <? include "../common/sub_header.html" ?>
-  <h1>회원정보수정</h1>
+  <a href="./../index.html" class="index_img">
+    <img src="./images/sub_logo_image.png" alt="로고이미지" class="logo_img">
+  </a>
+  <h1 class=title>회원정보수정</h1>
   <div id="wrap">
     <div>
       <form  name="member_form" method="post" action="modify.php"> 
         <div id="form_join">
           <div id="join2">
             <ul>
-              <li>
+              <li class="id_contaner">
                 <span>아이디</span>
-                <?= $row[id] ?>
+                <div>
+                  <span><?= $row[id] ?></span>
+                </div>
               </li>
-              <li>
+              <li class="password_container">
                 <label for="password">비밀번호</label>
                 <input type="password" name="pass" value="">
               </li>
-              <li>
+              <li class="password_confirm_container">
                 <label for="password_confirm">비밀번호 확인</label>
                 <input type="password" name="pass_confirm" value="">
               </li>
-              <li>
+              <li class="name_container">
                 <label for="name">이름</label>
                 <input type="text" name="name" value="<?= $row[name] ?>">
               </li>
-              <li>
-                <div id="nick1">
-                  <label for="nick">닉네임</label>
-                  <input type="text" name="nick" value="<?= $row[nick] ?>">
-                </div>
-                <div id="nick2" >
+              <li class="nick_container">
+                <label for="nick">닉네임</label>
+                <input type="text" name="nick" value="<?= $row[nick] ?>">
+                <div id="nick_confirm" >
                   <a href="#" onclick="check_nick()">
                     <span>중복확인</span>
                   </a>
                 </div>
               </li>
-              <li>
-                <select class="hp" name="hp1" id="hp1"> 
-                  <option value='010' <? if($hp1 == '010') echo 'selected'; ?>>010</option>
-                  <option value='011' <? if($hp1 == '011') echo 'selected'; ?>>011</option>
-                  <option value='016' <? if($hp1 == '016') echo 'selected'; ?>>016</option>
-                  <option value='017' <? if($hp1 == '017') echo 'selected'; ?>>017</option>
-                  <option value='018' <? if($hp1 == '018') echo 'selected'; ?>>018</option>
-                  <option value='019' <? if($hp1 == '019') echo 'selected'; ?>>019</option>
-                </select>
-                <input type="text" class="hp" name="hp2" value="<?= $hp2 ?>">
-                <input type="text" class="hp" name="hp3" value="<?= $hp3 ?>">
+              <li class="phone_container">
+                <label for="hp">휴대폰</label>
+                <div>
+                  <select class="hp" name="hp1" id="hp1"> 
+                    <option value='010' <? if($hp1 == '010') echo 'selected'; ?>>010</option>
+                    <option value='011' <? if($hp1 == '011') echo 'selected'; ?>>011</option>
+                    <option value='016' <? if($hp1 == '016') echo 'selected'; ?>>016</option>
+                    <option value='017' <? if($hp1 == '017') echo 'selected'; ?>>017</option>
+                    <option value='018' <? if($hp1 == '018') echo 'selected'; ?>>018</option>
+                    <option value='019' <? if($hp1 == '019') echo 'selected'; ?>>019</option>
+                  </select>
+                  <input type="text" class="hp" name="hp2" value="<?= $hp2 ?>">
+                  <input type="text" class="hp" name="hp3" value="<?= $hp3 ?>">
+                </div>
               </li>
-              <li>
-                <input type="text" id="email1" name="email1" value="<?= $email1 ?>"> 
-                <span>@</span> 
-                <input type="text" name="email2" value="<?= $email2 ?>">
+              <li class="email_container">
+                <label for="email">이메일</label>
+                <div>
+                  <input type="text" id="email1" name="email1" value="<?= $email1 ?>">
+                  <span>@</span> 
+                  <input type="text" id="email2" name="email2" value="<?= $email2 ?>">
+               </div>
               </li>
             </ul>
           </div>
@@ -186,7 +192,6 @@
       </form>
     </div>
   </div>
-  <? include "../common/sub_footer.html" ?>
 </body>
 <script src="./../common/js/jquery-1.12.4.min.js"></script>
 <script src="./../common/js/jquery-migrate-1.4.1.min.js"></script>

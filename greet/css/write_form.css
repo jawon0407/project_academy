@@ -1,0 +1,97 @@
+#contentArea{
+    display:flex;
+    flex-direction: column;
+    width:1000px;
+    padding: 50px 0px 150px;
+}
+
+#writer_info,
+#write_title,
+#write_infobox,
+#write_button{
+    display:flex;
+}
+
+.col1{
+    width: 15%;
+    padding: 10px 0;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 700;
+}
+
+.col2{
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col3{
+    padding-left:5px;
+}
+
+#write_title input,
+#write_infobox textarea{
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+#write_button{
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn_container a{
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition:all .3s ease-in-out;
+}
+
+
+.btn_container a:nth-child(1){
+    background-color: #f1f1f1;
+}
+
+.btn_container a:nth-child(1):hover{
+    background-color: #ccc;
+}
+
+.btn_container a:nth-child(2){
+    background-color: #0f9af5;
+}
+
+.btn_container a:nth-child(2):hover{
+    background-color: #006eb6;
+}
+
+.btn_container a:nth-child(2) button{
+    background-color: transparent;
+    border:none;
+    color:#fff;
+    font-size: 1rem;
+}
+
+.confirm_btn{
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 16px;
+    background-color: #0f9af5;
+    transition: all .3s ease-in-out;
+    color:white;
+    cursor:pointer;
+}
+
+.confirm_btn:hover{
+    background-color: #006eb6;
+}
