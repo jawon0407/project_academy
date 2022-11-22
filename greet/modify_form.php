@@ -80,7 +80,7 @@
 							<div id="write_infobox">
 								<div class="col1">내용</div>
 									<div class="col2">
-										<textarea rows="15" cols="79" name="content"><?=$item_subject?></textarea>
+										<textarea rows="15" cols="79" name="content"><?=$item_content?></textarea>
 									</div>
 								</div>
 							</div>

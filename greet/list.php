@@ -5,6 +5,8 @@
 	@extract($_POST);
 	@extract($_SESSION);
 
+	$table = "greet";			// 게시판 테이블명
+
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);

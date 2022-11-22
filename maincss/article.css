@@ -724,6 +724,19 @@ datalist {
   margin-top: 10px;
 }
 
+.news_lists li dl{
+  width:80%;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+
+.news_lists li dd{
+  margin:10px 0;
+  color:var(--font-middle-color);
+}
+
 .news_lists li:first-child a > span {
   margin-top: 10px;
 }
