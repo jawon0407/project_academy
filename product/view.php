@@ -71,12 +71,12 @@
 	$sql = "update $table set hit=$new_hit where num=$num";   // 글 조회수 증가시킴
 	mysql_query($sql, $connect);
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head> 
 <meta charset="utf-8">
-<link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
-<link href="../css/concert.css" rel="stylesheet" type="text/css" media="all">
+<link href="../sub2/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
+<link href="../css/view.css" rel="stylesheet" type="text/css" media="all">
 <script>
     function del(href) 
     {
@@ -163,6 +163,10 @@
 	</div> <!-- end of col2 -->
   </div> <!-- end of content -->
 </div> <!-- end of wrap -->
-
+<script src="./../common/js/jquery-1.12.4.min.js"></script>
+<script src="./../common/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="./../common/js/fullnav.js"></script>
+<script src="./../common/js/topBtn.js"></script>
+<script src="./../common/js/subskipnav.js"></script>
 </body>
 </html>

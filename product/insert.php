@@ -178,7 +178,7 @@ error_reporting(E_ALL);
 
 	echo "
 	   <script>
-	    location.href = 'list.php?table=$table&page=$page';
+	    	location.href = 'list.php?table=$table&page=$page&scale=$scale'; 
 	   </script>
 	";
 ?>

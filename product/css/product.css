@@ -1,0 +1,173 @@
+h2{
+    font-size: 3.2em;
+    display: block;
+    margin-top: 180px;
+}
+
+.contentArea{
+    margin: 90px 0 200px 0;
+}
+
+#col2,
+.num_container,
+#list_content{
+    width:100%;
+    display:flex;
+}
+
+#col2,
+#list_content{
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+}
+
+.num_container{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.num_container{
+    display:flex;
+    justify-content: space-between;
+    margin:20px 0;
+    align-items: center;
+}
+
+#total_record{
+    font-size: 20px;
+}
+
+.list_counter select{
+    padding: 7px 2px;
+    border-radius: 10px;
+}
+
+.list_counter select:focus{
+    outline:none;
+}
+
+#list_item{
+    display: flex;
+    align-items: center;
+}
+
+#list_content a{
+    width:100%;
+}
+
+.img_container{
+    width:30%
+}
+
+.contents_container{
+    width:70%;
+}
+
+.write_info_box{
+    display:flex;
+    align-items:center;
+}
+
+#page_button{
+    margin-top:20px;
+    width:20%;
+    display:flex;
+    align-self:center;
+    justify-content: space-around;
+}
+
+#page_button b,
+#page_button a{
+    padding:10px;
+    cursor: pointer;
+}
+
+#btn_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    width:20%
+}
+
+#btn_container a{
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition:all .3s ease-in-out;
+    text-align: center;
+}
+
+
+#btn_container a:nth-child(1){
+    background-color: #f1f1f1;
+}
+
+#btn_container a:nth-child(1):hover{
+    background-color: #ccc;
+}
+
+#btn_container a:nth-child(2){
+    background-color: #0f9af5;
+    color:#fff;
+}
+
+#btn_container a:nth-child(2):hover{
+    background-color: #006eb6;
+}
+
+#find_kind {
+    width:20%
+}
+
+#find_kind select{
+    border-radius: 5px;
+    font-size: 18px;
+    width:70%;
+    padding:10px;
+}
+
+.search_container{
+    width: 60%;
+    align-self: center;
+    margin-top: 60px;
+}
+
+#list_search{
+    width: 100%;
+    display: flex;   
+}
+
+#list_search4{
+    width:80%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#list_search4 input{
+    border-radius: 5px;
+    font-size: 18px;
+    width:80%;
+    padding:10px;
+    border:1px solid #999;
+}
+
+#list_search4 input:focus{
+    outline:none;
+}
+
+#list_search4 button{
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    width:15%;
+    padding: 9px 4px;
+    cursor:pointer;
+    transition:all .3s ease-in-out;
+}
+
+#list_search4 button:hover{
+    background-color: #ccc;
+}
