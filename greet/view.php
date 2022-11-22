@@ -170,11 +170,18 @@
 			</div>
 		</article>
 		<? include "../common/sub_footer.html" ?>
+		<a href="#top">
+			<div class="go_top">
+				<i class="fa-solid fa-arrow-up"></i>
+				<span class="hidden">위로 올라가기</span>
+			</div>
+      	</a>
 	</div>
 <script src="./../common/js/jquery-1.12.4.min.js"></script>
 <script src="./../common/js/jquery-migrate-1.4.1.min.js"></script>
 <script src="./../common/js/fullnav.js"></script>
 <script src="./../common/js/topBtn.js"></script>
 <script src="./../common/js/subskipnav.js"></script>
+<script src="https://kit.fontawesome.com/bff332bdcf.js" crossorigin="anonymous"></script>
 </body>
 </html>

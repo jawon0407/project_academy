@@ -74,13 +74,13 @@
 							<div id="write_title">
 								<div class="col1">제목</div>
 									<div class="col2">
-										<input type="text" name="subject">
+										<input type="text" name="subject" value="<?=$item_subject?>">
 									</div>
 							</div>
 							<div id="write_infobox">
 								<div class="col1">내용</div>
 									<div class="col2">
-										<textarea rows="15" cols="79" name="content"></textarea>
+										<textarea rows="15" cols="79" name="content"><?=$item_subject?></textarea>
 									</div>
 								</div>
 							</div>
@@ -96,11 +96,18 @@
   			</div>
 		</article> <!-- end of wrap -->
 		<? include "../common/sub_footer.html" ?>
+		<a href="#top">
+			<div class="go_top">
+				<i class="fa-solid fa-arrow-up"></i>
+				<span class="hidden">위로 올라가기</span>
+			</div>
+      	</a>
 	</div>
 <script src="./../common/js/jquery-1.12.4.min.js"></script>
 <script src="./../common/js/jquery-migrate-1.4.1.min.js"></script>
 <script src="./../common/js/fullnav.js"></script>
 <script src="./../common/js/topBtn.js"></script>
 <script src="./../common/js/subskipnav.js"></script>
+<script src="https://kit.fontawesome.com/bff332bdcf.js" crossorigin="anonymous"></script>
 </body>
 </html>

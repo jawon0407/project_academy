@@ -7,6 +7,7 @@ create table product (
    content text not null,
    regist_day char(20),
    hit int,
+   category char(20) not null,
    is_html char(1),
    file_name_0 char(40),
    file_name_1 char(40),

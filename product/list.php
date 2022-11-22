@@ -7,7 +7,6 @@
 
 	$table = "product";
 
->>>>>>> 74d66e2d0fba17a38b89aef0e00d857f2159bbbb
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
@@ -24,7 +23,7 @@
 	include "../lib/dbconn.php";
 
 	if(!$scale){
-		$scale=4;			// 한 화면에 표시되는 글 수
+		$scale=8;			// 한 화면에 표시되는 글 수
 	}
 
     if ($mode=="search")
@@ -44,7 +43,6 @@
 	else
 	{
 		$sql = "select * from $table order by num desc";
->>>>>>> 74d66e2d0fba17a38b89aef0e00d857f2159bbbb
 	}
 
 	$result = mysql_query($sql, $connect);
@@ -122,64 +120,70 @@
 							<label for="scale" class="hidden">리스트개수</label>
 							<select id="scale" name="scale" onchange="location.href='list.php?scale='+this.value">
 								<option value=''>보기</option>
-								<option value='4'>4</option>
 								<option value='8'>8</option>
 								<option value='12'>12</option>
+								<option value='16'>16</option>
 							</select>
 						</div>
 					</div>	
 					<div id="list_content">
-						<?		
-							for ($i=$start; $i<$start+$scale && $i < $total_record; $i++){
-								mysql_data_seek($result, $i);       
-								// 가져올 레코드로 위치(포인터) 이동  
-								$row = mysql_fetch_array($result);       
-								// 하나의 레코드 가져오기
-								
-								$item_num = $row[num];
-								$item_id = $row[id];
-								$item_name = $row[name];
-								$item_nick = $row[nick];
-								$item_hit = $row[hit];
-								$item_date = $row[regist_day];
-								$item_date = substr($item_date, 0, 10);  
-								$item_subject = str_replace(" ", "&nbsp;", $row[subject]);
-								$item_content = str_replace(" ", "&nbsp;", $row[content]);
-								if($row[file_copied_0]){ 
-									$item_img = './data/'.$row[file_copied_0];
-								}else{ 
-									$item_img = './data/default.jpg';
-								}	
-						?>
-						<a href="view.php?table=<?=$table?>&num=<?=$item_num?>&page=<?=$page?>&scale=<?=$scale?>">
-							<div id="list_item">
-								<div class="img_container">
-									<img src="<?=$item_img?>" alt="첨부된 이미지">
-								</div>
-								<div class="contents_container">
-									<strong class="title_info"><?=$item_subject?></strong>
-									<p class="content_info"><?=$item_content?></p>
-									<div class="write_info_box">
-										<div class="name_info">
-											<span><?=$item_nick?></span>
+						<div class="list_container">
+							<?		
+								for ($i=$start; $i<$start+$scale && $i < $total_record; $i++){
+									mysql_data_seek($result, $i);       
+									// 가져올 레코드로 위치(포인터) 이동  
+									$row = mysql_fetch_array($result);       
+									// 하나의 레코드 가져오기
+									
+									$item_num = $row[num];
+									$item_id = $row[id];
+									$item_name = $row[name];
+									$item_nick = $row[nick];
+									$item_hit = $row[hit];
+									$item_date = $row[regist_day];
+									$item_date = substr($item_date, 0, 10);  
+									$item_category = str_replace(" ", "&nbsp;", $row[category]);
+									$item_subject = str_replace(" ", "&nbsp;", $row[subject]);
+									$item_content = str_replace(" ", "&nbsp;", $row[content]);
+									if($row[file_copied_0]){ 
+										$item_img = './data/'.$row[file_copied_0];
+									}else{ 
+										$item_img = './data/default.jpg';
+									}	
+							?>
+							<a href="view.php?table=<?=$table?>&num=<?=$item_num?>&page=<?=$page?>&scale=<?=$scale?>">
+								<div id="list_item">
+									<div class="img_container">
+										<img src="<?=$item_img?>" alt="첨부된 이미지">
+									</div>
+									<div class="contents_container">
+										<div>
+											<strong class="title_info"><?=$item_subject?></strong>
+											<span class="category_info"><?=$item_category?></span>
 										</div>
-										<div class="date_info">
-											<span><?=$item_date?></span>
-										</div>
-										<div class="hit_info">
-											<i class="fa-solid fa-eye"></i>
-											<span>
-												<?=$item_hit?>
-											</span>
+										<p class="content_info"><?=$item_content?></p>
+										<div class="write_info_box">
+											<div class="name_info">
+												<span><?=$item_nick?></span>
+											</div>
+											<div class="date_info">
+												<span><?=$item_date?></span>
+											</div>
+											<div class="hit_info">
+												<i class="fa-solid fa-eye"></i>
+												<span>
+													<?=$item_hit?>
+												</span>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</a>	
+							</a>
 						<?
 							$number--;
 						}
 						?>
+						</div>
 						<div id="page_button">
 							<?
 								// 게시판 목록 하단에 페이지 링크 번호 출력
@@ -194,7 +198,7 @@
 							?>			
 						</div>
 						<div id="btn_container">
-							<a href="list.php?page=<?=$page?>&scale=<?=$scale?>&table=<?=$table?>">목록</a>
+							<a href="list.php?scale=<?=$scale?>&table=<?=$table?>">목록</a>
 							<? 
 								if($userid){
 							?>
@@ -210,6 +214,7 @@
 											<option value='content'>내용</option>
 											<option value='nick'>닉네임</option>
 											<option value='name'>이름</option>
+											<option value='category'>카테고리</option>
 										</select>
 									</div>
 									<div id="list_search4">
@@ -224,11 +229,18 @@
 			</div>
 		</article>
 		<? include "../common/sub_footer.html" ?>	
+		<a href="#top">
+			<div class="go_top">
+				<i class="fa-solid fa-arrow-up"></i>
+				<span class="hidden">위로 올라가기</span>
+			</div>
+      	</a>
 	</div>
 <script src="./../common/js/jquery-1.12.4.min.js"></script>
 <script src="./../common/js/jquery-migrate-1.4.1.min.js"></script>
 <script src="./../common/js/fullnav.js"></script>
 <script src="./../common/js/topBtn.js"></script>
 <script src="./../common/js/subskipnav.js"></script>
+<script src="https://kit.fontawesome.com/bff332bdcf.js" crossorigin="anonymous"></script>
 </body>
 </html>

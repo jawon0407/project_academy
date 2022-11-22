@@ -58,7 +58,13 @@
 
 #list_item{
     border-bottom: 1px solid #ccc;
+    transition:all .4s ease-in-out;
 }
+
+#list_item:hover{
+    background-color: #f1f1f1;
+}
+
 
 .list_title > li,
 #list_item > div{

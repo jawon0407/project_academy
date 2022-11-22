@@ -76,7 +76,7 @@
 <head> 
 <meta charset="utf-8">
 <link href="../sub2/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
-<link href="../css/view.css" rel="stylesheet" type="text/css" media="all">
+<link href="./css/view.css" rel="stylesheet" type="text/css" media="all">
 <script>
     function del(href) 
     {
@@ -88,85 +88,140 @@
 </head>
 
 <body>
-<div id="wrap">
-
-  <div id="header">
-    <? include "../lib/top_login2.php"; ?>
-  </div>  <!-- end of header -->
-
-  <div id="menu">
-	<? include "../lib/top_menu2.php"; ?>
-  </div>  <!-- end of menu --> 
-
-  <div id="content">
-	<div id="col1">
-		<div id="left_menu">
-<?
-			include "../lib/left_menu.php";
-?>
+	<div id="wrap">
+		<? include "../common/sub_header.html" ?>
+		<div class="main visual">
+			<img src="./../sub2/images/product_intromainlogo.png" alt="요넥스존" />
+			<h3>상품소개</h3>
 		</div>
-	</div>
-
-	<div id="col2">
-        
-		<div id="title">
-			<img src="../img/title_concert.gif">
+		<div class="subNav">
+			<ul class="subNav_wrap">
+			<li>
+					<a href="./../sub2/sub2_1.html">
+						<span>신상품</span>
+					</a>
+				</li>
+				<li>
+					<a href="./../sub2/sub2_2.html">
+						<span>배드민턴</span>
+					</a>
+				</li>
+				<li>
+					<a href="./../sub2/sub2_3.html">
+						<span>테니스</span>
+					</a>
+				</li>
+				<li>
+					<a href="./../sub2/sub2_4.html">
+							<span>의류 / 가방</span>
+					</a>
+				</li>
+				<li class="onclick">
+					<a href="./list.php">
+						<span>제품검색</span>
+					</a>
+				</li>
+			</ul>
 		</div>
-
-		<div id="view_comment"> &nbsp;</div>
-
-		<div id="view_title">
-			<div id="view_title1"><?= $item_subject ?></div><div id="view_title2"><?= $item_nick ?> | 조회 : <?= $item_hit ?>  
-			                      | <?= $item_date ?> </div>	
-		</div>
-
-		<div id="view_content">
-<?
-	for ($i=0; $i<3; $i++)
-	{
-		if ($image_copied[$i])
-		{
-			$img_name = $image_copied[$i];
-			$img_name = "./data/".$img_name;
-			$img_width = $image_width[$i];
-			
-			echo "<img src='$img_name' width='$img_width'>"."<br><br>";
-		}
-	}
-?>
-			<?= $item_content ?>
-		</div>
-
-		<div id="view_button">
-				<a href="list.php?table=<?=$table?>&page=<?=$page?>"><img src="../img/list.png"></a>&nbsp;
-<? 
-	if($userid==$item_id || $userid="admin" || $userlevel==1 )
-	{
-?>
-				<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
-				<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')"><img src="../img/delete.png"></a>&nbsp;
-<?
-	}
-?>
-<? 
-	if($userid)
-	{
-?>
-				<a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
-<?
-	}
-?>
-		</div>
-
-		<div class="clear"></div>
-
-	</div> <!-- end of col2 -->
-  </div> <!-- end of content -->
-</div> <!-- end of wrap -->
+		<article id="content">
+			<div class="titleArea">
+				<h2>제품소개</h2>
+				<div class="lineMap">
+					<span>홈</span>
+					&#62;
+					<span>상품소개</span>
+					&#62;
+					<strong>제품검색</strong>
+				</div>
+			</div>
+			<div class="contentArea">
+				<div id="col2">
+					<div id="view_title">
+						<div id="view_title1">
+							<div class="title_container">
+								<div class="title_box">
+									<span>제목</span>
+								</div>
+								<div class="title_info">
+									<span><?= $item_subject ?></span>
+								</div>
+							</div>
+							<div class="hit_container">
+								<div class="hit_box">
+									<span>조회수</span>
+								</div>
+								<div class="hit_info">
+									<span><?= $item_hit ?></span>  
+								</div>
+							</div>
+						</div>
+						<div id="view_title2">
+							<div class="writer_container">
+								<div class="writer_box">
+									<span>작성자</span>
+								</div>
+								<div class="writer_info">
+									<span><?= $item_nick ?></span>
+								</div>
+							</div>
+							<div class="day_container">
+								<div class="day_box">
+									<span>작성일자</span>
+								</div>
+								<div class="day_info">
+									<span><?= $item_date ?> </span>
+								</div>
+							</div> 
+						</div>
+					</div>
+					<div id="view_content">
+					<?
+						for ($i=0; $i<3; $i++)
+						{
+							if ($image_copied[$i])
+							{
+								$img_name = $image_copied[$i];
+								$img_name = "./data/".$img_name;
+								echo "<img src='$img_name' "."<br><br>";
+							}
+						}
+					?>
+					<?= $item_content ?>
+					</div>
+					<div id="view_button">
+						<a href="list.php?table=<?=$table?>&scale=<?=$scale?>">목록</a>&nbsp;
+						<? 
+							if($userid==$item_id || $userid="admin" || $userlevel==1 ){
+						?>
+						<a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>&scale=<?=$scale?>">수정</a>&nbsp;
+						<a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')">삭제</a>&nbsp;
+						<?
+							}
+						?>
+						<? 
+							if($userid){
+						?>
+						<a href="write_form.php?table=<?=$table?>&page=<?=$page?>&scale=<?=$scale?>">글쓰기</a>
+						<?
+							}
+						?>
+					</div>
+				</div>
+			</div>
+		</article>
+		<? include "../common/sub_footer.html" ?>
+		<a href="#top">
+			<div class="go_top">
+				<i class="fa-solid fa-arrow-up"></i>
+				<span class="hidden">위로 올라가기</span>
+			</div>
+      	</a>
+	</div> <!-- end of wrap -->
 <script src="./../common/js/jquery-1.12.4.min.js"></script>
 <script src="./../common/js/jquery-migrate-1.4.1.min.js"></script>
 <script src="./../common/js/fullnav.js"></script>
 <script src="./../common/js/topBtn.js"></script>
 <script src="./../common/js/subskipnav.js"></script>
+<script src="https://kit.fontawesome.com/bff332bdcf.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,4 +1,11 @@
-<? session_start(); ?>
+<? 
+  session_start(); 
+	@extract($_POST);
+	@extract($_GET);
+	@extract($_SESSION);
+	$table = "product";
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -101,27 +108,29 @@
       <article id="content">
         <h2 class="hidden">본문 컨텐츠 영역</h2>
         <section class="search">
-          <h3>검색어를 입력해주세요</h3>
+          <h3>검색할 제품을 입력해주세요</h3>
           <span>
-            추천 검색어 : #이용대, #astrox88, #원더플레이, #yonex_korea
+            추천 검색어 : #nanoflare700, #astrox88, #duora, #vcore
           </span>
           <div>
-            <form action="#">
+            <form method="POST" action="product/list.php?mode=search&table=<?=$table?>">
+              <label for="find" class="hidden">제목</label>
+              <input type="hidden" name="find" value="제목">
               <label for="search" class="hidden">검색어 입력</label>
               <input
                 type="text"
                 name="search"
                 id="search"
-                placeholder="이용대"
+                placeholder="astrox 88s pro"
                 list="search_list"
               >
               <datalist id="search_list">
-                <option value="이용대"></option>
+                <option value="vcore"></option>
                 <option value="astrox88"></option>
-                <option value="원더플레이"></option>
-                <option value="yonex_korea"></option>
+                <option value="nanoflre"></option>
+                <option value="duora"></option>
               </datalist>
-              <button>
+              <button type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <span class="hidden">검색</span>
               </button>
