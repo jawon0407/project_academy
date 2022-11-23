@@ -1,0 +1,244 @@
+h2{
+    font-size: 3.2em;
+    display: block;
+    margin-top: 180px;
+}
+
+.contentArea{
+    margin: 90px 0 200px 0;
+}
+
+#col2,
+#view_content{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.view_container{
+    border: 1px solid #ccc;
+}
+
+#view_title{
+    width:100%;
+}
+
+#view_title1,
+#view_title2{
+    display:flex;
+}
+
+#view_title1 > div,
+#view_title2 > div{
+    width:50%;
+}
+
+.title_container,
+.hit_container,
+.writer_container,
+.day_container{
+    display:flex;
+}
+
+
+.title_container > div,
+.hit_container > div,
+.writer_container > div,
+.day_container > div,
+#view_content > div{
+    padding:15px 10px;
+    border:1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.title_container > div:first-child,
+.hit_container > div:first-child,
+.writer_container > div:first-child,
+.day_container > div:first-child,
+.content_box{
+    background-color: #f2f2f2;
+    font-size:20px;
+    font-weight:500;
+}
+
+.title_container > div:first-child,
+.hit_container > div:first-child,
+.writer_container > div:first-child,
+.day_container > div:first-child{
+    width:20%;
+}
+
+.content_box{
+    width:10%
+}
+
+#ripple textarea{
+    resize:none;
+}
+
+.title_container > div:nth-child(2),
+.hit_container > div:nth-child(2),
+.writer_container > div:nth-child(2),
+.day_container > div:nth-child(2),
+.content_info{
+    font-size:16px;
+}
+
+.title_container > div:nth-child(2),
+.hit_container > div:nth-child(2),
+.writer_container > div:nth-child(2),
+.day_container > div:nth-child(2){
+    width:80%;
+}
+
+
+#view_content{
+    border: 1px solid#ccc;
+    padding: 100px;
+}
+
+.content_box{
+    display: flex;
+    align-items: center;
+}
+
+#ripple{
+    width:100%;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+#ripple_writer_title,
+#ripple_content{
+    position: relative;
+}
+
+.ripple_writer_container{
+    padding:15px 10px;
+    border-bottom: 1px solid #ccc;
+    transition:all .4s ease-in-out;
+}
+
+.ripple_writer_container:hover{
+    background-color: #f1f1f1;
+    box-shadow: 0 0 20px rgb(0 0 0 / 15%);
+}
+
+#ripple_writer_title > ul{
+    display: flex;
+    width: 20%;
+    align-items: center;
+}
+
+#ripple_writer_title > ul #writer_title1{
+    font-size:18px;
+}
+
+#ripple_writer_title > ul #writer_title2{
+    font-size: 13px;
+    color: #999;
+    margin-left: 20px;
+}
+
+#ripple_writer_title > ul #writer_title3{
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    transition:all .4s ease-in-out;
+}
+
+#ripple_writer_title > ul #writer_title3 a:{
+    color: #666;
+}
+
+
+#ripple_writer_title > ul #writer_title3 a:hover{
+    color: #EB0029;
+}
+
+#ripple_content{
+    margin-top:20px;
+}
+
+#ripple_box{
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+#ripple_box #ripple_box2{
+    display: flex;
+    width: 85%;
+    align-items: center;
+}
+
+#ripple_box #ripple_box2 textarea{
+    width:100%;
+    padding:10px;
+}
+
+#ripple_box #ripple_box3 a{
+    padding: 8px 5px;
+    background: #0f9af5;
+    color: #fff;
+    border-radius: 5px;
+    transition:all .4s ease-in-out;
+}
+
+#ripple_box #ripple_box3:hover a{
+    background: #006eb6;
+}
+
+#view_button{
+    display:flex;
+    align-self: flex-end;
+    margin: 30px 0;
+}
+
+#view_button a{
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 0 5px;
+    transition:all .3s ease-in-out;
+}
+
+#view_button a:nth-child(1){
+    background-color: #f1f1f1;
+}
+
+#view_button a:nth-child(1):hover{
+    background-color: #ccc;
+}
+
+#view_button a:nth-child(2){
+    background-color: #fd4261;
+    color:#fff;
+}
+
+#view_button a:nth-child(2):hover{
+    background-color: #EB0029;
+}
+
+#view_button a:nth-child(3){
+    background-color: #02d490;
+    color:#fff;
+}
+
+#view_button a:nth-child(3):hover{
+    background-color: #009867;
+}
+
+#view_button a:nth-child(4){
+    background-color: #0f9af5;
+    color:#fff;
+}
+
+#view_button a:nth-child(4):hover{
+    background-color: #006eb6;
+}

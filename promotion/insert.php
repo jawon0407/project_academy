@@ -1,40 +1,29 @@
-<? 
-session_start(); 
-
-@extract($_GET);
-@extract($_POST);
-@extract($_SESSION);
-
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-error_reporting(E_ALL);
-?>
+<? session_start(); ?>
 
 <meta charset="utf-8">
 <?
+    @extract($_POST);
+    @extract($_GET);
+    @extract($_SESSION);
+    ini_set('display_errors', 0);
+    ini_set('display_startup_errors', 0);
+    error_reporting(E_ALL);
+	
 	if(!$userid) {
 		echo("
 		<script>
-	     window.alert('로그인 후 이용해 주세요.')
-	     history.go(-1)
-	   </script>
+			window.alert('로그인 후 이용해 주세요.')
+			history.go(-1)
+		</script>
 		");
 		exit;
 	}
 
 	$regist_day = date("Y-m-d (H:i)");  // 현재의 '년-월-일-시-분'을 저장
-		/*   단일 파일 업로드 
-		$upfile_name	 = $_FILES["upfile"]["name"]; // 첨부된 파일의 실이름
-		$upfile_tmp_name = $_FILES["upfile"]["tmp_name"]; // 서버에 저장된 임시파일명
-		$upfile_type     = $_FILES["upfile"]["type"];
-		$upfile_size     = $_FILES["upfile"]["size"];
-		$upfile_error    = $_FILES["upfile"]["error"];
-		*/
 
 	// 다중 파일 업로드
-	$files = $_FILES["upfile"]; //배열로 리턴
-	$count = count($files["name"]); //배열의 개수
-			
+	$files = $_FILES["upfile"];
+	$count = count($files["name"]);
 	$upload_dir = './data/';
 
 	for ($i=0; $i<$count; $i++)
@@ -58,10 +47,10 @@ error_reporting(E_ALL);
 
 			if( $upfile_size[$i]  > 5000000 ) {
 				echo("
-				<script>
-				alert('업로드 파일 크기가 지정된 용량(5MB)을 초과합니다!<br>파일 크기를 체크해주세요! ');
-				history.go(-1)
-				</script>
+					<script>
+						alert('업로드 파일 크기가 지정된 용량(500KB)을 초과합니다!<br>파일 크기를 체크해주세요! ');
+						history.go(-1)
+					</script>
 				");
 				exit;
 			}
@@ -74,14 +63,13 @@ error_reporting(E_ALL);
 			{
 				echo("
 					<script>
-						alert('JPG와 GIF,PNG 이미지 파일만 업로드 가능합니다!');
+						alert('JPG와 GIF, PNG 이미지 파일만 업로드 가능합니다!');
 						history.go(-1)
 					</script>
 					");
 				exit;
 			}
-			//파일의 업로드 move_uploaded_file(pc에 있는 임시파일명, 실제 서버에 저장될 실제파일명) 메소드
-			// -> 리턴 (true/false)
+
 			if (!move_uploaded_file($upfile_tmp_name[$i], $uploaded_file[$i]) )
 			{
 				echo("
@@ -94,11 +82,9 @@ error_reporting(E_ALL);
 			}
 		}
 	}
-
 	include "../lib/dbconn.php";       // dconn.php 파일을 불러옴
 
-	if ($mode=="modify")
-	{
+	if ($mode === "modify"){
 		$num_checked = count($_POST['del_file']);
 		$position = $_POST['del_file'];
 
@@ -123,8 +109,7 @@ error_reporting(E_ALL);
 			if ($del_ok[$i] == "y")
 			{
 				$delete_field = "file_copied_".$i;
-				$delete_name = $row[$delete_field];
-				
+				$delete_name = $row[$delete_field];				
 				$delete_path = "./data/".$delete_name;
 
 				unlink($delete_path);
@@ -140,16 +125,8 @@ error_reporting(E_ALL);
 					mysql_query($sql, $connect);  // $sql 에 저장된 명령 실행					
 				}
 			}
-
 		}
-		$category = htmlspecialchars($category);
-		$subject = htmlspecialchars($subject);
-		$content = htmlspecialchars($content);
-		$category = str_replace("'", "&#039;", $category);
-		$subject = str_replace("'", "&#039;", $subject);
-		$content = str_replace("'", "&#039;", $content);
-		
-		$sql = "update $table set category='$category', subject='$subject', content='$content' where num=$num";
+		$sql = "update $table set subject='$subject', content='$content' where num=$num";
 		mysql_query($sql, $connect);  // $sql 에 저장된 명령 실행
 	}
 	else
@@ -161,26 +138,19 @@ error_reporting(E_ALL);
 		else
 		{
 			$is_html = "";
+			$content = htmlspecialchars($content);
 		}
-		$category = htmlspecialchars($category);
-		$subject = htmlspecialchars($subject);
-		$content = htmlspecialchars($content);
-		$category = str_replace("'", "&#039;", $category);
-		$subject = str_replace("'", "&#039;", $subject);
-		$content = str_replace("'", "&#039;", $content);
-
-		$sql = "insert into $table (id, name, nick, subject, content, regist_day, hit, is_html, category, ";
-		$sql .= " file_name_0, file_name_1, file_name_2, file_copied_0,  file_copied_1, file_copied_2) ";
-		$sql .= "values('$userid', '$username', '$usernick', '$subject', '$content', '$regist_day', 0, '$is_html', '$category', ";
-		$sql .= "'$upfile_name[0]', '$upfile_name[1]',  '$upfile_name[2]', '$copied_file_name[0]', '$copied_file_name[1]','$copied_file_name[2]')";
-		mysql_query($sql, $connect);  // $sql 에 저장된 명령 실행
+			$sql = "insert into $table (id, name, nick, subject, content, regist_day, hit, is_html, ";
+			$sql .= " file_name_0, file_name_1, file_name_2, file_copied_0,  file_copied_1, file_copied_2) ";
+			$sql .= "values('$userid', '$username', '$usernick', '$subject', '$content', '$regist_day', 0, '$is_html', ";
+			$sql .= "'$upfile_name[0]', '$upfile_name[1]',  '$upfile_name[2]', '$copied_file_name[0]', '$copied_file_name[1]','$copied_file_name[2]')";
+			mysql_query($sql, $connect);  // $sql 에 저장된 명령 실행
 	}
-
 	mysql_close();                // DB 연결 끊기
 
 	echo "
 	   <script>
-	    	location.href = 'list.php?table=$table&page=$page'; 
+	    	location.href = 'list.php?table=$table&page=$page';
 	   </script>
 	";
 ?>

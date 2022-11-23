@@ -78,8 +78,20 @@
 <link href="../sub2/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
 <link href="./css/view.css" rel="stylesheet" type="text/css" media="all">
 <script>
-    function del(href) 
-    {
+	function check_input(){
+		if (!document.ripple_form.ripple_content.value){
+				alert("내용을 입력하세요!");    
+				document.ripple_form.ripple_content.focus();
+				return;
+			}
+			document.ripple_form.submit();
+	}
+	function del_repple(href) {
+		if(confirm("한번 삭제한 자료는 복구할 방법이 없습니다.\n\n정말 삭제하시겠습니까?")) {
+			document.location.href = href;
+		}
+	}
+    function del(href) {
         if(confirm("한번 삭제한 자료는 복구할 방법이 없습니다.\n\n정말 삭제하시겠습니까?")) {
                 document.location.href = href;
         }
@@ -91,47 +103,37 @@
 	<div id="wrap">
 		<? include "../common/sub_header.html" ?>
 		<div class="main visual">
-			<img src="./../sub2/images/product_intromainlogo.png" alt="요넥스존" />
-			<h3>상품소개</h3>
+			<img src="./../sub4/common/images/yonexzone_main_image.png" alt="요넥스존" />
+			<h3>요넥스존</h3>
 		</div>
 		<div class="subNav">
 			<ul class="subNav_wrap">
-			<li>
-					<a href="./../sub2/sub2_1.html">
-						<span>신상품</span>
+				<li>
+					<a href="./../greet/list.php">
+						<span>요넥스소식</span>
 					</a>
 				</li>
 				<li>
-					<a href="./../sub2/sub2_2.html">
-						<span>배드민턴</span>
-					</a>
-				</li>
-				<li>
-					<a href="./../sub2/sub2_3.html">
-						<span>테니스</span>
-					</a>
-				</li>
-				<li>
-					<a href="./../sub2/sub2_4.html">
-							<span>의류 / 가방</span>
+					<a href="./../sub4/sub4_2.html">
+						<span>사회공헌</span>
 					</a>
 				</li>
 				<li class="onclick">
 					<a href="./list.php">
-						<span>제품검색</span>
+						<span>사회공헌</span>
 					</a>
 				</li>
 			</ul>
 		</div>
 		<article id="content">
 			<div class="titleArea">
-				<h2>제품소개</h2>
+				<h2>프로모션</h2>
 				<div class="lineMap">
 					<span>홈</span>
 					&#62;
-					<span>상품소개</span>
+					<span>요넥스존</span>
 					&#62;
-					<strong>제품검색</strong>
+					<strong>프로모션</strong>
 				</div>
 			</div>
 			<div class="contentArea">
@@ -187,6 +189,57 @@
 						}
 					?>
 					<?= $item_content ?>
+					</div>
+					<div id="ripple">
+						<?
+							$sql = "select * from promotion_ripple where parent='$item_num'";
+							$ripple_result = mysql_query($sql);
+
+							while ($row_ripple = mysql_fetch_array($ripple_result)){
+								$ripple_num     = $row_ripple[num];
+								$ripple_id      = $row_ripple[id];
+								$ripple_nick    = $row_ripple[nick];
+								$ripple_content = str_replace("\n", "<br>", $row_ripple[content]);
+								$ripple_content = str_replace(" ", "&nbsp;", $ripple_content);
+								$ripple_date    = $row_ripple[regist_day];
+						?>
+						<div class="ripple_writer_container">
+							<div id="ripple_writer_title">
+								<ul>
+									<li id="writer_title1"><?=$ripple_nick?></li>
+									<li id="writer_title2"><?=$ripple_date?></li>
+									<li id="writer_title3"> 
+									<? 
+											if($userid=="jawon0407" || $userid==$ripple_id)
+											echo "
+												<a href='delete_ripple.php?table=$table&num=$item_num&ripple_num=$ripple_num'>
+													<i class='fa-solid fa-trash-can'></i>
+													<span class='hidden'>삭제</span>
+												</a>
+											"; 
+									?>
+									</li>
+								</ul>
+							</div>
+							<div id="ripple_content">
+								<?=$ripple_content?>
+							</div>
+						</div>
+						<?
+							}
+						?>			
+						<form  name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">  
+						<div id="ripple_box">
+							<div id="ripple_box1">댓글달기</div>
+							<div id="ripple_box2"><textarea rows="5" cols="65" name="ripple_content"></textarea>
+							</div>
+							<div id="ripple_box3">
+								<a href="#" onclick="check_input()">
+									댓글쓰기
+								</a>
+							</div>
+						</div>
+						</form>
 					</div>
 					<div id="view_button">
 						<a href="list.php?table=<?=$table?>">목록</a>&nbsp;

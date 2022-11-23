@@ -1,29 +1,27 @@
 <? 
 	session_start(); 
-
-	@extract($_GET);
+	$table = "promotion";
+	$ripple = "promotion_ripple";
 	@extract($_POST);
-	@extract($_SESSION);
-
-	$table = "product";
-
-	ini_set('display_errors', 0);
-	ini_set('display_startup_errors', 0);
-	error_reporting(E_ALL);
+    @extract($_GET);
+    @extract($_SESSION);
+    ini_set('display_errors', 0);
+    ini_set('display_startup_errors', 0);
+    error_reporting(E_ALL);
 ?>
 <!DOCTYPE HTML>
 <html lang="ko">
 <head> 
 <meta charset="utf-8">
-<link href="../sub2/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
-<link href="./css/product.css" rel="stylesheet">
+<link href="../sub4/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
+<link href="./css/promotion.css" rel="stylesheet">
 </head>
 <?
 
 	include "../lib/dbconn.php";
 
 	if(!$scale){
-		$scale=8;			// 한 화면에 표시되는 글 수
+		$scale=5;			// 한 화면에 표시되는 글 수
 	}
 
     if ($mode=="search")
@@ -67,47 +65,37 @@
 	<div id="wrap">
 		<? include "../common/sub_header.html" ?>
 		<div class="main visual">
-			<img src="./../sub2/images/product_intromainlogo.png" alt="요넥스존" />
-			<h3>상품소개</h3>
+			<img src="./../sub4/common/images/yonexzone_main_image.png" alt="요넥스존" />
+			<h3>요넥스존</h3>
 		</div>
 		<div class="subNav">
 			<ul class="subNav_wrap">
-			<li>
-					<a href="./../sub2/sub2_1.html">
-						<span>신상품</span>
+				<li>
+					<a href="./../greet/list.php">
+						<span>요넥스소식</span>
 					</a>
 				</li>
 				<li>
-					<a href="./../sub2/sub2_2.html">
-						<span>배드민턴</span>
-					</a>
-				</li>
-				<li>
-					<a href="./../sub2/sub2_3.html">
-						<span>테니스</span>
-					</a>
-				</li>
-				<li>
-					<a href="./../sub2/sub2_4.html">
-						<span>의류 / 가방</span>
+					<a href="./../sub4/sub4_2.html">
+						<span>사회공헌</span>
 					</a>
 				</li>
 				<li class="onclick">
 					<a href="./list.php">
-						<span>제품검색</span>
+						<span>사회공헌</span>
 					</a>
 				</li>
 			</ul>
 		</div>
 		<article id="content">
 			<div class="titleArea">
-				<h2>제품검색</h2>
+				<h2>프로모션</h2>
 				<div class="lineMap">
 					<span>홈</span>
 					&#62;
-					<span>상품소개</span>
+					<span>요넥스존</span>
 					&#62;
-					<strong>제품검색</strong>
+					<strong>프로모션</strong>
 				</div>
 			</div>
 			<div class="contentArea">
@@ -120,9 +108,9 @@
 							<label for="scale" class="hidden">리스트개수</label>
 							<select id="scale" name="scale" onchange="location.href='list.php?scale='+this.value">
 								<option value=''>보기</option>
-								<option value='8'>8</option>
-								<option value='12'>12</option>
-								<option value='16'>16</option>
+								<option value='5'>5</option>
+								<option value='10'>10</option>
+								<option value='15'>15</option>
 							</select>
 						</div>
 					</div>	
@@ -192,13 +180,13 @@
 										echo "<b> $i </b>";
 									}
 									else{ 
-										echo "<a href='list.php?page=$i&scale=$scale'> $i </a>";
+										echo "<a href='list.php?page=$i'> $i </a>";
 									}      
 								}
 							?>			
 						</div>
 						<div id="btn_container">
-							<a href="list.php?table=<?=$table?>&page=1">목록</a>
+							<a href="list.php?table=<?=$table?>">목록</a>
 							<? 
 								if($userid){
 							?>
@@ -214,7 +202,6 @@
 											<option value='content'>내용</option>
 											<option value='nick'>닉네임</option>
 											<option value='name'>이름</option>
-											<option value='category'>카테고리</option>
 										</select>
 									</div>
 									<div id="list_search4">

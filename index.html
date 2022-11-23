@@ -3,7 +3,6 @@
 	@extract($_POST);
 	@extract($_GET);
 	@extract($_SESSION);
-	$table = "product";
 ?>
 
 <!DOCTYPE html>
@@ -113,9 +112,8 @@
             추천 검색어 : #nanoflare700, #astrox88, #duora, #vcore
           </span>
           <div>
-            <form method="POST" action="product/list.php?mode=search&table=<?=$table?>">
-              <label for="find" class="hidden">제목</label>
-              <input type="hidden" name="find" value="제목">
+            <form method="POST" action="product/list.php?table=product&mode=search">
+              <input type="hidden" name="find" value="subject">
               <label for="search" class="hidden">검색어 입력</label>
               <input
                 type="text"
@@ -220,12 +218,14 @@
           </div>
         </section>
         <!-- Slider main container -->
+        <? include "./lib/func.php"; ?>
         <section class="promotion">
           <h3>프로모션</h3>
           <!-- Additional required wrapper -->
           <ul class="swiper-wrapper promotion_list">
             <!-- Slides -->
-            <li class="swiper-slide">
+            <?  latest_article("promotion", 7, 15, 30);  ?>
+            <!-- <li class="swiper-slide">
               <a href="#">
                 <div>
                   <img
@@ -359,7 +359,7 @@
                   </dd>
                 </dl>
               </a>
-            </li>
+            </li> -->
           </ul>
           <!-- If we need pagination -->
           <div class="swiper-pagination"></div>
@@ -452,8 +452,8 @@
             <h3>news zone</h3>
             <div>
               <ul class="news_lists">
-                <!-- <? latest_article("greet", 2, 10, 40); ?> -->
-                <li>
+                <? latest_article("greet", 4, 10, 40); ?>
+                <!-- <li>
                   <a href="./sub4/sub4_3.html">
                     <dl>
                       <dt>
@@ -463,7 +463,7 @@
                       <small>2022.07.13</small>
                     </dl>
                   </a>
-                </li>
+                </li> -->
                 <!-- <li>
                   <a href="./sub4/sub4_3.html">
                     <p>

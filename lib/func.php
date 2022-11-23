@@ -30,32 +30,46 @@
 			
 			$regist_day = substr($row[regist_day], 0, 10);	// '2022-02-21'
 
-            
-			if($table === 'product'){
-				if($row[file_copied_0]){	//	첨부된 이미지가 있으면
-					$concertimg='./product/data/'.$row[file_copied_0];
-					echo"
-						
-					"
+			if($table === 'promotion'){
+                $file_copied_0 = $row[file_copied_0];
+				if($file_copied_0){
+					echo "
+						<li class='swiper-slide'>
+							<a href='./$table/view.php?table=$table&num=$num'>
+								<div>
+									<img class='cimg' src='./$table/data/$file_copied_0'>
+								</div>
+								<dl class='col1'>
+								<dt>
+									$subject
+								</dt>
+								<dd>
+									<span>$content</span> 
+									<small>$regist_day</small>
+								</dd>
+							</dl>	 
+						</a>
+					</li>
+				";
 				}else{
-					$concertimg= './product/data/default.jpg';
+					echo "
+						<li class='swiper-slide'>
+							<a href='./$table/view.php?table=$table&num=$num'>
+								<div>
+				       				<img src='./$table/data/default.jpg' alt="프로모션 이미지">
+								</div>	
+								<dl>
+									<dt>$subject</dt>
+									<dd>
+										<span>$content</span> 
+										<small>$regist_day</small>
+									</dd>
+								</dl>	 
+							</a>
+						</li>
+					";
 				}
-			}
-            
-
-			// if($table=='greet'){	// greet table
-
-			// 	echo "      
-			// 		<div class='col1'>
-			// 			<a href='./$table/view.php?table=$table&num=$num'>
-			// 				<p>$subject</p>
-			// 				<p>$content</p>
-			// 			</a>
-			// 		</div>
-			// 		<div class='col2'>$regist_day</div>
-			// 		<div class='clear'></div>
-			// 	";
-			// }
+		   }
 			
 			if($table==='greet'){		// greet table
 				echo "      

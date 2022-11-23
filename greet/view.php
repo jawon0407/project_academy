@@ -4,6 +4,7 @@
 	@extract($_POST);
 	@extract($_GET);
 	@extract($_SESSION);
+
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
@@ -141,7 +142,7 @@
 						</div>
 					</div>
 					<div id="view_button">
-						<a href="list.php?page=<?=$page?>&scale=<?=$scale?>">
+						<a href="list.php?table=<?=$table?>&page=<?=$page?>">
 							목록
 						</a>
 						<? 
@@ -150,7 +151,7 @@
 						<a href="javascript:del('delete.php?num=<?=$num?>')">
 							삭제
 						</a>
-						<a href="modify_form.php?num=<?=$num?>&page=<?=$page?>&scale=<?=$scale?>">
+						<a href="modify_form.php?num=<?=$num?>&page=<?=$page?>">
 							수정
 						</a>
 						<?
@@ -159,7 +160,7 @@
 						<? 
 							if($userid ){
 						?>
-						<a href="write_form.php?page=<?=$page?>&scale=<?=$scale?>">
+						<a href="write_form.php?page=<?=$page?>">
 							글쓰기
 						</a>
 						<?

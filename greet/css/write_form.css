@@ -66,32 +66,16 @@
     background-color: #ccc;
 }
 
+
+
 .btn_container a:nth-child(2){
     background-color: #0f9af5;
+    color:#fff;
 }
 
 .btn_container a:nth-child(2):hover{
     background-color: #006eb6;
 }
-
-.btn_container a:nth-child(2) button{
-    background-color: transparent;
-    border:none;
-    color:#fff;
-    font-size: 1rem;
-}
-
-.confirm_btn{
-    border: none;
-    border-radius: 5px;
-    padding: 0 10px;
-    font-size: 16px;
+.btn_container a:nth-child(2){
     background-color: #0f9af5;
-    transition: all .3s ease-in-out;
-    color:white;
-    cursor:pointer;
-}
-
-.confirm_btn:hover{
-    background-color: #006eb6;
 }

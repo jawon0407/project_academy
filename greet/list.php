@@ -23,7 +23,7 @@
 	include "../lib/dbconn.php";
 
 	if(!$scale){
-		$scale=10;			// 한 화면에 표시되는 글 수
+		$scale=5;			// 한 화면에 표시되는 글 수
 	}
 
     if ($mode=="search")
@@ -80,6 +80,11 @@
 				</li>
 				<li>
 					<a href="./../sub4/sub4_2.html">
+						<span>사회공헌</span>
+					</a>
+				</li>
+				<li>
+					<a href="./../promotion/list.php">
 						<span>사회공헌</span>
 					</a>
 				</li>
@@ -140,13 +145,15 @@
 
 								$item_subject = str_replace(" ", "&nbsp;", $row[subject]);
 						?>
-						<div id="list_item">
-							<div id="list_item1"><?= $number ?></div>
-							<div id="list_item2"><a href="view.php?num=<?=$item_num?>&page=<?=$page?>&scale=<?=$scale?>"><?= $item_subject ?></a></div>
-							<div id="list_item3"><?= $item_nick ?></div>
-							<div id="list_item4"><?= $item_date ?></div>
-							<div id="list_item5"><?= $item_hit ?></div>
-						</div>
+						<a href="view.php?table=<?=$table?>&num=<?=$item_num?>&page=<?=$page?>">
+							<div id="list_item">
+								<div id="list_item1"><?= $number ?></div>
+								<div id="list_item2"><?= $item_subject ?></div>
+								<div id="list_item3"><?= $item_nick ?></div>
+								<div id="list_item4"><?= $item_date ?></div>
+								<div id="list_item5"><?= $item_hit ?></div>
+							</div>
+						</a>
 						<?
 							$number--;
 						}
@@ -165,11 +172,11 @@
 							?>			
 						</div>
 						<div id="btn_container">
-							<a href="list.php?page=<?=$page?>&scale=<?=$scale?>">목록</a>
+							<a href="list.php?page=<?=$page?>">목록</a>
 							<? 
 								if($userid){
 							?>
-							<a href="write_form.php?page=<?=$page?>&scale=<?=$scale?>">글쓰기</a>
+							<a href="write_form.php?page=<?=$page?>">글쓰기</a>
 							<? } ?>
 						</div>
 						<div class="search_container">

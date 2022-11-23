@@ -14,8 +14,25 @@
 <meta charset="utf-8">
 <link href="../sub4/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
 <link href="./css/write_form.css" rel="stylesheet" type="text/css" media="all">
+<script>
+	  function check_input()
+   {
+      	if (!document.board_form.subject.value)
+     	{
+          	alert("제목을 입력하세요!");    
+          	document.board_form.subject.focus();
+          	return;
+      	}
+     	 if (!document.board_form.content.value)
+      	{
+        	alert("내용을 입력하세요!");    
+        	document.board_form.content.focus();
+        	return;
+      	}
+     	 document.board_form.submit();
+   }
+</script>
 </head>
-
 <body>
 	<div id="wrap">
 		<? include "../common/sub_header.html" ?>
@@ -50,7 +67,7 @@
 			</div>
   			<div id="contentArea">
 				<div id="col2">        
-					<form name="board_form" method="post" action="insert.php?page=<?=$page?>&scale=<?=$scale?>"> 
+					<form name="board_form" method="post" action="insert.php?page=<?=$page?>"> 
 						<div id="write_form">
 							<div id="writer_info">
 								<div class="col1">닉네임</div>
@@ -77,11 +94,11 @@
 							</div>
 						</div>
 						<div id="write_button" class="btn_container">
-							<a href="list.php?page=<?=$page?>&scale=<?=$scale?>">
+							<a href="list.php?page=<?=$page?>">
 								뒤로 가기
 							</a>
-							<a href="list.php?page=1&scale=<?=$scale?>">
-								<button type="submit">완료</button>
+							<a href="#" onclick="check_input()">
+								확인
 							</a>
 						</div>
 					</form>

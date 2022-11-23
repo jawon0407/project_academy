@@ -1,8 +1,7 @@
 <? 
 	session_start(); 
 	
-	//새글쓰기
-	//$table = 'concert'
+
 	@extract($_GET);
 	@extract($_POST);
 	@extract($_SESSION);
@@ -36,8 +35,8 @@
 <html lang="ko">
 <head> 
 <meta charset="utf-8">
-<link href="../sub2/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
-<link href="./css/product_write.css" rel="stylesheet" type="text/css" media="all">
+<link href="../sub4/common/css/sub_style.css" rel="stylesheet" type="text/css" media="all">
+<link href="./css/promotion_write.css" rel="stylesheet">
 <script>
   function check_input()
    {
@@ -47,12 +46,6 @@
           	document.board_form.subject.focus();
           	return;
       	}
-	 	 if (!document.board_form.category.value)
-		{
-			alert("카테고리를 선택하세요!");    
-			document.board_form.category_1.focus();
-			return;
-		}
      	 if (!document.board_form.content.value)
       	{
         	alert("내용을 입력하세요!");    
@@ -67,47 +60,37 @@
 <div id="wrap">
 <? include "../common/sub_header.html" ?>
 		<div class="main visual">
-			<img src="./../sub2/images/product_intromainlogo.png" alt="요넥스존" />
-			<h3>상품소개</h3>
+			<img src="./../sub4/common/images/yonexzone_main_image.png" alt="요넥스존" />
+			<h3>요넥스존</h3>
 		</div>
 		<div class="subNav">
 			<ul class="subNav_wrap">
-			<li>
-					<a href="./../sub2/sub2_1.html">
-						<span>신상품</span>
+				<li>
+					<a href="./../greet/list.php">
+						<span>요넥스소식</span>
 					</a>
 				</li>
 				<li>
-					<a href="./../sub2/sub2_2.html">
-						<span>배드민턴</span>
-					</a>
-				</li>
-				<li>
-					<a href="./../sub2/sub2_3.html">
-						<span>테니스</span>
-					</a>
-				</li>
-				<li>
-					<a href="./../sub2/sub2_4.html">
-						<span>의류 / 가방</span>
+					<a href="./../sub4/sub4_2.html">
+						<span>사회공헌</span>
 					</a>
 				</li>
 				<li class="onclick">
 					<a href="./list.php">
-						<span>제품검색</span>
+						<span>사회공헌</span>
 					</a>
 				</li>
 			</ul>
 		</div>
 		<article id="content">
 			<div class="titleArea">
-				<h2>제품등록</h2>
+				<h2>프로모션</h2>
 				<div class="lineMap">
 					<span>홈</span>
 					&#62;
-					<span>상품소개</span>
+					<span>요넥스존</span>
 					&#62;
-					<strong>제품검색</strong>
+					<strong>프로모션</strong>
 				</div>
 			</div>
  			<div class="contentArea">
@@ -145,42 +128,6 @@
 								<div class="col1">제목</div>
 								<div class="col2">
 									<input type="text" name="subject" value="<?=$item_subject?>" >
-								</div>
-							</div>
-							<div id="category_container">
-								<div class="col1">카테고리</div>
-								<div class="col2">
-									<select name="category">
-									<?
-												if($item_category === '배드민턴') {
-													echo "
-														<option value='배드민턴' selected>배드민턴</option>
-														<option value='테니스'>테니스</option>
-														<option value='의류 / 가방'>의류 / 가방</option>
-													";
-												} else if($item_category === '테니스'){
-													echo "
-														<option value='배드민턴'>배드민턴</option>
-														<option value='테니스' selected>테니스</option>
-														<option value='의류 / 가방'>의류 / 가방</option>
-													";
-												}else if($item_category === '의류 / 가방'){
-													echo "
-														<option value='배드민턴'>배드민턴</option>
-														<option value='테니스'>테니스</option>
-														<option value='의류 / 가방' selected>의류 / 가방</option>
-													";
-												} 
-												else {
-													echo "
-														<option value=''>선택</option>
-														<option value='배드민턴'>배드민턴</option>
-														<option value='테니스'>테니스</option>
-														<option value='의류 / 가방'>의류 / 가방</option>
-													";
-												}
-											?>
-									</select>
 								</div>
 							</div>
 							<div id="content_container">
@@ -242,7 +189,7 @@
 							?>
 						</div>
 						<div id="write_button" class="btn_container">
-							<a href="list.php?table=<?=$table?>&page=1">
+							<a href="list.php?table=<?=$table?>">
 								목록
 							</a>
 							<a href="#" onclick="check_input()">

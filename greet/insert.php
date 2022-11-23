@@ -75,7 +75,7 @@
 
 	echo "
 		<script>
-			location.href = 'list.php?page=$page&scale=$scale';
+			location.href = 'list.php?page=$page';
 		</script>
 	";
 ?>
