@@ -114,9 +114,9 @@
 
     mysql_close();
 ?>
-<body class="w-screen bg-gray-100 flex flex-col items-center">
+<body class="w-screen h-screen justify-center bg-gray-100 flex flex-col items-center">
   <h1 class="title text-2xl font-bold my-20">회원정보수정</h1>
-  <div id="wrap" class="bg-white w-4/5 p-20 rounded-md shadow-md">
+  <div id="wrap" class="bg-white w-4/5 p-20 rounded-md shadow-add">
     <div class="relative">
       <form  name="member_form" method="post" action="modify.php" class="border-2 rounded-md pb-4"> 
         <div id="form_join">

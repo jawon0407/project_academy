@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./*.html",
-    "./**/*.html",
+    "./*.{html,js}",
+    "./**/*.{html,php}",
   ],
   presets: [],
   darkMode: "media", // or 'class'
@@ -54,6 +54,7 @@ module.exports = {
       font: "#333",
       main: "#006eb6",
       point: "#009867",
+      bright_red:"#EB0029",
     }),
     columns: {
       auto: "auto",
@@ -234,6 +235,7 @@ module.exports = {
       "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
       inner: "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
       none: "none",
+      add: "0 0 20px 0 rgba(0,0,0,0.2)",
     },
     boxShadowColor: ({ theme }) => theme("colors"),
     caretColor: ({ theme }) => theme("colors"),
@@ -926,6 +928,12 @@ module.exports = {
       "1/2": "50%",
       "1/3": "33.333333%",
       "2/3": "66.666667%",
+      "1/20" : "5%",
+      "85%" : "85%",
+      "15%" : "15%",
+      "13%" : "13%",
+      "7%" : "7%",
+      "13/20" : "65%",
       "1/4": "25%",
       "2/4": "50%",
       "3/4": "75%",
@@ -935,6 +943,8 @@ module.exports = {
       "4/5": "80%",
       "1/6": "16.666667%",
       "2/6": "33.333333%",
+      "3/10" : "30%",
+      "7/10" : "70%",
       "3/6": "50%",
       "4/6": "66.666667%",
       "5/6": "83.333333%",
@@ -947,11 +957,13 @@ module.exports = {
       "6/12": "50%",
       "7/12": "58.333333%",
       "8/12": "66.666667%",
+      "7/10" : "70%",
       "9/12": "75%",
       "10/12": "83.333333%",
       "9/10" : "90%",
       "11/12": "91.666667%",
       "2xl": "200%",
+      "3xl": "300%",
       full: "100%",
       screen: "100vw",
       min: "min-content",
@@ -993,5 +1005,6 @@ module.exports = {
     "disabled",
   ],
   plugins: [
+    require('tw-elements/dist/plugin')
   ],
 };
