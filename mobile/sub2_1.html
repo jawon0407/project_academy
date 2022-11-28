@@ -147,41 +147,6 @@
               </a>
             </li>
           </ul>
-          <?
-          @extract($_SESSION);
-          @extract($_POST);
-          @extract($_GET);
-          
-          //$userid = $_SESSION['userid'];
-
-            if(!$userid)
-          {
-        ?>
-        <ul class="flex space-x-4 mt-10 justify-center">
-          <li class="rounded-lg bg-main">
-            <a href="./login/login_form.php" class="block px-4 py-2 text-white w-full"> 로그인 </a>
-          </li>
-          <li class="rounded-lg bg-main">
-            <a href="./member/join.html" class="block px-4 py-2 text-white w-full"> 회원가입 </a>
-          </li>
-        </ul>
-          <?
-            }
-            else
-            {
-          ?>
-              <ul class="flex space-x-4 mt-10 justify-center">
-                <li class="rounded-lg bg-main">
-                  <a href="./login/logout.php" class="block px-4 py-2 text-white w-full"> 로그아웃 </a>
-                </li>
-                <li class="rounded-lg bg-main">
-                  <a href="./member/member_form_modify.php" class="block px-4 py-2 text-white w-full"> 회원정보수정 </a>
-                </li>
-              </ul>
-      
-          <?
-            }
-          ?>
         </nav>        
       </header>
 
